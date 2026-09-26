@@ -1,4 +1,5 @@
-import { education, experience, site, skills, type Entry } from "@/lib/content";
+import type { Content } from "@/models/content";
+import type { Entry } from "@/models/entry";
 import { Section } from "./Section";
 
 function Heading({ children }: { children: React.ReactNode }) {
@@ -28,28 +29,28 @@ function Timeline({ entries }: { entries: Entry[] }) {
   );
 }
 
-export function About() {
+export function About({ about }: { about: Content["about"] }) {
   return (
-    <Section id="profilo" index="02" label="Profilo">
+    <Section id="about" index="02" label={about.label}>
       <p className="max-w-[46ch] text-xl leading-snug tracking-[-0.015em] md:text-2xl">
-        {site.about}
+        {about.text}
       </p>
 
       <div className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6">
         <div className="space-y-16">
           <div>
-            <Heading>Esperienza</Heading>
-            <Timeline entries={experience} />
+            <Heading>{about.experienceLabel}</Heading>
+            <Timeline entries={about.experience} />
           </div>
           <div>
-            <Heading>Formazione</Heading>
-            <Timeline entries={education} />
+            <Heading>{about.educationLabel}</Heading>
+            <Timeline entries={about.education} />
           </div>
         </div>
         <div>
-          <Heading>Strumenti</Heading>
+          <Heading>{about.skillsLabel}</Heading>
           <dl className="text-sm">
-            {skills.map((skill) => (
+            {about.skills.map((skill) => (
               <div
                 key={skill.area}
                 className="grid grid-cols-[5.5rem_1fr] gap-4 border-t border-line py-4"

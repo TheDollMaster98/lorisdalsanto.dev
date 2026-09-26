@@ -1,11 +1,11 @@
-import { projects } from "@/lib/content";
+import type { Content } from "@/models/content";
 import { Section } from "./Section";
 
-export function Work() {
+export function Work({ work }: { work: Content["work"] }) {
   return (
-    <Section id="lavori" index="01" label="Lavori">
+    <Section id="work" index="01" label={work.label}>
       <ol className="border-b border-line">
-        {projects.map((project) => {
+        {work.projects.map((project) => {
           const content = (
             <div className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10">
               <div className="col-span-8 md:col-span-5">
