@@ -21,6 +21,15 @@ npm run build   # genera out/, deployabile su qualsiasi hosting statico
 
 Per aggiungere una lingua: nuovo file in `content/`, poi aggiungila a `locales` e `contents` in `lib/i18n.ts`.
 
+## Deploy
+
+Ogni push su `main` pubblica il sito su GitHub Pages (`.github/workflows/deploy.yml`).
+Prerequisito, una volta sola: Settings → Pages → Source: **GitHub Actions**.
+
+Senza dominio il sito è su `https://thedollmaster98.github.io/lorisdalsanto.dev/`: il workflow
+passa la sottocartella a Next tramite `PAGES_BASE_PATH`. Con un dominio personalizzato il percorso
+diventa vuoto da solo.
+
 ## Design
 
 - Palette: token in `app/globals.css`
