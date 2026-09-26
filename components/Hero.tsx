@@ -9,11 +9,11 @@ export function Hero() {
         {site.available && (
           <span className="flex items-center gap-2">
             <span className="size-1.5 rounded-full bg-signal" aria-hidden />
-            Disponibile per nuovi progetti
+            Aperto a nuove opportunità
           </span>
         )}
       </div>
-      <h1 className="max-w-[18ch] text-[clamp(2.5rem,7vw,6.5rem)] font-medium leading-[0.98] tracking-[-0.035em]">
+      <h1 className="max-w-[20ch] text-[clamp(2.5rem,6.5vw,6rem)] font-medium leading-[0.98] tracking-[-0.035em]">
         {site.statement}
       </h1>
     </section>

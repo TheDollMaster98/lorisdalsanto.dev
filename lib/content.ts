@@ -2,22 +2,24 @@
 
 export const site = {
   name: "Loris Dal Santo",
-  role: "Frontend Developer",
-  location: "[Città], Italia",
+  role: "Front-End & Mobile Developer",
+  location: "Milano",
   email: "[tua@email.it]",
   available: true,
   statement:
-    "Costruisco interfacce web veloci, leggibili e mantenibili. [Riscrivi questa frase: chi sei, per chi lavori, che risultato porti.]",
+    "Progetto e sviluppo interfacce per prodotti enterprise, dall’architettura all’ultimo componente.",
+  about:
+    "Da quattro anni sviluppo front-end su progetti dove un errore costa caro: piattaforme bancarie per UniCredit, portali interni per EY AI & Data, un’app fintech in Flutter. Oggi in EY seguo il front-end in autonomia: scelgo l’architettura, costruisco i componenti, scrivo la documentazione e presento le demo ai Partner. Lavoro con Angular, Next.js e Flutter, con attenzione ad accessibilità, test e a un codice che resti leggibile anche dopo un anno.",
   links: [
     { label: "GitHub", href: "https://github.com/TheDollMaster98" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/[profilo]" },
-    { label: "CV", href: "/cv.pdf" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/lorisdalsanto/" },
   ],
 };
 
 export type Project = {
   title: string;
   year: string;
+  context: string;
   role: string;
   summary: string;
   stack: string[];
@@ -26,40 +28,71 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Fanta LoL",
+    title: "Portale IA interno",
     year: "2025",
-    role: "Design & sviluppo",
+    context: "EY · AI & Data",
+    role: "Front-end technical owner",
     summary:
-      "Piattaforma fantasy per il competitivo di League of Legends: leghe private, aste in tempo reale, ruoli e punteggi importati da Leaguepedia.",
-    stack: ["Next.js", "TypeScript", "Firebase", "Leaguepedia API"],
-    href: "https://github.com/TheDollMaster98/frontend-fanta-app",
+      "Portale interno della divisione AI & Data. Ho definito architettura e setup, sviluppato UX/UI e componenti riutilizzabili, gestito autenticazione e integrazione con il back-end, e presentato demo e scelte architetturali direttamente ai Partner.",
+    stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "NestJS"],
   },
   {
-    title: "[Progetto 2]",
-    year: "[Anno]",
-    role: "[Ruolo]",
-    summary: "[Problema, cosa hai fatto tu, risultato misurabile. Due righe.]",
-    stack: ["[Tech]"],
+    title: "Editor documentale",
+    year: "2025",
+    context: "EY · settore immobiliare",
+    role: "Unico sviluppatore front-end",
+    summary:
+      "Editor rich text per compilare e generare documenti .docx strutturati. Architettura, design UX/UI e backlog tecnico front-end interamente a mio carico.",
+    stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
   },
   {
-    title: "[Progetto 3]",
-    year: "[Anno]",
-    role: "[Ruolo]",
-    summary: "[Problema, cosa hai fatto tu, risultato misurabile. Due righe.]",
-    stack: ["[Tech]"],
+    title: "UC Hedge",
+    year: "2022 — 2024",
+    context: "UniCredit · via Be | Shaping the Future",
+    role: "Front-end developer",
+    summary:
+      "Piattaforma per la gestione end-to-end del rischio di cambio delle aziende, premiata agli Euromoney Awards 2023. Componenti front-end, fix UX/UI e test unitari in un team distribuito tra Italia, Germania e Romania.",
+    stack: ["Angular", "RxJS", "Bootstrap 5", "Karma", "Jasmine"],
+  },
+  {
+    title: "Findora",
+    year: "2024 — oggi",
+    context: "Startup fintech",
+    role: "Mobile & web developer",
+    summary:
+      "App mobile in Flutter con autenticazione, dati e notifiche push su Firebase, landing page in React e portale gestionale in Angular. Open beta con oltre 100 tester, i cui feedback hanno guidato le iterazioni su UI e UX.",
+    stack: ["Flutter 3", "Riverpod", "Firebase", "React", "Angular 17"],
   },
 ];
 
-export const experience = [
-  { period: "[2024 — oggi]", company: "[Azienda]", role: "[Ruolo]" },
-  { period: "[2022 — 2024]", company: "[Azienda]", role: "[Ruolo]" },
+export type Entry = {
+  period: string;
+  company: string;
+  role: string;
+};
+
+export const experience: Entry[] = [
+  { period: "2025 — oggi", company: "EY · AI & Data", role: "Senior I — Front-End Developer" },
+  {
+    period: "2023 — 2025",
+    company: "Be | Shaping the Future",
+    role: "Junior Specialist · consulente UniCredit",
+  },
+  { period: "2022", company: "Be | Shaping the Future", role: "Junior Developer · stage" },
+];
+
+export const education: Entry[] = [
+  {
+    period: "2020 — in corso",
+    company: "Università degli Studi di Milano",
+    role: "Informatica per la comunicazione digitale",
+  },
 ];
 
 export const skills = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "Firebase",
-  "GSAP",
+  { area: "Web", items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals" },
+  { area: "Mobile", items: "Flutter 3, Riverpod, BLoC, Firebase" },
+  { area: "UI", items: "Tailwind CSS, Material Design, Bootstrap, shadcn/ui, WCAG" },
+  { area: "Qualità", items: "Karma, Jasmine, unit test, code review" },
+  { area: "Delivery", items: "Jenkins, Docker, Azure, NestJS, Jira, Agile/Scrum" },
 ];
