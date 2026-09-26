@@ -1,10 +1,10 @@
-// Unica fonte dei contenuti del sito. Tutto ciò che è tra [parentesi quadre] va sostituito.
+// Unica fonte dei contenuti del sito.
 
 export const site = {
   name: "Loris Dal Santo",
   role: "Front-End & Mobile Developer",
   location: "Milano",
-  email: "[tua@email.it]",
+  email: "lorisdalsanto@hotmail.it",
   available: true,
   statement:
     "Progetto e sviluppo interfacce per prodotti enterprise, dall’architettura all’ultimo componente.",
