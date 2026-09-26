@@ -56,12 +56,23 @@ export const projects: Project[] = [
   },
   {
     title: "Findora",
-    year: "2024 — oggi",
+    year: "2024 — 2025",
     context: "Startup fintech",
-    role: "Mobile & web developer",
+    role: "Flutter mobile & front-end developer",
     summary:
-      "App mobile in Flutter con autenticazione, dati e notifiche push su Firebase, landing page in React e portale gestionale in Angular. Open beta con oltre 100 tester, i cui feedback hanno guidato le iterazioni su UI e UX.",
-    stack: ["Flutter 3", "Riverpod", "Firebase", "React", "Angular 17"],
+      "App mobile cross-platform in FlutterFlow e Flutter con autenticazione e database su Firebase, landing page in React e portale gestionale in Angular. Open beta con oltre 100 tester, i cui feedback hanno guidato le iterazioni su UI e UX.",
+    stack: ["Flutter 3.20", "FlutterFlow", "Riverpod", "Firebase", "React 18", "Angular 20"],
+    href: "https://findora.it",
+  },
+  {
+    title: "Fam Fanta",
+    year: "2026",
+    context: "Progetto personale",
+    role: "Design & sviluppo",
+    summary:
+      "Fantasy league per il competitivo di League of Legends: leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Firebase", "Leaguepedia API"],
+    href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
   },
 ];
 
@@ -73,6 +84,11 @@ export type Entry = {
 
 export const experience: Entry[] = [
   { period: "2025 — oggi", company: "EY · AI & Data", role: "Senior I — Front-End Developer" },
+  {
+    period: "2024 — 2025",
+    company: "Findora · startup",
+    role: "Flutter Mobile & Front-End Developer",
+  },
   {
     period: "2023 — 2025",
     company: "Be | Shaping the Future",
@@ -91,7 +107,7 @@ export const education: Entry[] = [
 
 export const skills = [
   { area: "Web", items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals" },
-  { area: "Mobile", items: "Flutter 3, Riverpod, BLoC, Firebase" },
+  { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod, Firebase" },
   { area: "UI", items: "Tailwind CSS, Material Design, Bootstrap, shadcn/ui, WCAG" },
   { area: "Qualità", items: "Karma, Jasmine, unit test, code review" },
   { area: "Delivery", items: "Jenkins, Docker, Azure, NestJS, Jira, Agile/Scrum" },

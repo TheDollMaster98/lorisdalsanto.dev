@@ -11,6 +11,11 @@ export function Work() {
               <div className="col-span-8 md:col-span-5">
                 <h3 className="text-2xl font-medium tracking-[-0.02em] md:text-3xl">
                   {project.title}
+                  {project.href && (
+                    <span className="ml-2 text-ink-muted" aria-hidden>
+                      ↗
+                    </span>
+                  )}
                 </h3>
                 <p className="mt-2 text-sm text-ink-muted">{project.context}</p>
               </div>
