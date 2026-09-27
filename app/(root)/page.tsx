@@ -9,19 +9,20 @@ export const metadata: Metadata = {
 // Con l'export statico non c'è un server che possa fare redirect:
 // sceglie la lingua del browser via script (inglese per le lingue non supportate),
 // con meta refresh sulla lingua predefinita se JavaScript è disattivato.
+const base = process.env.PAGES_BASE_PATH ?? "";
 const redirect = `
   var supported = ${JSON.stringify(locales)};
   var lang = (navigator.language || "").slice(0, 2).toLowerCase();
-  location.replace("/" + (supported.indexOf(lang) >= 0 ? lang : "en") + "/");
+  location.replace("${base}/" + (supported.indexOf(lang) >= 0 ? lang : "en") + "/");
 `;
 
 export default function RootPage() {
   return (
     <>
-      <meta httpEquiv="refresh" content={`0; url=/${defaultLocale}/`} />
+      <meta httpEquiv="refresh" content={`0; url=${base}/${defaultLocale}/`} />
       <script dangerouslySetInnerHTML={{ __html: redirect }} />
       <noscript>
-        <a href={`/${defaultLocale}/`}>Loris Dal Santo</a>
+        <a href={`${base}/${defaultLocale}/`}>Loris Dal Santo</a>
       </noscript>
     </>
   );
