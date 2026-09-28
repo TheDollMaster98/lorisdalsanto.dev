@@ -76,14 +76,14 @@ diventa vuoto da solo.
 Definita una sola volta in `src/app/globals.css` (variabili CSS in `:root`, esposte a Tailwind con `@theme`).
 Nessun gradiente, nessuna ombra: il sito usa solo questi sei colori.
 
-| Token | Hex | Classe Tailwind | Uso | Contrasto su `paper` |
-| --- | --- | --- | --- | --- |
-| `paper` | `#F4F2EE` | `bg-paper` | Sfondo della pagina (bianco perla) | — |
-| `paper-raised` | `#EBE8E2` | `bg-paper-raised` | Hover delle righe dei progetti | — |
-| `ink` | `#151515` | `text-ink`, `bg-ink` | Testo principale, sottolineatura dell'email, selezione | 16.3:1 |
-| `ink-muted` | `#5E5B55` | `text-ink-muted` | Testo secondario, etichette, date, metadati | 6.1:1 |
-| `line` | `#D9D5CD` | `border-line`, `bg-line` | Linee sottili e separatori (decorativi) | — |
-| `signal` | `#3F7A4A` | `bg-signal` | Solo il pallino "Aperto a nuove opportunità" | 4.6:1 |
+| Colore | Token | Hex | Classe Tailwind | Uso | Contrasto su `paper` |
+| --- | --- | --- | --- | --- | --- |
+| <img src="docs/palette/paper.svg" width="48" height="24" alt="paper"> | `paper` | `#F4F2EE` | `bg-paper` | Sfondo della pagina (bianco perla) | — |
+| <img src="docs/palette/paper-raised.svg" width="48" height="24" alt="paper-raised"> | `paper-raised` | `#EBE8E2` | `bg-paper-raised` | Hover delle righe dei progetti | — |
+| <img src="docs/palette/ink.svg" width="48" height="24" alt="ink"> | `ink` | `#151515` | `text-ink`, `bg-ink` | Testo principale, sottolineatura dell'email, selezione | 16.3:1 |
+| <img src="docs/palette/ink-muted.svg" width="48" height="24" alt="ink-muted"> | `ink-muted` | `#5E5B55` | `text-ink-muted` | Testo secondario, etichette, date, metadati | 6.1:1 |
+| <img src="docs/palette/line.svg" width="48" height="24" alt="line"> | `line` | `#D9D5CD` | `border-line`, `bg-line` | Linee sottili e separatori (decorativi) | — |
+| <img src="docs/palette/signal.svg" width="48" height="24" alt="signal"> | `signal` | `#3F7A4A` | `bg-signal` | Solo il pallino "Aperto a nuove opportunità" | 4.6:1 |
 
 Tutti i colori usati per il testo superano il livello AA delle WCAG (4.5:1) sullo sfondo.
 Per cambiare un colore basta modificare la variabile in `:root`: le classi Tailwind si aggiornano da sole.
