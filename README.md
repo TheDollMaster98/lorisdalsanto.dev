@@ -12,14 +12,17 @@ npm run build   # genera out/, deployabile su qualsiasi hosting statico
 
 ## Struttura
 
-- `models/` — tipi dei dati, un file `*.model.ts` per tipo (`Content`, `Project`, `Entry`, `Skill`, `Profile`)
-- `content/it.ts`, `content/en.ts` — testi per lingua, tipizzati con `Content`
-- `content/profile.ts` — dati uguali in tutte le lingue (nome, email, link)
-- `lib/i18n.ts` — lingue supportate e accesso ai testi
-- `app/[lang]/` — pagina generata per ogni lingua (`/it/`, `/en/`)
-- `app/(root)/` — `/` rimanda alla lingua del browser (inglese se non supportata)
+Tutto il codice sta in `src/`; nella root restano solo le configurazioni.
 
-Per aggiungere una lingua: nuovo file in `content/`, poi aggiungila a `locales` e `contents` in `lib/i18n.ts`.
+- `src/app/[lang]/` — pagina generata per ogni lingua (`/it/`, `/en/`): compone le sezioni
+- `src/app/(root)/` — `/` rimanda alla lingua del browser (inglese se non supportata)
+- `src/components/layout/` — elementi presenti su tutta la pagina (`Header`, `Footer`, `Motion`)
+- `src/components/sections/` — le sezioni della pagina (`Hero`, `Work`, `About`, `Contact`) e il contenitore comune `Section`
+- `src/content/` — testi per lingua (`it.ts`, `en.ts`) e dati comuni (`profile.ts`)
+- `src/lib/i18n.ts` — lingue supportate e accesso ai testi
+- `src/models/` — tipi dei dati, un file `*.model.ts` per tipo
+
+Per aggiungere una lingua: nuovo file in `src/content/`, poi aggiungila a `locales` e `contents` in `src/lib/i18n.ts`.
 
 ## Deploy
 

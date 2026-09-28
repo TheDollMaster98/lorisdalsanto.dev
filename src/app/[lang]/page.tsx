@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { Motion } from "@/components/Motion";
-import { Work } from "@/components/Work";
+import { About } from "@/components/sections/About";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { Hero } from "@/components/sections/Hero";
+import { Motion } from "@/components/layout/Motion";
+import { Work } from "@/components/sections/Work";
 import { getContent, isLocale } from "@/lib/i18n";
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
