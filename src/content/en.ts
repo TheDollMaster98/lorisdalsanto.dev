@@ -16,7 +16,11 @@ export const en: Content = {
     location: "Milan, Italy",
     availability: "Open to new opportunities",
     statement:
-      "I design and build interfaces for enterprise products, from the architecture down to the last component.",
+      "I design and build web and mobile interfaces for large companies and small businesses, from the architecture to going live.",
+  },
+  intro: {
+    label: "Introduction",
+    text: "For four years I have been building front-ends where mistakes are expensive: banking platforms for UniCredit, internal portals for EY AI & Data, a fintech app in Flutter. At EY I now own the front-end end to end: I choose the architecture, build the components, write the documentation and demo the work to the Partners. I work with Angular, Next.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
   },
   work: {
     label: "Work",
@@ -91,7 +95,6 @@ export const en: Content = {
   },
   about: {
     label: "About",
-    text: "For four years I have been building front-ends where mistakes are expensive: banking platforms for UniCredit, internal portals for EY AI & Data, a fintech app in Flutter. At EY I now own the front-end end to end: I choose the architecture, build the components, write the documentation and demo the work to the Partners. I work with Angular, Next.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
     experienceLabel: "Experience",
     experience: [
       {
