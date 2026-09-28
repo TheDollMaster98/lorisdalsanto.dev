@@ -14,13 +14,21 @@ npm run build   # genera out/, deployabile su qualsiasi hosting statico
 
 Tutto il codice sta in `src/`; nella root restano solo le configurazioni.
 
-- `src/app/[lang]/` — pagina generata per ogni lingua (`/it/`, `/en/`): compone le sezioni
-- `src/app/(root)/` — `/` rimanda alla lingua del browser (inglese se non supportata)
-- `src/components/layout/` — elementi presenti su tutta la pagina (`Header`, `Footer`, `Motion`)
-- `src/components/sections/` — le sezioni della pagina (`Hero`, `Work`, `About`, `Contact`) e il contenitore comune `Section`
+- `src/app/` — solo routing: ogni `page.tsx` carica i dati e restituisce una vista
+  - `[lang]/layout.tsx` — layout radice per lingua (`<html>`, font, metadati)
+  - `[lang]/(public)/page.tsx` — landing (`/it/`, `/en/`). I gruppi tra parentesi non finiscono nell'URL:
+    pagine pubbliche in `(public)`, e in futuro quelle con login in un gruppo a parte con il proprio layout
+  - `(root)/page.tsx` — `/` rimanda alla lingua del browser (inglese se non supportata)
+- `src/views/` — una cartella per pagina, con i componenti usati solo lì
+  - `landing/LandingPage.tsx` — compone la pagina
+  - `landing/sections/` — `Hero`, `Work`, `About`, `Contact` e il contenitore `Section`
+  - `landing/Motion.tsx` — animazioni GSAP della landing
+- `src/components/` — componenti condivisi tra pagine (`layout/Header`, `layout/Footer`)
 - `src/content/` — testi per lingua (`it.ts`, `en.ts`) e dati comuni (`profile.ts`)
 - `src/lib/i18n.ts` — lingue supportate e accesso ai testi
 - `src/models/` — tipi dei dati, un file `*.model.ts` per tipo
+
+Non si usa `src/pages/`: in Next è riservata al Pages Router e ogni file lì dentro diventerebbe una route.
 
 Per aggiungere una lingua: nuovo file in `src/content/`, poi aggiungila a `locales` e `contents` in `src/lib/i18n.ts`.
 
