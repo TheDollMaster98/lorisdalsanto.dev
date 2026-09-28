@@ -27,12 +27,12 @@ export const it: Content = {
     label: "Lavori",
     projects: [
       {
-        title: "Portale IA interno",
+        title: "Portale AI per i bandi",
         year: "2025",
         context: "EY · AI & Data",
-        role: "Front-end technical owner",
+        role: "Front-end owner",
         summary:
-          "Portale interno della divisione AI & Data. Ho definito architettura e setup, sviluppato UX/UI e componenti riutilizzabili, gestito autenticazione e integrazione con il back-end, e presentato demo e scelte architetturali direttamente ai Partner.",
+          "Analisi AI dei bandi regionali per circa 20 utenti: proposte, soluzioni e grafo delle relazioni tra bandi al posto di un controllo manuale, con dashboard di KPI. Impostato da zero, con una libreria di 20+ componenti riutilizzabili e integrazione con il back-end NestJS.",
         stack: [
           "Next.js 15",
           "TypeScript",
@@ -42,12 +42,12 @@ export const it: Content = {
         ],
       },
       {
-        title: "Editor documentale",
+        title: "Piattaforma real estate",
         year: "2025",
         context: "EY · settore immobiliare",
         role: "Unico sviluppatore front-end",
         summary:
-          "Editor rich text per compilare e generare documenti .docx strutturati. Architettura, design UX/UI e backlog tecnico front-end interamente a mio carico.",
+          "Gestione dei progetti immobiliari per circa 15 utenti: tracking con dashboard di KPI ed editor rich text che genera documenti .docx strutturati. Nata come fork dell’intranet interna, riusando 10+ componenti, ha sostituito un controllo manuale.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {
@@ -101,22 +101,30 @@ export const it: Content = {
       {
         period: "2025 — oggi",
         company: "EY · AI & Data",
-        role: "Senior I — Front-End Developer",
+        role: "Associate (Senior I) — Front-End Developer",
+        summary:
+          "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner.",
       },
       {
         period: "2024 — 2025",
-        company: "Findora · startup",
+        company: "Findora · startup fintech",
         role: "Flutter Mobile & Front-End Developer",
+        summary:
+          "App cross-platform in Flutter e Firebase, landing in React e gestionale in Angular 20. Open beta con oltre 100 tester.",
       },
       {
-        period: "2023 — 2025",
-        company: "Be | Shaping the Future",
-        role: "Junior Specialist · consulente UniCredit",
+        period: "2023 — 2024",
+        company: "Yggdrasill Project · startup",
+        role: "Full-Stack Developer",
+        summary:
+          "Blog full-stack: Angular 14 con Firebase (auth, database, hosting) ed Express + MongoDB sul back-end, architettura modulare.",
       },
       {
-        period: "2022",
+        period: "2022 — 2025",
         company: "Be | Shaping the Future",
-        role: "Junior Developer · stage",
+        role: "Junior Front-End Developer · cliente UniCredit",
+        summary:
+          "Progetti bancari Angular (13–19) a lungo termine: coverage dei test +15%, +10% e +5%, rilasci CI/CD su Jenkins, team IT/DE/RO.",
       },
     ],
     educationLabel: "Formazione",
@@ -125,6 +133,8 @@ export const it: Content = {
         period: "2020 — in corso",
         company: "Università degli Studi di Milano",
         role: "Informatica per la comunicazione digitale",
+        summary:
+          "Focus su mobile computing, digital media e interfacce utente.",
       },
     ],
   },
@@ -139,7 +149,7 @@ export const it: Content = {
       {
         area: "Back-end",
         items:
-          "NestJS e Node.js (come supporto), Firebase (Auth, Firestore), database NoSQL",
+          "NestJS, Node.js ed Express (come supporto), Firebase (Auth, Firestore, Hosting), MongoDB e database NoSQL",
       },
       {
         area: "UI",
