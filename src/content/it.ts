@@ -16,7 +16,11 @@ export const it: Content = {
     location: "Milano",
     availability: "Aperto a nuove opportunità",
     statement:
-      "Progetto e sviluppo interfacce per prodotti enterprise, dall’architettura all’ultimo componente.",
+      "Progetto e sviluppo interfacce web e mobile per grandi aziende e piccole imprese, dall’architettura alla messa online.",
+  },
+  intro: {
+    label: "Presentazione",
+    text: "Da quattro anni sviluppo front-end su progetti dove un errore costa caro: piattaforme bancarie per UniCredit, portali interni per EY AI & Data, un’app fintech in Flutter. Oggi in EY seguo il front-end in autonomia: scelgo l’architettura, costruisco i componenti, scrivo la documentazione e presento le demo ai Partner. Lavoro con Angular, Next.js e Flutter, con attenzione ad accessibilità, test e a un codice che resti leggibile anche dopo un anno.",
   },
   work: {
     label: "Lavori",
@@ -91,7 +95,6 @@ export const it: Content = {
   },
   about: {
     label: "Profilo",
-    text: "Da quattro anni sviluppo front-end su progetti dove un errore costa caro: piattaforme bancarie per UniCredit, portali interni per EY AI & Data, un’app fintech in Flutter. Oggi in EY seguo il front-end in autonomia: scelgo l’architettura, costruisco i componenti, scrivo la documentazione e presento le demo ai Partner. Lavoro con Angular, Next.js e Flutter, con attenzione ad accessibilità, test e a un codice che resti leggibile anche dopo un anno.",
     experienceLabel: "Esperienza",
     experience: [
       {
