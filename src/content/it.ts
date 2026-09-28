@@ -21,7 +21,7 @@ export const it: Content = {
   },
   intro: {
     label: "Presentazione",
-    text: "Sviluppatore full-stack JavaScript e mobile Flutter con quattro anni di esperienza, soprattutto in ambito bancario ed enterprise: progetti per UniCredit Europa come consulente, portali interni per EY AI & Data Italia, un’app mobile fintech in Flutter e progetti in startup. Oggi in EY seguo il front-end di due progetti interni: architettura, componenti, documentazione, rilascio e demo ai Partner. Lavoro con Angular, Next.js, Node.js e Flutter, con attenzione all’accessibilità, ai test e a un codice che resti leggibile anche dopo un anno.",
+    text: "Sviluppatore full-stack JavaScript e mobile Flutter con quattro anni di esperienza, soprattutto in ambito bancario ed enterprise. Ho lavorato come consulente per UniCredit Europa, su portali interni per EY AI & Data Italia, su un’app mobile fintech in Flutter e su progetti in startup. Oggi in EY seguo il front-end di due progetti interni, dall’architettura ai componenti, dalla documentazione al rilascio, fino alle demo per i Partner. Lavoro con Angular, Next.js, Node.js e Flutter, con attenzione all’accessibilità, ai test e a un codice che resti leggibile anche dopo un anno.",
     ai: "Nello sviluppo uso strumenti di intelligenza artificiale, sempre sotto la mia supervisione diretta. Dove un cliente o un progetto non ne prevede l’uso, lavoro senza, in piena autonomia.",
   },
   work: {
