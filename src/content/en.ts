@@ -33,7 +33,7 @@ export const en: Content = {
         context: "EY · AI & Data",
         role: "Front-end owner",
         summary:
-          "AI analysis of regional grants for about 20 users: proposals, solutions and a graph of relations between grants, replacing a manual review, with KPI dashboards. Built from scratch, with a library of 20+ reusable components and a NestJS back-end integration.",
+          "It analyses regional grants with AI for about 20 users and replaced a manual review. It generates proposals, solutions and a graph of relations between grants, with KPI dashboards. I built it from scratch, with a library of 20+ reusable components and a NestJS back-end integration.",
         stack: [
           "Next.js 15",
           "TypeScript",
@@ -48,7 +48,7 @@ export const en: Content = {
         context: "EY · real estate",
         role: "Sole front-end developer",
         summary:
-          "Real estate project management for about 15 users: tracking with KPI dashboards and a rich text editor that generates structured .docx documents. Forked from the company intranet, reusing 10+ components, it replaced a manual review.",
+          "It manages real estate projects for about 15 users, with tracking on KPI dashboards and a rich text editor that generates structured .docx documents. It started as a fork of the company intranet, reusing 10+ components, and replaced a manual review.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {
@@ -83,7 +83,7 @@ export const en: Content = {
         context: "Personal project",
         role: "Design & development",
         summary:
-          "Fantasy league for competitive League of Legends: private leagues, auctions, roles and scores imported from Leaguepedia.",
+          "Fantasy league for competitive League of Legends, with private leagues, auctions, roles and scores imported from Leaguepedia.",
         stack: [
           "Next.js 16",
           "TypeScript",
