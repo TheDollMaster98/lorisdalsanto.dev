@@ -14,23 +14,30 @@ npm run build   # genera out/, deployabile su qualsiasi hosting statico
 
 Tutto il codice sta in `src/`; nella root restano solo le configurazioni.
 
-- `src/app/` — solo routing: ogni `page.tsx` carica i dati e restituisce una vista
-  - `[lang]/layout.tsx` — layout radice per lingua (`<html>`, font, metadati)
-  - `[lang]/(public)/page.tsx` — landing (`/it/`, `/en/`). I gruppi tra parentesi non finiscono nell'URL:
-    pagine pubbliche in `(public)`, e in futuro quelle con login in un gruppo a parte con il proprio layout
-  - `(root)/page.tsx` — `/` rimanda alla lingua del browser (inglese se non supportata)
-- `src/views/` — una cartella per pagina, con i componenti usati solo lì
-  - `landing/LandingPage.tsx` — compone la pagina
-  - `landing/sections/` — `Hero`, `Work`, `About`, `Contact` e il contenitore `Section`
-  - `landing/Motion.tsx` — animazioni GSAP della landing
-- `src/components/` — componenti condivisi tra pagine (`layout/Header`, `layout/Footer`)
-- `src/content/` — testi per lingua (`it.ts`, `en.ts`) e dati comuni (`profile.ts`)
-- `src/lib/i18n.ts` — lingue supportate e accesso ai testi
-- `src/models/` — tipi dei dati, un file `*.model.ts` per tipo
+```
+src/
+  app/
+    (public)/               pagine pubbliche (in futuro: (private) con login, api/)
+      [lang]/               lingua nell'URL: /it/, /en/
+        layout.tsx          <html>, font, metadati
+        page.tsx            la landing
+        _sections/          sezioni della landing (Hero, Work, About, Contact, Section)
+    globals.css
+  components/layout/        componenti condivisi tra pagine (Header, Footer)
+  content/                  testi per lingua (it.ts, en.ts) e dati comuni (profile.ts)
+  lib/
+    i18n/                   lingue supportate (locales.ts) e accesso ai testi (index.ts)
+    motion/                 animazioni GSAP (Motion.tsx)
+  models/                   tipi dei dati, un file *.model.ts per tipo
+  proxy.ts                  redirect alla lingua (solo con hosting con server)
+public/index.html           "/" → lingua del browser sull'export statico
+```
 
-Non si usa `src/pages/`: in Next è riservata al Pages Router e ogni file lì dentro diventerebbe una route.
+- Ogni pagina è un `page.tsx` con accanto i suoi componenti in una cartella `_nome/`: il trattino basso dice a Next che non è una route.
+- I gruppi tra parentesi, come `(public)`, non finiscono nell'URL.
+- Non si usa `src/pages/`: in Next è riservata al Pages Router.
 
-Per aggiungere una lingua: nuovo file in `src/content/`, poi aggiungila a `locales` e `contents` in `src/lib/i18n.ts`.
+Per aggiungere una lingua: nuovo file in `src/content/`, poi aggiungila a `locales` in `src/lib/i18n/locales.ts`, a `contents` in `src/lib/i18n/index.ts` e a `supported` in `public/index.html`.
 
 ## Deploy
 
