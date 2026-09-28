@@ -6,6 +6,7 @@ import { Motion } from "@/lib/motion/Motion";
 import { About } from "./_landing-sections/About";
 import { Contact } from "./_landing-sections/Contact";
 import { Hero } from "./_landing-sections/Hero";
+import { Intro } from "./_landing-sections/Intro";
 import { Work } from "./_landing-sections/Work";
 
 export default async function LandingPage({
@@ -22,6 +23,7 @@ export default async function LandingPage({
       <Header locale={lang} nav={content.nav} />
       <main>
         <Hero hero={content.hero} />
+        <Intro intro={content.intro} />
         <Work work={content.work} />
         <About about={content.about} />
         <Contact contact={content.contact} />

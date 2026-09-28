@@ -19,13 +19,16 @@ export type Content = {
     availability: string;
     statement: string;
   };
+  intro: {
+    label: string;
+    text: string;
+  };
   work: {
     label: string;
     projects: Project[];
   };
   about: {
     label: string;
-    text: string;
     experienceLabel: string;
     experience: Entry[];
     educationLabel: string;
