@@ -4,7 +4,7 @@ import type { Content } from "@/models/content.model";
 export function Footer({ footer }: { footer: Content["footer"] }) {
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto flex max-w-[1280px] justify-between px-4 py-6 font-mono text-xs text-ink-muted md:px-8">
+      <div className="mx-auto flex max-w-7xl justify-between px-4 py-6 font-mono text-xs text-ink-muted md:px-8">
         <span>
           © {new Date().getFullYear()} {profile.name}
         </span>
