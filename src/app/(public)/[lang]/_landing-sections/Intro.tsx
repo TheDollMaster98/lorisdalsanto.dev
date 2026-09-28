@@ -10,6 +10,9 @@ export function Intro({ intro }: { intro: Content["intro"] }) {
       >
         {intro.text}
       </p>
+      <p data-reveal className="mt-8 max-w-[60ch] text-sm text-ink-muted">
+        {intro.ai}
+      </p>
     </Section>
   );
 }

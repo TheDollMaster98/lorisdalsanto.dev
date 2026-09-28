@@ -23,6 +23,8 @@ export type Content = {
   intro: {
     label: string;
     text: string;
+    // Nota breve sull'uso di strumenti AI, mostrata sotto il paragrafo.
+    ai: string;
   };
   work: {
     label: string;

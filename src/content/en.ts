@@ -21,7 +21,8 @@ export const en: Content = {
   },
   intro: {
     label: "Introduction",
-    text: "For four years I have been building front-ends where mistakes are expensive: banking platforms for UniCredit, internal portals for EY AI & Data, a fintech app in Flutter. At EY I now own the front-end end to end: I choose the architecture, build the components, write the documentation and demo the work to the Partners. I work with Angular, Next.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
+    text: "Front-end and mobile developer with four years of experience, mostly in banking and enterprise: projects for UniCredit Europe as a consultant, internal portals for EY AI & Data Italy, a fintech mobile app in Flutter and full-stack work in startups. At EY I now own the front-end of two internal projects: architecture, components, documentation, release and demos to the Partners. I work with Angular, Next.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
+    ai: "I use AI tools in my daily work, always under my direct supervision: ideas, code review, testing and debugging stay in my hands.",
   },
   work: {
     label: "Work",

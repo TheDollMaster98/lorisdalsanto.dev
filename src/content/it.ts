@@ -21,7 +21,8 @@ export const it: Content = {
   },
   intro: {
     label: "Presentazione",
-    text: "Da quattro anni sviluppo front-end su progetti dove un errore costa caro: piattaforme bancarie per UniCredit, portali interni per EY AI & Data, un’app fintech in Flutter. Oggi in EY seguo il front-end in autonomia: scelgo l’architettura, costruisco i componenti, scrivo la documentazione e presento le demo ai Partner. Lavoro con Angular, Next.js e Flutter, con attenzione ad accessibilità, test e a un codice che resti leggibile anche dopo un anno.",
+    text: "Sviluppatore front-end e mobile con quattro anni di esperienza, soprattutto in ambito bancario ed enterprise: progetti per UniCredit Europa come consulente, portali interni per EY AI & Data Italia, un’app mobile fintech in Flutter ed esperienze full-stack in startup. Oggi in EY seguo il front-end di due progetti interni: architettura, componenti, documentazione, rilascio e demo ai Partner. Lavoro con Angular, Next.js e Flutter, con attenzione all’accessibilità, ai test e a un codice che resti leggibile anche dopo un anno.",
+    ai: "Uso strumenti di intelligenza artificiale nello sviluppo quotidiano, sempre sotto la mia supervisione diretta: idee, revisione del codice, test e debug restano in mano mia.",
   },
   work: {
     label: "Lavori",
