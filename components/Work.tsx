@@ -4,15 +4,18 @@ import { Section } from "./Section";
 export function Work({ work }: { work: Content["work"] }) {
   return (
     <Section id="work" index="01" label={work.label}>
-      <ol className="border-b border-line">
+      <ol>
         {work.projects.map((project) => {
           const content = (
-            <div className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10">
+            <div data-reveal className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10">
               <div className="col-span-8 md:col-span-5">
                 <h3 className="text-2xl font-medium tracking-[-0.02em] md:text-3xl">
                   {project.title}
                   {project.href && (
-                    <span className="ml-2 text-ink-muted" aria-hidden>
+                    <span
+                      className="ml-2 inline-block text-ink-muted transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      aria-hidden
+                    >
                       ↗
                     </span>
                   )}
@@ -32,13 +35,14 @@ export function Work({ work }: { work: Content["work"] }) {
           );
 
           return (
-            <li key={project.title} className="border-t border-line">
+            <li key={project.title}>
+              <div data-line className="h-px bg-line" />
               {project.href ? (
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="block transition-colors hover:bg-paper-raised"
+                  className="group block transition-colors hover:bg-paper-raised"
                 >
                   {content}
                 </a>
@@ -49,6 +53,7 @@ export function Work({ work }: { work: Content["work"] }) {
           );
         })}
       </ol>
+      <div data-line className="h-px bg-line" />
     </Section>
   );
 }

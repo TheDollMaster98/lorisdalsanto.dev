@@ -32,22 +32,22 @@ function Timeline({ entries }: { entries: Entry[] }) {
 export function About({ about }: { about: Content["about"] }) {
   return (
     <Section id="about" index="02" label={about.label}>
-      <p className="max-w-[46ch] text-xl leading-snug tracking-[-0.015em] md:text-2xl">
+      <p data-reveal className="max-w-[46ch] text-xl leading-snug tracking-[-0.015em] md:text-2xl">
         {about.text}
       </p>
 
       <div className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6">
         <div className="space-y-16">
-          <div>
+          <div data-reveal>
             <Heading>{about.experienceLabel}</Heading>
             <Timeline entries={about.experience} />
           </div>
-          <div>
+          <div data-reveal>
             <Heading>{about.educationLabel}</Heading>
             <Timeline entries={about.education} />
           </div>
         </div>
-        <div>
+        <div data-reveal>
           <Heading>{about.skillsLabel}</Heading>
           <dl className="text-sm">
             {about.skills.map((skill) => (

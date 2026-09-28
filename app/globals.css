@@ -32,6 +32,33 @@ html {
   color: var(--paper);
 }
 
+/* Il titolo resta nascosto finché GSAP non lo divide in righe, così non "salta" al primo paint.
+   Se lo script non parte, dopo 2.5s si mostra comunque. */
+.js [data-hero-title] {
+  visibility: hidden;
+  animation: reveal-fallback 0s 2.5s forwards;
+}
+
+@keyframes reveal-fallback {
+  to {
+    visibility: visible;
+  }
+}
+
+/* Le maschere di SplitText sono alte quanto la riga: con un'interlinea stretta taglierebbero
+   le discendenti (g, p). Si allungano verso il basso senza spostare il testo. */
+[data-hero-title] > div {
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-hero-title] {
+    visibility: visible;
+    animation: none;
+  }
+}
+
 a:focus-visible {
   outline: 1px solid var(--ink);
   outline-offset: 4px;

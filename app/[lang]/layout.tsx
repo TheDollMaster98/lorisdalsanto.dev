@@ -46,7 +46,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   if (!isLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${sans.variable} ${mono.variable}`}>
+    // suppressHydrationWarning: lo script qui sotto aggiunge la classe "js" prima di React.
+    <html lang={lang} className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="bg-paper font-sans text-ink">{children}</body>
     </html>
   );

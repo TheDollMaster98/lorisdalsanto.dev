@@ -3,7 +3,7 @@ import type { Content } from "@/models/content";
 export function Hero({ hero }: { hero: Content["hero"] }) {
   return (
     <section id="top" className="mx-auto max-w-[1280px] px-4 pb-20 pt-24 md:px-8 md:pb-32 md:pt-40">
-      <div className="mb-12 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.08em] text-ink-muted">
+      <div data-hero-meta className="mb-12 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.08em] text-ink-muted">
         <span>{hero.role}</span>
         <span>{hero.location}</span>
         <span className="flex items-center gap-2">
@@ -11,7 +11,7 @@ export function Hero({ hero }: { hero: Content["hero"] }) {
           {hero.availability}
         </span>
       </div>
-      <h1 className="max-w-[20ch] text-[clamp(2.5rem,6.5vw,6rem)] font-medium leading-[0.98] tracking-[-0.035em]">
+      <h1 data-hero-title className="max-w-[20ch] text-[clamp(2.5rem,6.5vw,6rem)] font-medium leading-[0.98] tracking-[-0.035em]">
         {hero.statement}
       </h1>
     </section>
