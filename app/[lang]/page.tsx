@@ -4,6 +4,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { Motion } from "@/components/Motion";
 import { Work } from "@/components/Work";
 import { getContent, isLocale } from "@/lib/i18n";
 
@@ -13,7 +14,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const content = getContent(lang);
 
   return (
-    <>
+    <Motion>
       <Header locale={lang} nav={content.nav} />
       <main>
         <Hero hero={content.hero} />
@@ -22,6 +23,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <Contact contact={content.contact} />
       </main>
       <Footer footer={content.footer} />
-    </>
+    </Motion>
   );
 }
