@@ -2,7 +2,7 @@ import type { Content } from "@/models/content.model";
 
 export const it: Content = {
   meta: {
-    title: "Loris Dal Santo — Full-Stack JavaScript & Flutter Mobile Developer",
+    title: "Loris Dal Santo | Full-Stack JavaScript & Flutter Mobile Developer",
     description:
       "Sviluppatore full-stack JavaScript e mobile Flutter a Milano. Angular, Next.js, Node.js e Flutter per banche, enterprise e startup.",
   },
@@ -30,7 +30,7 @@ export const it: Content = {
       {
         title: "Portale AI per i bandi",
         year: "2025",
-        context: "EY · AI & Data",
+        context: "EY AI & Data",
         role: "Front-end owner",
         summary:
           "Analizza i bandi regionali con l’AI per circa 20 utenti e ha sostituito un controllo fatto a mano. Genera proposte, soluzioni e il grafo delle relazioni tra bandi, con dashboard di KPI. L’ho impostato da zero, con una libreria di 20+ componenti riutilizzabili e l’integrazione con il back-end NestJS.",
@@ -45,7 +45,7 @@ export const it: Content = {
       {
         title: "Piattaforma real estate",
         year: "2025",
-        context: "EY · settore immobiliare",
+        context: "EY, settore immobiliare",
         role: "Unico sviluppatore front-end",
         summary:
           "Gestisce i progetti immobiliari per circa 15 utenti, con tracking su dashboard di KPI e un editor rich text che genera documenti .docx strutturati. È nata come fork dell’intranet interna, riusando 10+ componenti, e ha sostituito un controllo fatto a mano.",
@@ -53,8 +53,8 @@ export const it: Content = {
       },
       {
         title: "UC Hedge",
-        year: "2022 — 2024",
-        context: "UniCredit · via Be | Shaping the Future",
+        year: "2022 - 2024",
+        context: "UniCredit, tramite Be | Shaping the Future",
         role: "Front-end developer",
         summary:
           "Piattaforma per la gestione end-to-end del rischio di cambio delle aziende, premiata agli Euromoney Awards 2023. Componenti front-end, fix UX/UI e test unitari in un team distribuito tra Italia, Germania e Romania.",
@@ -62,7 +62,7 @@ export const it: Content = {
       },
       {
         title: "Findora",
-        year: "2024 — 2025",
+        year: "2024 - 2025",
         context: "Startup fintech",
         role: "Flutter mobile & front-end developer",
         summary:
@@ -100,30 +100,30 @@ export const it: Content = {
     experienceLabel: "Esperienza",
     experience: [
       {
-        period: "2025 — oggi",
-        company: "EY · AI & Data",
-        role: "Associate (Senior I) — Front-End Developer",
+        period: "2025 - oggi",
+        company: "EY AI & Data",
+        role: "Associate (Senior I), Front-End Developer",
         summary:
           "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner.",
       },
       {
-        period: "2024 — 2025",
-        company: "Findora · startup fintech",
+        period: "2024 - 2025",
+        company: "Findora, startup fintech",
         role: "Flutter Mobile & Front-End Developer",
         summary:
           "App cross-platform in Flutter e Firebase, landing in React e gestionale in Angular 20. Open beta con oltre 100 tester.",
       },
       {
-        period: "2023 — 2024",
-        company: "Yggdrasill Project · startup",
+        period: "2023 - 2024",
+        company: "Yggdrasill Project, startup",
         role: "Full-Stack Developer",
         summary:
           "Blog full-stack: Angular 14 con Firebase (auth, database, hosting) ed Express + MongoDB sul back-end, architettura modulare.",
       },
       {
-        period: "2022 — 2025",
+        period: "2022 - 2025",
         company: "Be | Shaping the Future",
-        role: "Junior Front-End Developer · cliente UniCredit",
+        role: "Junior Front-End Developer, cliente UniCredit",
         summary:
           "Progetti bancari Angular (13–19) a lungo termine: coverage dei test +15%, +10% e +5%, rilasci CI/CD su Jenkins, team IT/DE/RO.",
       },
@@ -131,7 +131,7 @@ export const it: Content = {
     educationLabel: "Formazione",
     education: [
       {
-        period: "2020 — in corso",
+        period: "2020 - in corso",
         company: "Università degli Studi di Milano",
         role: "Informatica per la comunicazione digitale",
         summary:

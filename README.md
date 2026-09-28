@@ -21,9 +21,9 @@ npm run lint
 | [Tailwind CSS](https://tailwindcss.com) | 4.3 | Stili; token di colore in `src/app/globals.css` via `@theme` |
 | [GSAP](https://gsap.com) | 3.15 | Animazioni: SplitText (titolo riga per riga), ScrollTrigger (linee e contenuti allo scroll), `@gsap/react` (`useGSAP`) |
 | [ESLint](https://eslint.org) | 9.39 | `eslint-config-next` (core-web-vitals + TypeScript) |
-| [Prettier](https://prettier.io) | — | Formattazione con le impostazioni predefinite (dall'editor, non è in `package.json`) |
-| Google Fonts | — | Schibsted Grotesk (testo), IBM Plex Mono (metadati), serviti da `next/font` |
-| GitHub Actions + GitHub Pages | — | Build e deploy a ogni push su `main` |
+| [Prettier](https://prettier.io) | - | Formattazione con le impostazioni predefinite (dall'editor, non è in `package.json`) |
+| Google Fonts | - | Schibsted Grotesk (testo), IBM Plex Mono (metadati), serviti da `next/font` |
+| GitHub Actions + GitHub Pages | - | Build e deploy a ogni push su `main` |
 
 Scelte principali:
 
@@ -78,11 +78,11 @@ Nessun gradiente, nessuna ombra: il sito usa solo questi sei colori.
 
 | Colore | Token | Hex | Classe Tailwind | Uso | Contrasto su `paper` |
 | --- | --- | --- | --- | --- | --- |
-| <img src="docs/palette/paper.svg" width="48" height="24" alt="paper"> | `paper` | `#F4F2EE` | `bg-paper` | Sfondo della pagina (bianco perla) | — |
-| <img src="docs/palette/paper-raised.svg" width="48" height="24" alt="paper-raised"> | `paper-raised` | `#EBE8E2` | `bg-paper-raised` | Hover delle righe dei progetti | — |
+| <img src="docs/palette/paper.svg" width="48" height="24" alt="paper"> | `paper` | `#F4F2EE` | `bg-paper` | Sfondo della pagina (bianco perla) | - |
+| <img src="docs/palette/paper-raised.svg" width="48" height="24" alt="paper-raised"> | `paper-raised` | `#EBE8E2` | `bg-paper-raised` | Hover delle righe dei progetti | - |
 | <img src="docs/palette/ink.svg" width="48" height="24" alt="ink"> | `ink` | `#151515` | `text-ink`, `bg-ink` | Testo principale, sottolineatura dell'email, selezione | 16.3:1 |
 | <img src="docs/palette/ink-muted.svg" width="48" height="24" alt="ink-muted"> | `ink-muted` | `#5E5B55` | `text-ink-muted` | Testo secondario, etichette, date, metadati | 6.1:1 |
-| <img src="docs/palette/line.svg" width="48" height="24" alt="line"> | `line` | `#D9D5CD` | `border-line`, `bg-line` | Linee sottili e separatori (decorativi) | — |
+| <img src="docs/palette/line.svg" width="48" height="24" alt="line"> | `line` | `#D9D5CD` | `border-line`, `bg-line` | Linee sottili e separatori (decorativi) | - |
 | <img src="docs/palette/signal.svg" width="48" height="24" alt="signal"> | `signal` | `#3F7A4A` | `bg-signal` | Solo il pallino "Aperto a nuove opportunità" | 4.6:1 |
 
 Tutti i colori usati per il testo superano il livello AA delle WCAG (4.5:1) sullo sfondo.
@@ -97,4 +97,4 @@ Entrambi caricati da Google Fonts tramite `next/font`, quindi serviti dal sito s
 
 ## AI full disclosure
 
-- This software is developed with strong assistance from AI coding agents and with humans leading the ideas, testing, and debugging. We say this openly because it shaped how the project was built. If you are not happy with AI-developed code, this software is not for you. The acknowledgement is equally important: this would not exist without the open-source projects it is built on, largely written by hand — Next.js, React, Tailwind CSS and GSAP.
+- This software is developed with strong assistance from AI coding agents and with humans leading the ideas, testing, and debugging. We say this openly because it shaped how the project was built. If you are not happy with AI-developed code, this software is not for you. The acknowledgement is equally important: this would not exist without the open-source projects it is built on, largely written by hand (Next.js, React, Tailwind CSS and GSAP).

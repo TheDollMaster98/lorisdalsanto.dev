@@ -31,7 +31,8 @@ export function Work({ work }: { work: Content["work"] }) {
               <div className="col-span-12 md:col-span-5">
                 <p className="text-ink-muted">{project.summary}</p>
                 <p className="mt-4 font-mono text-xs text-ink-muted">
-                  {project.role} — {project.stack.join(", ")}
+                  {project.role}
+                  <span className="mt-1 block">{project.stack.join(", ")}</span>
                 </p>
               </div>
             </div>

@@ -2,7 +2,7 @@ import type { Content } from "@/models/content.model";
 
 export const en: Content = {
   meta: {
-    title: "Loris Dal Santo — Full-Stack JavaScript & Flutter Mobile Developer",
+    title: "Loris Dal Santo | Full-Stack JavaScript & Flutter Mobile Developer",
     description:
       "Full-stack JavaScript and Flutter mobile developer in Milan. Angular, Next.js, Node.js and Flutter for banking, enterprise and startups.",
   },
@@ -30,7 +30,7 @@ export const en: Content = {
       {
         title: "AI grants portal",
         year: "2025",
-        context: "EY · AI & Data",
+        context: "EY AI & Data",
         role: "Front-end owner",
         summary:
           "It analyses regional grants with AI for about 20 users and replaced a manual review. It generates proposals, solutions and a graph of relations between grants, with KPI dashboards. I built it from scratch, with a library of 20+ reusable components and a NestJS back-end integration.",
@@ -45,7 +45,7 @@ export const en: Content = {
       {
         title: "Real estate platform",
         year: "2025",
-        context: "EY · real estate",
+        context: "EY, real estate",
         role: "Sole front-end developer",
         summary:
           "It manages real estate projects for about 15 users, with tracking on KPI dashboards and a rich text editor that generates structured .docx documents. It started as a fork of the company intranet, reusing 10+ components, and replaced a manual review.",
@@ -53,8 +53,8 @@ export const en: Content = {
       },
       {
         title: "UC Hedge",
-        year: "2022 — 2024",
-        context: "UniCredit · via Be | Shaping the Future",
+        year: "2022 - 2024",
+        context: "UniCredit, via Be | Shaping the Future",
         role: "Front-end developer",
         summary:
           "End-to-end platform for managing corporate FX risk, recognised at the Euromoney Awards 2023. Front-end components, UX/UI fixes and unit tests in a team spread across Italy, Germany and Romania.",
@@ -62,7 +62,7 @@ export const en: Content = {
       },
       {
         title: "Findora",
-        year: "2024 — 2025",
+        year: "2024 - 2025",
         context: "Fintech startup",
         role: "Flutter mobile & front-end developer",
         summary:
@@ -100,30 +100,30 @@ export const en: Content = {
     experienceLabel: "Experience",
     experience: [
       {
-        period: "2025 — now",
-        company: "EY · AI & Data",
-        role: "Associate (Senior I) — Front-End Developer",
+        period: "2025 - now",
+        company: "EY AI & Data",
+        role: "Associate (Senior I), Front-End Developer",
         summary:
           "Sole front-end owner of two internal enterprise products, end to end: architecture, development, documentation and demos to the Partners.",
       },
       {
-        period: "2024 — 2025",
-        company: "Findora · fintech startup",
+        period: "2024 - 2025",
+        company: "Findora, fintech startup",
         role: "Flutter Mobile & Front-End Developer",
         summary:
           "Cross-platform Flutter and Firebase app, React landing page and Angular 20 back office. Open beta with over 100 testers.",
       },
       {
-        period: "2023 — 2024",
-        company: "Yggdrasill Project · startup",
+        period: "2023 - 2024",
+        company: "Yggdrasill Project, startup",
         role: "Full-Stack Developer",
         summary:
           "Full-stack blog: Angular 14 with Firebase (auth, database, hosting) and an Express + MongoDB back end, modular architecture.",
       },
       {
-        period: "2022 — 2025",
+        period: "2022 - 2025",
         company: "Be | Shaping the Future",
-        role: "Junior Front-End Developer · UniCredit client",
+        role: "Junior Front-End Developer, UniCredit client",
         summary:
           "Long-running Angular (13–19) banking projects: test coverage +15%, +10% and +5%, CI/CD releases on Jenkins, team across IT/DE/RO.",
       },
@@ -131,7 +131,7 @@ export const en: Content = {
     educationLabel: "Education",
     education: [
       {
-        period: "2020 — ongoing",
+        period: "2020 - ongoing",
         company: "University of Milan",
         role: "Computer Science for Digital Communication",
         summary:
