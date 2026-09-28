@@ -11,6 +11,7 @@ export type Content = {
   nav: {
     work: string;
     about: string;
+    stack: string;
     contact: string;
   };
   hero: {
@@ -33,7 +34,9 @@ export type Content = {
     experience: Entry[];
     educationLabel: string;
     education: Entry[];
-    skillsLabel: string;
+  };
+  stack: {
+    label: string;
     skills: Skill[];
   };
   contact: {
