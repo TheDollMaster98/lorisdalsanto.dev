@@ -16,7 +16,7 @@ function Timeline({ entries }: { entries: Entry[] }) {
       {entries.map((item) => (
         <div
           key={item.company + item.period}
-          className="grid grid-cols-[8.5rem_1fr] gap-4 border-t border-line py-4 text-sm"
+          className="grid grid-cols-1 gap-1 border-t border-line py-4 text-sm sm:grid-cols-[8.5rem_1fr] sm:gap-4"
         >
           <dt className="font-mono text-xs leading-5 text-ink-muted">
             {item.period}
@@ -24,6 +24,9 @@ function Timeline({ entries }: { entries: Entry[] }) {
           <dd>
             {item.company}
             <span className="block text-ink-muted">{item.role}</span>
+            {item.summary && (
+              <span className="mt-2 block text-ink-muted">{item.summary}</span>
+            )}
           </dd>
         </div>
       ))}
@@ -34,7 +37,7 @@ function Timeline({ entries }: { entries: Entry[] }) {
 export function About({ about }: { about: Content["about"] }) {
   return (
     <Section id="about" index="02" label={about.label}>
-      <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6">
+      <div className="grid max-w-3xl grid-cols-1 gap-16">
         <div data-reveal>
           <Heading>{about.experienceLabel}</Heading>
           <Timeline entries={about.experience} />
