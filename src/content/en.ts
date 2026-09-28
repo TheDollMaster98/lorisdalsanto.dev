@@ -28,7 +28,13 @@ export const en: Content = {
         role: "Front-end technical owner",
         summary:
           "Internal portal for the AI & Data division. I defined the architecture and project setup, built the UX/UI and a reusable component library, handled authentication and back-end integration, and presented demos and architectural decisions directly to the Partners.",
-        stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "NestJS"],
+        stack: [
+          "Next.js 15",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "NestJS",
+        ],
       },
       {
         title: "Document editor",
@@ -55,7 +61,14 @@ export const en: Content = {
         role: "Flutter mobile & front-end developer",
         summary:
           "Cross-platform mobile app in FlutterFlow and Flutter with Firebase authentication and database, a React landing page and an Angular back-office portal. Open beta with over 100 testers, whose feedback drove the UI and UX iterations.",
-        stack: ["Flutter 3.20", "FlutterFlow", "Riverpod", "Firebase", "React 18", "Angular 20"],
+        stack: [
+          "Flutter 3.20",
+          "FlutterFlow",
+          "Riverpod",
+          "Firebase",
+          "React 18",
+          "Angular 20",
+        ],
         href: "https://findora.it",
       },
       {
@@ -65,7 +78,13 @@ export const en: Content = {
         role: "Design & development",
         summary:
           "Fantasy league for competitive League of Legends: private leagues, auctions, roles and scores imported from Leaguepedia.",
-        stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Firebase", "Leaguepedia API"],
+        stack: [
+          "Next.js 16",
+          "TypeScript",
+          "Tailwind CSS",
+          "Firebase",
+          "Leaguepedia API",
+        ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
       },
     ],
@@ -90,7 +109,11 @@ export const en: Content = {
         company: "Be | Shaping the Future",
         role: "Junior Specialist · UniCredit consultant",
       },
-      { period: "2022", company: "Be | Shaping the Future", role: "Junior Developer · internship" },
+      {
+        period: "2022",
+        company: "Be | Shaping the Future",
+        role: "Junior Developer · internship",
+      },
     ],
     educationLabel: "Education",
     education: [
@@ -102,11 +125,22 @@ export const en: Content = {
     ],
     skillsLabel: "Tools",
     skills: [
-      { area: "Web", items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals" },
-      { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod, Firebase" },
-      { area: "UI", items: "Tailwind CSS, Material Design, Bootstrap, shadcn/ui, WCAG" },
+      {
+        area: "Web",
+        items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals",
+      },
+      { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod" },
+      {
+        area: "Back-end",
+        items:
+          "NestJS and Node.js (in a support role), Firebase (Auth, Firestore), NoSQL databases",
+      },
+      {
+        area: "UI",
+        items: "Tailwind CSS, Material Design, Bootstrap, shadcn/ui, WCAG",
+      },
       { area: "Quality", items: "Karma, Jasmine, unit testing, code review" },
-      { area: "Delivery", items: "Jenkins, Docker, Azure, NestJS, Jira, Agile/Scrum" },
+      { area: "Delivery", items: "Jenkins, Docker, Azure, Jira, Agile/Scrum" },
     ],
   },
   contact: {
