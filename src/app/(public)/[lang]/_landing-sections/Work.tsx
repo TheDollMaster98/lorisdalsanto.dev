@@ -7,7 +7,10 @@ export function Work({ work }: { work: Content["work"] }) {
       <ol>
         {work.projects.map((project) => {
           const content = (
-            <div data-reveal className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10">
+            <div
+              data-reveal
+              className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10"
+            >
               <div className="col-span-8 md:col-span-5">
                 <h3 className="text-2xl font-medium tracking-[-0.02em] md:text-3xl">
                   {project.title}

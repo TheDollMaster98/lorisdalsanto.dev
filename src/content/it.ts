@@ -8,7 +8,8 @@ export const it: Content = {
   },
   nav: {
     work: "Lavori",
-    about: "Profilo",
+    about: "Percorso",
+    stack: "Tecnologie",
     contact: "Contatti",
   },
   hero: {
@@ -94,7 +95,7 @@ export const it: Content = {
     ],
   },
   about: {
-    label: "Profilo",
+    label: "Percorso",
     experienceLabel: "Esperienza",
     experience: [
       {
@@ -126,7 +127,9 @@ export const it: Content = {
         role: "Informatica per la comunicazione digitale",
       },
     ],
-    skillsLabel: "Strumenti",
+  },
+  stack: {
+    label: "Tecnologie",
     skills: [
       {
         area: "Web",

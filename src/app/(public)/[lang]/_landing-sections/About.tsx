@@ -35,31 +35,13 @@ export function About({ about }: { about: Content["about"] }) {
   return (
     <Section id="about" index="02" label={about.label}>
       <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6">
-        <div className="space-y-16">
-          <div data-reveal>
-            <Heading>{about.experienceLabel}</Heading>
-            <Timeline entries={about.experience} />
-          </div>
-          <div data-reveal>
-            <Heading>{about.educationLabel}</Heading>
-            <Timeline entries={about.education} />
-          </div>
+        <div data-reveal>
+          <Heading>{about.experienceLabel}</Heading>
+          <Timeline entries={about.experience} />
         </div>
         <div data-reveal>
-          <Heading>{about.skillsLabel}</Heading>
-          <dl className="text-sm">
-            {about.skills.map((skill) => (
-              <div
-                key={skill.area}
-                className="grid grid-cols-[5.5rem_1fr] gap-4 border-t border-line py-4"
-              >
-                <dt className="font-mono text-xs leading-5 text-ink-muted">
-                  {skill.area}
-                </dt>
-                <dd>{skill.items}</dd>
-              </div>
-            ))}
-          </dl>
+          <Heading>{about.educationLabel}</Heading>
+          <Timeline entries={about.education} />
         </div>
       </div>
     </Section>
