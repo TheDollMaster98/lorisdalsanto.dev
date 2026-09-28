@@ -95,6 +95,30 @@ Per cambiare un colore basta modificare la variabile in `:root`: le classi Tailw
 
 Entrambi caricati da Google Fonts tramite `next/font`, quindi serviti dal sito stesso, senza richieste a Google dal browser.
 
+### Perché queste scelte
+
+Lo stile è **editoriale**, ispirato allo Stile tipografico internazionale (o "Svizzero"): griglia a colonne, tipografia grande come elemento principale, allineamenti rigorosi, pochissima decorazione. Le etichette numerate (`00 / Presentazione`) e le linee sottili a tutta larghezza vengono da lì. Il contenuto resta in una colonna di 1280px, mentre le linee arrivano ai bordi: è quel contrasto a tenere tutto sulla stessa griglia.
+
+Alcune scelte vengono dalla richiesta iniziale, non da una fonte: niente gradienti ed effetti "generati", un bianco che sembri premium invece del bianco puro.
+
+- **Bianco perla invece di `#FFFFFF`.** `#F4F2EE` è un bianco caldo che richiama la carta: meno freddo e "da applicazione" del bianco puro, coerente con l'impostazione editoriale.
+- **Nero morbido invece di `#000000`.** `#151515` resta a 16:1 di contrasto sullo sfondo, ben oltre il minimo, ma è meno duro del nero puro accanto a un bianco caldo. Usare grigi leggermente saturati (qui verso il caldo) invece di grigi neutri è un consiglio di *Refactoring UI*.
+- **Un solo colore d'accento, con un solo significato.** Il verde `signal` compare solo nel pallino "disponibile": un colore usato ovunque smette di comunicare qualcosa.
+- **Contrasto AA.** I colori del testo rispettano il minimo di 4.5:1 delle WCAG 2.2 (criterio 1.4.3), calcolato sullo sfondo `paper`.
+- **Righe corte.** Il titolo è limitato a 20 caratteri per riga e la presentazione a 46 caratteri. I testi lunghi si leggono meglio tra i 45 e i 90 caratteri per riga (*Practical Typography*).
+- **Font.** Schibsted Grotesk è un grottesco contemporaneo con carattere proprio, e toglie al sito l'aspetto generico dei font più usati (Inter, Geist). IBM Plex Mono, monospaziato, separa visivamente i metadati (date, ruoli, tecnologie) dal testo.
+- **Animazioni.** Poche e lente, tutte con la stessa curva: rivelano il contenuto e non lo decorano. Con "riduci animazioni" attivo nel sistema non si anima nulla (`prefers-reduced-motion`, criterio WCAG 2.3.3).
+
+### Fonti
+
+- Josef Müller-Brockmann, *Grid Systems in Graphic Design* (Niggli, 1981): il riferimento sullo Stile tipografico internazionale e sulle griglie.
+- Adam Wathan e Steve Schoger, *Refactoring UI*: https://www.refactoringui.com/
+- Matthew Butterick, *Practical Typography*, "Line length": https://practicaltypography.com/line-length.html
+- W3C, *WCAG 2.2*, criteri 1.4.3 (Contrast Minimum) e 2.3.3 (Animation from Interactions): https://www.w3.org/TR/WCAG22/
+- MDN, `prefers-reduced-motion`: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+- Schibsted Grotesk su Google Fonts: https://fonts.google.com/specimen/Schibsted+Grotesk
+- IBM Plex: https://www.ibm.com/plex/
+
 ## AI full disclosure
 
 - This software is developed with strong assistance from AI coding agents and with humans leading the ideas, testing, and debugging. We say this openly because it shaped how the project was built. If you are not happy with AI-developed code, this software is not for you. The acknowledgement is equally important: this would not exist without the open-source projects it is built on, largely written by hand (Next.js, React, Tailwind CSS and GSAP).
