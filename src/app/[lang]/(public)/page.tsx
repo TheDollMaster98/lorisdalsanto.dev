@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getContent, isLocale } from "@/lib/i18n";
-import { LandingPage } from "@/views/landing/LandingPage";
+import { LandingPage } from "@/views/landing/landing.page";
 
 export default async function Page({
   params,

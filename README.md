@@ -20,7 +20,7 @@ Tutto il codice sta in `src/`; nella root restano solo le configurazioni.
     pagine pubbliche in `(public)`, e in futuro quelle con login in un gruppo a parte con il proprio layout
   - `(root)/page.tsx` — `/` rimanda alla lingua del browser (inglese se non supportata)
 - `src/views/` — una cartella per pagina, con i componenti usati solo lì
-  - `landing/LandingPage.tsx` — compone la pagina
+  - `landing/landing.page.tsx` — la pagina (un file `*.page.tsx` per cartella, come i `*.model.ts`)
   - `landing/sections/` — `Hero`, `Work`, `About`, `Contact` e il contenitore `Section`
   - `landing/Motion.tsx` — animazioni GSAP della landing
 - `src/components/` — componenti condivisi tra pagine (`layout/Header`, `layout/Footer`)
