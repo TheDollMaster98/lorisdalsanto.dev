@@ -71,9 +71,29 @@ diventa vuoto da solo.
 
 ## Design
 
-- Palette: token in `src/app/globals.css`
-  - `paper` #F4F2EE (bianco perla), `paper-raised` #EBE8E2, `ink` #151515, `ink-muted` #5E5B55, `line` #D9D5CD, `signal` #3F7A4A (solo il pallino "disponibile")
-- Font: Schibsted Grotesk (testo), IBM Plex Mono (metadati)
+### Palette
+
+Definita una sola volta in `src/app/globals.css` (variabili CSS in `:root`, esposte a Tailwind con `@theme`).
+Nessun gradiente, nessuna ombra: il sito usa solo questi sei colori.
+
+| Token | Hex | Classe Tailwind | Uso | Contrasto su `paper` |
+| --- | --- | --- | --- | --- |
+| `paper` | `#F4F2EE` | `bg-paper` | Sfondo della pagina (bianco perla) | — |
+| `paper-raised` | `#EBE8E2` | `bg-paper-raised` | Hover delle righe dei progetti | — |
+| `ink` | `#151515` | `text-ink`, `bg-ink` | Testo principale, sottolineatura dell'email, selezione | 16.3:1 |
+| `ink-muted` | `#5E5B55` | `text-ink-muted` | Testo secondario, etichette, date, metadati | 6.1:1 |
+| `line` | `#D9D5CD` | `border-line`, `bg-line` | Linee sottili e separatori (decorativi) | — |
+| `signal` | `#3F7A4A` | `bg-signal` | Solo il pallino "Aperto a nuove opportunità" | 4.6:1 |
+
+Tutti i colori usati per il testo superano il livello AA delle WCAG (4.5:1) sullo sfondo.
+Per cambiare un colore basta modificare la variabile in `:root`: le classi Tailwind si aggiornano da sole.
+
+### Tipografia
+
+- **Schibsted Grotesk**: testo e titoli (`font-sans`)
+- **IBM Plex Mono**: etichette, date e metadati (`font-mono`)
+
+Entrambi caricati da Google Fonts tramite `next/font`, quindi serviti dal sito stesso, senza richieste a Google dal browser.
 
 ## AI full disclosure
 
