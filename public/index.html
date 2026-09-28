@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Loris Dal Santo</title>
+    <!--
+      Con l'export statico non c'è un server che faccia redirect (src/proxy.ts non gira):
+      "/" sceglie la lingua del browser qui. Percorsi relativi, così funziona anche nella
+      sottocartella di GitHub Pages. Lingue da tenere allineate a src/lib/i18n/locales.ts.
+    -->
+    <meta http-equiv="refresh" content="0; url=./it/" />
+    <script>
+      var supported = ["it", "en"];
+      var lang = (navigator.language || "").slice(0, 2).toLowerCase();
+      location.replace(
+        "./" + (supported.indexOf(lang) >= 0 ? lang : "en") + "/",
+      );
+    </script>
+  </head>
+  <body>
+    <a href="./it/">Loris Dal Santo</a>
+  </body>
+</html>

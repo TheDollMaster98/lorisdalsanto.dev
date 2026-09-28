@@ -1,10 +1,15 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { fallbackLocale, isLocale, locales, type Locale } from "@/lib/locales";
+import {
+  fallbackLocale,
+  isLocale,
+  locales,
+  type Locale,
+} from "@/lib/i18n/locales";
 
 // Redirect alla lingua del browser per gli URL senza lingua, come nella guida
 // Internationalization di Next.js.
 // Attivo solo con un hosting con server: con `output: "export"` (GitHub Pages)
-// Next lo disattiva e la lingua la sceglie src/app/(root)/page.tsx nel browser.
+// Next lo disattiva e la lingua la sceglie public/index.html nel browser.
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
