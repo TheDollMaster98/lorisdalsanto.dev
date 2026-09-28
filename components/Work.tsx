@@ -1,4 +1,4 @@
-import type { Content } from "@/models/content";
+import type { Content } from "@/models/content.model";
 import { Section } from "./Section";
 
 export function Work({ work }: { work: Content["work"] }) {

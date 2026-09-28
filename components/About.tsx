@@ -1,5 +1,5 @@
-import type { Content } from "@/models/content";
-import type { Entry } from "@/models/entry";
+import type { Content } from "@/models/content.model";
+import type { Entry } from "@/models/entry.model";
 import { Section } from "./Section";
 
 function Heading({ children }: { children: React.ReactNode }) {

@@ -1,5 +1,5 @@
 import { profile } from "@/content/profile";
-import type { Content } from "@/models/content";
+import type { Content } from "@/models/content.model";
 
 export function Footer({ footer }: { footer: Content["footer"] }) {
   return (

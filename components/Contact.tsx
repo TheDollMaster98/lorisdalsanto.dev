@@ -1,5 +1,5 @@
 import { profile } from "@/content/profile";
-import type { Content } from "@/models/content";
+import type { Content } from "@/models/content.model";
 import { Section } from "./Section";
 
 export function Contact({ contact }: { contact: Content["contact"] }) {
