@@ -21,7 +21,7 @@ src/
       [lang]/               lingua nell'URL: /it/, /en/
         layout.tsx          <html>, font, metadati
         page.tsx            la landing
-        _sections/          sezioni della landing (Hero, Work, About, Contact, Section)
+        _landing-sections/  sezioni della landing (Hero, Work, About, Contact, Section)
     globals.css
   components/layout/        componenti condivisi tra pagine (Header, Footer)
   content/                  testi per lingua (it.ts, en.ts) e dati comuni (profile.ts)
@@ -33,7 +33,7 @@ src/
 public/index.html           "/" → lingua del browser sull'export statico
 ```
 
-- Ogni pagina è un `page.tsx` con accanto i suoi componenti in una cartella `_nome/`: il trattino basso dice a Next che non è una route.
+- Ogni pagina è un `page.tsx` con accanto i suoi componenti in una cartella `_nome/` (es. `_landing-sections/`): il trattino basso dice a Next che non è una route.
 - I gruppi tra parentesi, come `(public)`, non finiscono nell'URL.
 - Non si usa `src/pages/`: in Next è riservata al Pages Router.
 
