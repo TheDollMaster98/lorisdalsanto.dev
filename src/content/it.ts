@@ -2,9 +2,9 @@ import type { Content } from "@/models/content.model";
 
 export const it: Content = {
   meta: {
-    title: "Loris Dal Santo — Front-End & Mobile Developer",
+    title: "Loris Dal Santo — Full-Stack JavaScript & Flutter Mobile Developer",
     description:
-      "Front-end e mobile developer a Milano. Interfacce per prodotti enterprise in Angular, Next.js e Flutter.",
+      "Sviluppatore full-stack JavaScript e mobile Flutter a Milano. Angular, Next.js, Node.js e Flutter per banche, enterprise e startup.",
   },
   nav: {
     work: "Lavori",
@@ -13,7 +13,7 @@ export const it: Content = {
     contact: "Contatti",
   },
   hero: {
-    role: "Front-End & Mobile Developer",
+    role: "Full-Stack JavaScript & Flutter Mobile Developer",
     location: "Milano",
     availability: "Aperto a nuove opportunità",
     statement:
@@ -21,7 +21,8 @@ export const it: Content = {
   },
   intro: {
     label: "Presentazione",
-    text: "Da quattro anni sviluppo front-end su progetti dove un errore costa caro: piattaforme bancarie per UniCredit, portali interni per EY AI & Data, un’app fintech in Flutter. Oggi in EY seguo il front-end in autonomia: scelgo l’architettura, costruisco i componenti, scrivo la documentazione e presento le demo ai Partner. Lavoro con Angular, Next.js e Flutter, con attenzione ad accessibilità, test e a un codice che resti leggibile anche dopo un anno.",
+    text: "Sviluppatore full-stack JavaScript e mobile Flutter con quattro anni di esperienza, soprattutto in ambito bancario ed enterprise: progetti per UniCredit Europa come consulente, portali interni per EY AI & Data Italia, un’app mobile fintech in Flutter e progetti in startup. Oggi in EY seguo il front-end di due progetti interni: architettura, componenti, documentazione, rilascio e demo ai Partner. Lavoro con Angular, Next.js, Node.js e Flutter, con attenzione all’accessibilità, ai test e a un codice che resti leggibile anche dopo un anno.",
+    ai: "Nello sviluppo uso strumenti di intelligenza artificiale, sempre sotto la mia supervisione diretta. Dove un cliente o un progetto non ne prevede l’uso, lavoro senza, in piena autonomia.",
   },
   work: {
     label: "Lavori",
@@ -149,7 +150,7 @@ export const it: Content = {
       {
         area: "Back-end",
         items:
-          "NestJS, Node.js ed Express (come supporto), Firebase (Auth, Firestore, Hosting), MongoDB e database NoSQL",
+          "NestJS, Node.js ed Express, Firebase (Auth, Firestore, Hosting), MongoDB e database NoSQL",
       },
       {
         area: "UI",
