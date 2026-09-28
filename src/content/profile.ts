@@ -1,4 +1,4 @@
-import type { Profile } from "@/models/profile";
+import type { Profile } from "@/models/profile.model";
 
 // Dati uguali in tutte le lingue.
 export const profile: Profile = {

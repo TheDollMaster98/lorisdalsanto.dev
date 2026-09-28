@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { IBM_Plex_Mono, Schibsted_Grotesk } from "next/font/google";
 import { getContent, isLocale, locales } from "@/lib/i18n";
-import "../globals.css";
+import "../../globals.css";
 
 const sans = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -46,7 +46,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   if (!isLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${sans.variable} ${mono.variable}`}>
+    // suppressHydrationWarning: lo script qui sotto aggiunge la classe "js" prima di React.
+    <html lang={lang} className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="bg-paper font-sans text-ink">{children}</body>
     </html>
   );

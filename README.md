@@ -12,14 +12,32 @@ npm run build   # genera out/, deployabile su qualsiasi hosting statico
 
 ## Struttura
 
-- `models/` — tipi dei dati (`Content`, `Project`, `Entry`, `Skill`, `Profile`)
-- `content/it.ts`, `content/en.ts` — testi per lingua, tipizzati con `Content`
-- `content/profile.ts` — dati uguali in tutte le lingue (nome, email, link)
-- `lib/i18n.ts` — lingue supportate e accesso ai testi
-- `app/[lang]/` — pagina generata per ogni lingua (`/it/`, `/en/`)
-- `app/(root)/` — `/` rimanda alla lingua del browser (inglese se non supportata)
+Tutto il codice sta in `src/`; nella root restano solo le configurazioni.
 
-Per aggiungere una lingua: nuovo file in `content/`, poi aggiungila a `locales` e `contents` in `lib/i18n.ts`.
+```
+src/
+  app/
+    (public)/               pagine pubbliche (in futuro: (private) con login, api/)
+      [lang]/               lingua nell'URL: /it/, /en/
+        layout.tsx          <html>, font, metadati
+        page.tsx            la landing
+        _landing-sections/  sezioni della landing (Hero, Work, About, Contact, Section)
+    globals.css
+  components/layout/        componenti condivisi tra pagine (Header, Footer)
+  content/                  testi per lingua (it.ts, en.ts) e dati comuni (profile.ts)
+  lib/
+    i18n/                   lingue supportate (locales.ts) e accesso ai testi (index.ts)
+    motion/                 animazioni GSAP (Motion.tsx)
+  models/                   tipi dei dati, un file *.model.ts per tipo
+  proxy.ts                  redirect alla lingua (solo con hosting con server)
+public/index.html           "/" → lingua del browser sull'export statico
+```
+
+- Ogni pagina è un `page.tsx` con accanto i suoi componenti in una cartella `_nome/` (es. `_landing-sections/`): il trattino basso dice a Next che non è una route.
+- I gruppi tra parentesi, come `(public)`, non finiscono nell'URL.
+- Non si usa `src/pages/`: in Next è riservata al Pages Router.
+
+Per aggiungere una lingua: nuovo file in `src/content/`, poi aggiungila a `locales` in `src/lib/i18n/locales.ts`, a `contents` in `src/lib/i18n/index.ts` e a `supported` in `public/index.html`.
 
 ## Deploy
 
