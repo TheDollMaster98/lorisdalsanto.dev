@@ -2,9 +2,9 @@ import type { Content } from "@/models/content.model";
 
 export const en: Content = {
   meta: {
-    title: "Loris Dal Santo — Front-End & Mobile Developer",
+    title: "Loris Dal Santo — Full-Stack JavaScript & Flutter Mobile Developer",
     description:
-      "Front-end and mobile developer in Milan. Interfaces for enterprise products in Angular, Next.js and Flutter.",
+      "Full-stack JavaScript and Flutter mobile developer in Milan. Angular, Next.js, Node.js and Flutter for banking, enterprise and startups.",
   },
   nav: {
     work: "Work",
@@ -13,7 +13,7 @@ export const en: Content = {
     contact: "Contact",
   },
   hero: {
-    role: "Front-End & Mobile Developer",
+    role: "Full-Stack JavaScript & Flutter Mobile Developer",
     location: "Milan, Italy",
     availability: "Open to new opportunities",
     statement:
@@ -21,8 +21,8 @@ export const en: Content = {
   },
   intro: {
     label: "Introduction",
-    text: "Front-end and mobile developer with four years of experience, mostly in banking and enterprise: projects for UniCredit Europe as a consultant, internal portals for EY AI & Data Italy, a fintech mobile app in Flutter and full-stack work in startups. At EY I now own the front-end of two internal projects: architecture, components, documentation, release and demos to the Partners. I work with Angular, Next.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
-    ai: "I use AI tools in my daily work, always under my direct supervision: ideas, code review, testing and debugging stay in my hands.",
+    text: "Full-stack JavaScript and Flutter mobile developer with four years of experience, mostly in banking and enterprise: projects for UniCredit Europe as a consultant, internal portals for EY AI & Data Italy, a fintech mobile app in Flutter and startup projects. At EY I now own the front-end of two internal projects: architecture, components, documentation, release and demos to the Partners. I work with Angular, Next.js, Node.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
+    ai: "I use AI tools in development, always under my direct supervision. Where a client or project rules them out, I work without them, fully independently.",
   },
   work: {
     label: "Work",
@@ -150,7 +150,7 @@ export const en: Content = {
       {
         area: "Back-end",
         items:
-          "NestJS, Node.js and Express (in a support role), Firebase (Auth, Firestore, Hosting), MongoDB and NoSQL databases",
+          "NestJS, Node.js and Express, Firebase (Auth, Firestore, Hosting), MongoDB and NoSQL databases",
       },
       {
         area: "UI",
