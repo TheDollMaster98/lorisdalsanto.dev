@@ -1,4 +1,4 @@
-import type { Content } from "@/models/content";
+import type { Content } from "@/models/content.model";
 
 export const it: Content = {
   meta: {

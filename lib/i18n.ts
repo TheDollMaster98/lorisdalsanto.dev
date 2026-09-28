@@ -1,6 +1,6 @@
 import { en } from "@/content/en";
 import { it } from "@/content/it";
-import type { Content } from "@/models/content";
+import type { Content } from "@/models/content.model";
 
 export const locales = ["it", "en"] as const;
 export type Locale = (typeof locales)[number];

@@ -1,6 +1,6 @@
-import type { Entry } from "./entry";
-import type { Project } from "./project";
-import type { Skill } from "./skill";
+import type { Entry } from "./entry.model";
+import type { Project } from "./project.model";
+import type { Skill } from "./skill.model";
 
 // Testi di una lingua: ogni file in content/ deve rispettare questa forma.
 export type Content = {

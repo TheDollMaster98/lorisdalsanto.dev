@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { profile } from "@/content/profile";
 import { locales, type Locale } from "@/lib/i18n";
-import type { Content } from "@/models/content";
+import type { Content } from "@/models/content.model";
 
 type HeaderProps = {
   locale: Locale;

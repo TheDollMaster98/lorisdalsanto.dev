@@ -12,7 +12,7 @@ npm run build   # genera out/, deployabile su qualsiasi hosting statico
 
 ## Struttura
 
-- `models/` — tipi dei dati (`Content`, `Project`, `Entry`, `Skill`, `Profile`)
+- `models/` — tipi dei dati, un file `*.model.ts` per tipo (`Content`, `Project`, `Entry`, `Skill`, `Profile`)
 - `content/it.ts`, `content/en.ts` — testi per lingua, tipizzati con `Content`
 - `content/profile.ts` — dati uguali in tutte le lingue (nome, email, link)
 - `lib/i18n.ts` — lingue supportate e accesso ai testi
