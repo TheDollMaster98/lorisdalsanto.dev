@@ -28,7 +28,13 @@ export const it: Content = {
         role: "Front-end technical owner",
         summary:
           "Portale interno della divisione AI & Data. Ho definito architettura e setup, sviluppato UX/UI e componenti riutilizzabili, gestito autenticazione e integrazione con il back-end, e presentato demo e scelte architetturali direttamente ai Partner.",
-        stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "NestJS"],
+        stack: [
+          "Next.js 15",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "NestJS",
+        ],
       },
       {
         title: "Editor documentale",
@@ -55,7 +61,14 @@ export const it: Content = {
         role: "Flutter mobile & front-end developer",
         summary:
           "App mobile cross-platform in FlutterFlow e Flutter con autenticazione e database su Firebase, landing page in React e portale gestionale in Angular. Open beta con oltre 100 tester, i cui feedback hanno guidato le iterazioni su UI e UX.",
-        stack: ["Flutter 3.20", "FlutterFlow", "Riverpod", "Firebase", "React 18", "Angular 20"],
+        stack: [
+          "Flutter 3.20",
+          "FlutterFlow",
+          "Riverpod",
+          "Firebase",
+          "React 18",
+          "Angular 20",
+        ],
         href: "https://findora.it",
       },
       {
@@ -65,7 +78,13 @@ export const it: Content = {
         role: "Design & sviluppo",
         summary:
           "Fantasy league per il competitivo di League of Legends: leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
-        stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Firebase", "Leaguepedia API"],
+        stack: [
+          "Next.js 16",
+          "TypeScript",
+          "Tailwind CSS",
+          "Firebase",
+          "Leaguepedia API",
+        ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
       },
     ],
@@ -75,7 +94,11 @@ export const it: Content = {
     text: "Da quattro anni sviluppo front-end su progetti dove un errore costa caro: piattaforme bancarie per UniCredit, portali interni per EY AI & Data, un’app fintech in Flutter. Oggi in EY seguo il front-end in autonomia: scelgo l’architettura, costruisco i componenti, scrivo la documentazione e presento le demo ai Partner. Lavoro con Angular, Next.js e Flutter, con attenzione ad accessibilità, test e a un codice che resti leggibile anche dopo un anno.",
     experienceLabel: "Esperienza",
     experience: [
-      { period: "2025 — oggi", company: "EY · AI & Data", role: "Senior I — Front-End Developer" },
+      {
+        period: "2025 — oggi",
+        company: "EY · AI & Data",
+        role: "Senior I — Front-End Developer",
+      },
       {
         period: "2024 — 2025",
         company: "Findora · startup",
@@ -86,7 +109,11 @@ export const it: Content = {
         company: "Be | Shaping the Future",
         role: "Junior Specialist · consulente UniCredit",
       },
-      { period: "2022", company: "Be | Shaping the Future", role: "Junior Developer · stage" },
+      {
+        period: "2022",
+        company: "Be | Shaping the Future",
+        role: "Junior Developer · stage",
+      },
     ],
     educationLabel: "Formazione",
     education: [
@@ -98,11 +125,22 @@ export const it: Content = {
     ],
     skillsLabel: "Strumenti",
     skills: [
-      { area: "Web", items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals" },
-      { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod, Firebase" },
-      { area: "UI", items: "Tailwind CSS, Material Design, Bootstrap, shadcn/ui, WCAG" },
+      {
+        area: "Web",
+        items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals",
+      },
+      { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod" },
+      {
+        area: "Back-end",
+        items:
+          "NestJS e Node.js (come supporto), Firebase (Auth, Firestore), database NoSQL",
+      },
+      {
+        area: "UI",
+        items: "Tailwind CSS, Material Design, Bootstrap, shadcn/ui, WCAG",
+      },
       { area: "Qualità", items: "Karma, Jasmine, unit test, code review" },
-      { area: "Delivery", items: "Jenkins, Docker, Azure, NestJS, Jira, Agile/Scrum" },
+      { area: "Delivery", items: "Jenkins, Docker, Azure, Jira, Agile/Scrum" },
     ],
   },
   contact: {
