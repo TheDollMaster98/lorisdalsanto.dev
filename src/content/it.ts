@@ -33,7 +33,7 @@ export const it: Content = {
         context: "EY · AI & Data",
         role: "Front-end owner",
         summary:
-          "Analisi AI dei bandi regionali per circa 20 utenti: proposte, soluzioni e grafo delle relazioni tra bandi al posto di un controllo manuale, con dashboard di KPI. Impostato da zero, con una libreria di 20+ componenti riutilizzabili e integrazione con il back-end NestJS.",
+          "Analizza i bandi regionali con l’AI per circa 20 utenti e ha sostituito un controllo fatto a mano. Genera proposte, soluzioni e il grafo delle relazioni tra bandi, con dashboard di KPI. L’ho impostato da zero, con una libreria di 20+ componenti riutilizzabili e l’integrazione con il back-end NestJS.",
         stack: [
           "Next.js 15",
           "TypeScript",
@@ -48,7 +48,7 @@ export const it: Content = {
         context: "EY · settore immobiliare",
         role: "Unico sviluppatore front-end",
         summary:
-          "Gestione dei progetti immobiliari per circa 15 utenti: tracking con dashboard di KPI ed editor rich text che genera documenti .docx strutturati. Nata come fork dell’intranet interna, riusando 10+ componenti, ha sostituito un controllo manuale.",
+          "Gestisce i progetti immobiliari per circa 15 utenti, con tracking su dashboard di KPI e un editor rich text che genera documenti .docx strutturati. È nata come fork dell’intranet interna, riusando 10+ componenti, e ha sostituito un controllo fatto a mano.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {
@@ -83,7 +83,7 @@ export const it: Content = {
         context: "Progetto personale",
         role: "Design & sviluppo",
         summary:
-          "Fantasy league per il competitivo di League of Legends: leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
+          "Fantasy league per il competitivo di League of Legends, con leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
         stack: [
           "Next.js 16",
           "TypeScript",
