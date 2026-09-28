@@ -11,7 +11,9 @@ type HeaderProps = {
 export function Header({ locale, nav }: HeaderProps) {
   const items = [
     { label: nav.work, href: "#work" },
-    { label: nav.about, href: "#about" },
+    // Su mobile non c'è spazio per quattro voci: queste si raggiungono scorrendo.
+    { label: nav.about, href: "#about", secondary: true },
+    { label: nav.stack, href: "#stack", secondary: true },
     { label: nav.contact, href: "#contact" },
   ];
 
@@ -27,7 +29,9 @@ export function Header({ locale, nav }: HeaderProps) {
               <a
                 key={item.href}
                 href={item.href}
-                className="transition-colors hover:text-ink"
+                className={`transition-colors hover:text-ink ${
+                  item.secondary ? "hidden md:inline" : ""
+                }`}
               >
                 {item.label}
               </a>
