@@ -1,7 +1,10 @@
 import { Fragment } from "react";
+import { profile } from "@/content/profile";
 import type { Content } from "@/models/content.model";
 
 export function Hero({ hero }: { hero: Content["hero"] }) {
+  const cv = profile.links.find((link) => link.label === "CV");
+
   return (
     <section
       id="top"
@@ -35,6 +38,27 @@ export function Hero({ hero }: { hero: Content["hero"] }) {
       >
         {hero.statement}
       </h1>
+      <div
+        data-hero-cta
+        className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 md:mt-16 md:text-lg"
+      >
+        <a
+          href={`mailto:${profile.email}`}
+          className="border-b border-ink pb-0.5 font-medium transition-colors hover:border-ink-muted hover:text-ink-muted"
+        >
+          {hero.cta.contact} →
+        </a>
+        {cv && (
+          <a
+            href={cv.href}
+            target="_blank"
+            rel="noreferrer"
+            className="text-ink-muted transition-colors hover:text-ink"
+          >
+            {hero.cta.cv} ↗
+          </a>
+        )}
+      </div>
     </section>
   );
 }

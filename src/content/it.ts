@@ -18,6 +18,7 @@ export const it: Content = {
     availability: "Aperto a nuove opportunità",
     statement:
       "Progetto e sviluppo interfacce web e mobile per grandi aziende e piccole imprese, dall’architettura alla messa online.",
+    cta: { contact: "Scrivimi", cv: "Leggi il CV" },
   },
   intro: {
     label: "Presentazione",
@@ -166,5 +167,44 @@ export const it: Content = {
   },
   footer: {
     backToTop: "Torna su ↑",
+    privacy: "Privacy",
+  },
+  privacy: {
+    metaTitle: "Privacy | Loris Dal Santo",
+    metaDescription:
+      "Informativa privacy del sito di Loris Dal Santo: nessun cookie, nessun tracciamento.",
+    title: "Privacy",
+    updated: "Ultimo aggiornamento: settembre 2026",
+    sections: [
+      {
+        heading: "Chi gestisce il sito",
+        body: "Questo è il portfolio personale di Loris Dal Santo. Per qualsiasi domanda sui tuoi dati puoi scrivere a {email}.",
+      },
+      {
+        heading: "Cosa raccoglie il sito",
+        body: "Niente. Il sito non usa cookie, non ha moduli di contatto e non usa strumenti di analisi o di tracciamento. Anche i font sono serviti dal sito stesso, senza richieste a Google.",
+      },
+      {
+        heading: "Hosting",
+        body: "Il sito è ospitato su GitHub Pages. Come ogni server web, GitHub può registrare l’indirizzo IP dei visitatori per la sicurezza e il funzionamento del servizio, secondo la propria informativa.",
+        link: {
+          label: "GitHub General Privacy Statement",
+          href: "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+        },
+      },
+      {
+        heading: "Se mi scrivi",
+        body: "Uso il tuo indirizzo email e il contenuto del messaggio solo per risponderti. Non li condivido con nessuno.",
+      },
+      {
+        heading: "Link esterni",
+        body: "I link a LinkedIn, GitHub, Google Drive e ai progetti portano a siti con le proprie informative privacy.",
+      },
+      {
+        heading: "I tuoi diritti",
+        body: "Puoi chiedere in qualsiasi momento di vedere, correggere o cancellare i dati che mi hai inviato, scrivendo a {email}.",
+      },
+    ],
+    back: "Torna al sito",
   },
 };

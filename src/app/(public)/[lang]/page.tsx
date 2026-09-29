@@ -30,7 +30,7 @@ export default async function LandingPage({
         <Stack stack={content.stack} />
         <Contact contact={content.contact} />
       </main>
-      <Footer footer={content.footer} />
+      <Footer locale={lang} footer={content.footer} />
     </Motion>
   );
 }
