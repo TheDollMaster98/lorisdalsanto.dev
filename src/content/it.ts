@@ -240,6 +240,7 @@ export const it: Content = {
     },
   },
   footer: {
+    localTime: "Ora a Milano",
     backToTop: "Torna su ↑",
     privacy: "Privacy",
   },

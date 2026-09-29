@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { profile } from "@/content/profile";
 import type { Locale } from "@/lib/i18n";
+import { LocalTime } from "./LocalTime";
 import type { Content } from "@/models/content.model";
 
 type FooterProps = {
@@ -12,9 +13,12 @@ export function Footer({ locale, footer }: FooterProps) {
   return (
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-x-6 gap-y-2 px-4 py-6 font-mono text-xs text-ink-muted md:px-8">
-        <span>
-          © {new Date().getFullYear()} {profile.name}
-        </span>
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+          <span>
+            © {new Date().getFullYear()} {profile.name}
+          </span>
+          <LocalTime label={footer.localTime} />
+        </div>
         <div className="flex gap-6">
           <Link
             href={`/${locale}/privacy/`}
