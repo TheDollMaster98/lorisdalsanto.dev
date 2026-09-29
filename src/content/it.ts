@@ -134,6 +134,25 @@ export const it: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
+        slug: "fam-fanta",
+        images: [
+          {
+            file: "01.webp",
+            alt: "Elenco delle leghe dell’utente in Fam Fanta",
+            caption:
+              "Le leghe dell’utente, con modalità d’asta, budget e ruolo di creatore.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "02.webp",
+            alt: "Asta live in corso su un giocatore",
+            caption:
+              "Un’asta live in corso, con countdown, offerte rapide, crediti dei partecipanti e storico delle offerte.",
+            width: 1865,
+            height: 1126,
+          },
+        ],
       },
     ],
   },

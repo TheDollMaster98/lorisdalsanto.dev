@@ -134,6 +134,25 @@ export const en: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
+        slug: "fam-fanta",
+        images: [
+          {
+            file: "01.webp",
+            alt: "List of the user’s leagues in Fam Fanta",
+            caption:
+              "The user’s leagues, with auction mode, budget and creator role.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "02.webp",
+            alt: "Live auction in progress on a player",
+            caption:
+              "A live auction in progress, with countdown, quick bids, everyone’s credits and bid history.",
+            width: 1865,
+            height: 1126,
+          },
+        ],
       },
     ],
   },
