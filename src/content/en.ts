@@ -27,6 +27,12 @@ export const en: Content = {
   },
   work: {
     label: "Work",
+    gallery: {
+      open: "View images",
+      close: "Close",
+      title: "Projects",
+      visit: "Visit the site",
+    },
     projects: [
       {
         title: "AI grants portal",
@@ -76,7 +82,33 @@ export const en: Content = {
           "React 18",
           "Angular 20",
         ],
-        href: "https://findora.it",
+        slug: "findora",
+        images: [
+          {
+            file: "01.jpg",
+            alt: "Findora, image 1",
+            caption:
+              "Placeholder: replace the file and describe what this image shows.",
+            width: 1600,
+            height: 1000,
+          },
+          {
+            file: "02.jpg",
+            alt: "Findora, image 2",
+            caption:
+              "Placeholder: replace the file and describe what this image shows.",
+            width: 1600,
+            height: 1000,
+          },
+          {
+            file: "03.jpg",
+            alt: "Findora, image 3",
+            caption:
+              "Placeholder: replace the file and describe what this image shows.",
+            width: 1600,
+            height: 1000,
+          },
+        ],
       },
       {
         title: "Fam Fanta",
@@ -93,6 +125,25 @@ export const en: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
+        slug: "fam-fanta",
+        images: [
+          {
+            file: "01.jpg",
+            alt: "Fam Fanta, image 1",
+            caption:
+              "Placeholder: replace the file and describe what this image shows.",
+            width: 1600,
+            height: 1000,
+          },
+          {
+            file: "02.jpg",
+            alt: "Fam Fanta, image 2",
+            caption:
+              "Placeholder: replace the file and describe what this image shows.",
+            width: 1600,
+            height: 1000,
+          },
+        ],
       },
     ],
   },

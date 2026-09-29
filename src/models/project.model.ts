@@ -1,3 +1,13 @@
+export type ProjectImage = {
+  // Nome del file dentro public/projects/<slug>/, es. "01.jpg".
+  file: string;
+  alt: string;
+  caption?: string;
+  // Dimensioni reali: servono solo a riservare lo spazio prima del caricamento.
+  width?: number;
+  height?: number;
+};
+
 export type Project = {
   title: string;
   year: string;
@@ -6,4 +16,7 @@ export type Project = {
   summary: string;
   stack: string[];
   href?: string;
+  // Con slug e immagini, cliccando il progetto si apre la galleria.
+  slug?: string;
+  images?: ProjectImage[];
 };

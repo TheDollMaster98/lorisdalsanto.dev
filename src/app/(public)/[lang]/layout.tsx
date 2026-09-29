@@ -16,7 +16,9 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LayoutProps): Promise<Metadata> {
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const { meta } = getContent(lang);
@@ -29,9 +31,17 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
 
   return (
     // suppressHydrationWarning: lo script qui sotto aggiunge la classe "js" prima di React.
-    <html lang={lang} className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html
+      lang={lang}
+      className={`${sans.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
       </head>
       <body className="bg-paper font-sans text-ink">{children}</body>
     </html>

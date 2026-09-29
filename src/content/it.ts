@@ -27,6 +27,12 @@ export const it: Content = {
   },
   work: {
     label: "Lavori",
+    gallery: {
+      open: "Vedi le immagini",
+      close: "Chiudi",
+      title: "Progetti",
+      visit: "Apri il sito",
+    },
     projects: [
       {
         title: "Portale AI per i bandi",
@@ -76,7 +82,33 @@ export const it: Content = {
           "React 18",
           "Angular 20",
         ],
-        href: "https://findora.it",
+        slug: "findora",
+        images: [
+          {
+            file: "01.jpg",
+            alt: "Findora, immagine 1",
+            caption:
+              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
+            width: 1600,
+            height: 1000,
+          },
+          {
+            file: "02.jpg",
+            alt: "Findora, immagine 2",
+            caption:
+              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
+            width: 1600,
+            height: 1000,
+          },
+          {
+            file: "03.jpg",
+            alt: "Findora, immagine 3",
+            caption:
+              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
+            width: 1600,
+            height: 1000,
+          },
+        ],
       },
       {
         title: "Fam Fanta",
@@ -93,6 +125,25 @@ export const it: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
+        slug: "fam-fanta",
+        images: [
+          {
+            file: "01.jpg",
+            alt: "Fam Fanta, immagine 1",
+            caption:
+              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
+            width: 1600,
+            height: 1000,
+          },
+          {
+            file: "02.jpg",
+            alt: "Fam Fanta, immagine 2",
+            caption:
+              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
+            width: 1600,
+            height: 1000,
+          },
+        ],
       },
     ],
   },
