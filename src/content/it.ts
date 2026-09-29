@@ -87,28 +87,35 @@ export const it: Content = {
         slug: "findora",
         images: [
           {
-            file: "01.jpg",
-            alt: "Findora, immagine 1",
+            file: "01.webp",
+            alt: "Sezione iniziale della landing page di Findora",
             caption:
-              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
-            width: 1600,
-            height: 1000,
+              "La sezione iniziale della landing page in React, con i tre passi per iniziare.",
+            width: 1875,
+            height: 925,
           },
           {
-            file: "02.jpg",
-            alt: "Findora, immagine 2",
+            file: "02.webp",
+            alt: "Sezione Come funziona con tre schermate dell’app mobile",
             caption:
-              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
-            width: 1600,
-            height: 1000,
+              "Come funziona Findora, con le schermate dell’app mobile in Flutter e i percorsi per clienti e venditori.",
+            width: 1875,
+            height: 925,
           },
           {
-            file: "03.jpg",
-            alt: "Findora, immagine 3",
+            file: "03.webp",
+            alt: "Sezione Suite Enterprise con la schermata di ricerca dell’app",
             caption:
-              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
-            width: 1600,
-            height: 1000,
+              "La sezione dedicata alle aziende, con la schermata di ricerca dell’app.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "04.webp",
+            alt: "Sezioni Ambassador e domande frequenti della landing page",
+            caption: "Il programma Ambassador e le domande frequenti.",
+            width: 1875,
+            height: 925,
           },
         ],
       },
@@ -127,25 +134,6 @@ export const it: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
-        slug: "fam-fanta",
-        images: [
-          {
-            file: "01.jpg",
-            alt: "Fam Fanta, immagine 1",
-            caption:
-              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
-            width: 1600,
-            height: 1000,
-          },
-          {
-            file: "02.jpg",
-            alt: "Fam Fanta, immagine 2",
-            caption:
-              "Segnaposto: sostituisci il file e scrivi cosa mostra questa immagine.",
-            width: 1600,
-            height: 1000,
-          },
-        ],
       },
     ],
   },

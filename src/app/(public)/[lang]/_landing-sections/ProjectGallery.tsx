@@ -246,29 +246,35 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
               className="font-mono text-xs uppercase tracking-[0.08em] text-ink-muted"
             >
               {labels.title}
-              <span className="ml-3 tabular-nums" aria-live="polite">
-                {pad(active + 1)} / {pad(projects.length)}
-              </span>
+              {projects.length > 1 && (
+                <span className="ml-3 tabular-nums" aria-live="polite">
+                  {pad(active + 1)} / {pad(projects.length)}
+                </span>
+              )}
             </p>
             <div className="flex items-center gap-5 font-mono text-xs tracking-[0.08em]">
-              <button
-                type="button"
-                aria-label={labels.previous}
-                disabled={active === 0}
-                onClick={() => go(active - 1)}
-                className="transition-colors hover:text-ink-muted disabled:text-line"
-              >
-                ↑
-              </button>
-              <button
-                type="button"
-                aria-label={labels.next}
-                disabled={active === projects.length - 1}
-                onClick={() => go(active + 1)}
-                className="transition-colors hover:text-ink-muted disabled:text-line"
-              >
-                ↓
-              </button>
+              {projects.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    aria-label={labels.previous}
+                    disabled={active === 0}
+                    onClick={() => go(active - 1)}
+                    className="transition-colors hover:text-ink-muted disabled:text-line"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    type="button"
+                    aria-label={labels.next}
+                    disabled={active === projects.length - 1}
+                    onClick={() => go(active + 1)}
+                    className="transition-colors hover:text-ink-muted disabled:text-line"
+                  >
+                    ↓
+                  </button>
+                </>
+              )}
               <button
                 type="button"
                 autoFocus

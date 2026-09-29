@@ -87,28 +87,35 @@ export const en: Content = {
         slug: "findora",
         images: [
           {
-            file: "01.jpg",
-            alt: "Findora, image 1",
+            file: "01.webp",
+            alt: "Hero section of the Findora landing page",
             caption:
-              "Placeholder: replace the file and describe what this image shows.",
-            width: 1600,
-            height: 1000,
+              "The hero section of the React landing page, with the three steps to get started.",
+            width: 1875,
+            height: 925,
           },
           {
-            file: "02.jpg",
-            alt: "Findora, image 2",
+            file: "02.webp",
+            alt: "How it works section with three screens of the mobile app",
             caption:
-              "Placeholder: replace the file and describe what this image shows.",
-            width: 1600,
-            height: 1000,
+              "How Findora works, with screens of the Flutter mobile app and the paths for clients and sellers.",
+            width: 1875,
+            height: 925,
           },
           {
-            file: "03.jpg",
-            alt: "Findora, image 3",
+            file: "03.webp",
+            alt: "Enterprise suite section with the app search screen",
             caption:
-              "Placeholder: replace the file and describe what this image shows.",
-            width: 1600,
-            height: 1000,
+              "The section for companies, with the search screen of the app.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "04.webp",
+            alt: "Ambassador and FAQ sections of the landing page",
+            caption: "The Ambassador programme and the FAQ.",
+            width: 1875,
+            height: 925,
           },
         ],
       },
@@ -127,25 +134,6 @@ export const en: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
-        slug: "fam-fanta",
-        images: [
-          {
-            file: "01.jpg",
-            alt: "Fam Fanta, image 1",
-            caption:
-              "Placeholder: replace the file and describe what this image shows.",
-            width: 1600,
-            height: 1000,
-          },
-          {
-            file: "02.jpg",
-            alt: "Fam Fanta, image 2",
-            caption:
-              "Placeholder: replace the file and describe what this image shows.",
-            width: 1600,
-            height: 1000,
-          },
-        ],
       },
     ],
   },
