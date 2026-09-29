@@ -74,3 +74,16 @@ a:focus-visible {
     scrollbar-color: var(--ink-muted) transparent;
   }
 }
+
+/* Stampa (pagina CV): A4, sfondo bianco, niente animazioni. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 16mm;
+  }
+
+  html {
+    background: #fff;
+    font-size: 10pt;
+  }
+}

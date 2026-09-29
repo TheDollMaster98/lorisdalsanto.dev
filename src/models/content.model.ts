@@ -13,6 +13,7 @@ export type Content = {
     about: string;
     stack: string;
     contact: string;
+    cv: string;
   };
   hero: {
     role: string;

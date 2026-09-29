@@ -1,16 +1,16 @@
+import Link from "next/link";
 import { Fragment } from "react";
-import { profile } from "@/content/profile";
+import type { Locale } from "@/lib/i18n";
 import { mailtoHref } from "@/lib/site/mailto";
 import type { Content } from "@/models/content.model";
 
 type HeroProps = {
+  locale: Locale;
   hero: Content["hero"];
   mail: Content["contact"]["mail"];
 };
 
-export function Hero({ hero, mail }: HeroProps) {
-  const cv = profile.links.find((link) => link.label === "CV");
-
+export function Hero({ locale, hero, mail }: HeroProps) {
   return (
     <section
       id="top"
@@ -54,16 +54,12 @@ export function Hero({ hero, mail }: HeroProps) {
         >
           {hero.cta.contact} →
         </a>
-        {cv && (
-          <a
-            href={cv.href}
-            target="_blank"
-            rel="noreferrer"
-            className="text-ink-muted transition-colors hover:text-ink"
-          >
-            {hero.cta.cv} ↗
-          </a>
-        )}
+        <Link
+          href={`/${locale}/cv/`}
+          className="text-ink-muted transition-colors hover:text-ink"
+        >
+          {hero.cta.cv} →
+        </Link>
       </div>
     </section>
   );

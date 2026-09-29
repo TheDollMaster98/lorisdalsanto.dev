@@ -50,13 +50,17 @@ export default async function LandingPage({
     <Motion>
       <Header locale={lang} nav={content.nav} />
       <main>
-        <Hero hero={content.hero} mail={content.contact.mail} />
+        <Hero locale={lang} hero={content.hero} mail={content.contact.mail} />
         <Intro intro={content.intro} />
         <Work work={content.work} />
         <ProjectGallery projects={gallery} labels={content.work.gallery} />
         <About about={content.about} />
         <Stack stack={content.stack} />
-        <Contact contact={content.contact} />
+        <Contact
+          locale={lang}
+          contact={content.contact}
+          cvLabel={content.nav.cv}
+        />
       </main>
       <Footer locale={lang} footer={content.footer} />
     </Motion>
