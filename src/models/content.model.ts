@@ -13,6 +13,7 @@ export type Content = {
     about: string;
     stack: string;
     contact: string;
+    cv: string;
   };
   hero: {
     role: string;
@@ -64,6 +65,7 @@ export type Content = {
   };
   footer: {
     backToTop: string;
+    localTime: string;
     privacy: string;
   };
   privacy: {

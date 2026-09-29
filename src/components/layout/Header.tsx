@@ -18,10 +18,11 @@ export function Header({ locale, nav, path = "" }: HeaderProps) {
     { label: nav.about, href: `${home}#about`, secondary: true },
     { label: nav.stack, href: `${home}#stack`, secondary: true },
     { label: nav.contact, href: `${home}#contact` },
+    { label: nav.cv, href: `${home}cv/` },
   ];
 
   return (
-    <header className="sticky top-0 z-10 border-b border-line bg-paper/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-10 border-b border-line bg-paper/90 backdrop-blur-sm print:hidden">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 md:px-8">
         <Link href={home} className="truncate text-sm font-medium">
           {profile.name}

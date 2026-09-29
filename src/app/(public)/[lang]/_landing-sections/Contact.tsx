@@ -1,9 +1,17 @@
+import Link from "next/link";
 import { profile } from "@/content/profile";
+import type { Locale } from "@/lib/i18n";
 import { mailtoHref } from "@/lib/site/mailto";
 import type { Content } from "@/models/content.model";
 import { Section } from "./Section";
 
-export function Contact({ contact }: { contact: Content["contact"] }) {
+type ContactProps = {
+  locale: Locale;
+  contact: Content["contact"];
+  cvLabel: string;
+};
+
+export function Contact({ locale, contact, cvLabel }: ContactProps) {
   return (
     <Section id="contact" index="04" label={contact.label}>
       <p data-reveal className="mb-6 text-ink-muted">
@@ -26,7 +34,7 @@ export function Contact({ contact }: { contact: Content["contact"] }) {
           <li key={link.label}>
             <a
               href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : undefined}
+              target="_blank"
               rel="noreferrer"
               className="text-ink-muted transition-colors hover:text-ink"
             >
@@ -34,6 +42,14 @@ export function Contact({ contact }: { contact: Content["contact"] }) {
             </a>
           </li>
         ))}
+        <li>
+          <Link
+            href={`/${locale}/cv/`}
+            className="text-ink-muted transition-colors hover:text-ink"
+          >
+            {cvLabel} →
+          </Link>
+        </li>
       </ul>
     </Section>
   );

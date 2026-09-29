@@ -11,6 +11,7 @@ export const en: Content = {
     about: "Background",
     stack: "Tech stack",
     contact: "Contact",
+    cv: "CV",
   },
   hero: {
     role: "Full-Stack JavaScript & Flutter Mobile Developer",
@@ -66,7 +67,7 @@ export const en: Content = {
         context: "UniCredit, via Be | Shaping the Future",
         role: "Front-end developer",
         summary:
-          "End-to-end platform for managing corporate FX risk, recognised at the Euromoney Awards 2023. Front-end components, UX/UI fixes and unit tests in a team spread across Italy, Germany and Romania.",
+          "End-to-end platform for managing corporate FX risk, cited by Euromoney when naming UniCredit Best FX Bank for Service and Support 2023. Front-end components, UX/UI fixes and unit tests in a team spread across Italy, Germany and Romania.",
         stack: ["Angular", "RxJS", "Bootstrap 5", "Karma", "Jasmine"],
         links: [
           {
@@ -74,7 +75,7 @@ export const en: Content = {
             href: "https://www.linkedin.com/feed/update/urn:li:activity:7059081868662423553/",
           },
           {
-            label: "LinkedIn, October 2023",
+            label: "Euromoney award 2023",
             href: "https://www.linkedin.com/feed/update/urn:li:activity:7115278129404743680/",
           },
         ],
@@ -173,7 +174,7 @@ export const en: Content = {
       {
         period: "2025 - now",
         company: "EY AI & Data",
-        role: "Associate (Senior I), Front-End Developer",
+        role: "Senior Consultant (Senior I), Front-End Developer",
         summary:
           "Sole front-end owner of two internal enterprise products, end to end: architecture, development, documentation and demos to the Partners.",
       },
@@ -219,7 +220,7 @@ export const en: Content = {
       },
       { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod" },
       {
-        area: "Back-end",
+        area: "Back-end (support)",
         items:
           "NestJS, Node.js and Express, Firebase (Auth, Firestore, Hosting), MongoDB and NoSQL databases",
       },
@@ -240,6 +241,7 @@ export const en: Content = {
     },
   },
   footer: {
+    localTime: "Time in Milan",
     backToTop: "Back to top ↑",
     privacy: "Privacy",
   },

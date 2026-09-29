@@ -27,6 +27,15 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* Tailwind 4 toglie la manina ai pulsanti: la rimettiamo, così tutto ciò che è cliccabile
+   la mostra, come i link. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
 ::selection {
   background: var(--ink);
   color: var(--paper);
@@ -72,5 +81,18 @@ a:focus-visible {
 
   &:hover {
     scrollbar-color: var(--ink-muted) transparent;
+  }
+}
+
+/* Stampa (pagina CV): A4, sfondo bianco, niente animazioni. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 16mm;
+  }
+
+  html {
+    background: #fff;
+    font-size: 10pt;
   }
 }

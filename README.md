@@ -16,10 +16,10 @@ npm run lint
 | Cosa | Versione | Uso |
 | --- | --- | --- |
 | [Next.js](https://nextjs.org) | 16.3 | App Router, static export (`output: "export"`), route `[lang]` generate con `generateStaticParams`, `next/font`, `proxy.ts` |
-| [React](https://react.dev) | 19.2 | Server Components per le sezioni, un solo Client Component (`Motion`) |
+| [React](https://react.dev) | 19.2 | Server Components per le sezioni; Client Component solo dove serve il browser: `Motion`, `ProjectGallery`, `LocalTime`, `PrintButton` |
 | [TypeScript](https://www.typescriptlang.org) | 5.9 | Tipi dei contenuti in `src/models/` |
 | [Tailwind CSS](https://tailwindcss.com) | 4.3 | Stili; token di colore in `src/app/globals.css` via `@theme` |
-| [GSAP](https://gsap.com) | 3.15 | Animazioni: SplitText (titolo riga per riga), ScrollTrigger (linee e contenuti allo scroll), `@gsap/react` (`useGSAP`) |
+| [GSAP](https://gsap.com) | 3.15 | Animazioni: SplitText (titolo riga per riga), ScrollTrigger (linee e contenuti allo scroll), `@gsap/react` (`useGSAP`), cambio progetto nella galleria |
 | [ESLint](https://eslint.org) | 9.39 | `eslint-config-next` (core-web-vitals + TypeScript) |
 | [Prettier](https://prettier.io) | - | Formattazione con le impostazioni predefinite (dall'editor, non è in `package.json`) |
 | Google Fonts | - | Schibsted Grotesk (testo), IBM Plex Mono (metadati), serviti da `next/font` |
@@ -42,27 +42,35 @@ src/
       [lang]/               lingua nell'URL: /it/, /en/
         layout.tsx          <html>, font, metadati
         page.tsx            la landing
-        _landing-sections/  sezioni della landing (Hero, Work, About, Contact, Section)
+        _landing-sections/  sezioni della landing (Hero, Intro, Work, ProjectGallery, About, Stack, Contact, Section)
+        cv/page.tsx         CV stampabile in PDF (componenti in cv/_cv/)
         privacy/page.tsx    informativa privacy
     global-not-found.tsx    pagina 404 unica e bilingue
     robots.ts, sitemap.ts   robots.txt e sitemap.xml
     icon.png, apple-icon.png  favicon e icona per iOS
     globals.css
-  components/layout/        componenti condivisi tra pagine (Header, Footer)
-  content/                  testi per lingua (it.ts, en.ts) e dati comuni (profile.ts)
+  components/layout/        componenti condivisi tra pagine (Header, Footer, LocalTime)
+  content/                  testi per lingua (it.ts, en.ts), CV (cv/it.ts, cv/en.ts) e dati comuni (profile.ts)
   lib/
     i18n/                   lingue supportate (locales.ts) e accesso ai testi (index.ts)
     motion/                 animazioni GSAP (Motion.tsx)
-    site/                   indirizzo del sito, metadati (Open Graph, canonical, hreflang), font
+    site/                   indirizzo del sito, metadati (Open Graph, canonical, hreflang), font, percorsi degli asset
   models/                   tipi dei dati, un file *.model.ts per tipo
   proxy.ts                  redirect alla lingua (solo con hosting con server)
 public/index.html           "/" → lingua del browser sull'export statico
-public/assets/img/          immagini: og.png (anteprima social, 1200x630) e projects/<slug>/ (galleria)
+public/assets/img/          immagini: og.png (anteprima social, 1200x630) e projects/<slug>/ (galleria dei progetti)
 ```
 
 - Ogni pagina è un `page.tsx` con accanto i suoi componenti in una cartella `_nome/` (es. `_landing-sections/`): il trattino basso dice a Next che non è una route.
 - I gruppi tra parentesi, come `(public)`, non finiscono nell'URL.
 - Non si usa `src/pages/`: in Next è riservata al Pages Router.
+
+Per modificare i contenuti:
+
+- **Testi del sito**: `src/content/it.ts` e `src/content/en.ts`.
+- **CV** (`/it/cv/`, `/en/cv/`): `src/content/cv/it.ts` e `src/content/cv/en.ts`. Dal browser, "Stampa o salva in PDF" produce un A4 pulito (stili `print:` di Tailwind e `@media print` in `globals.css`). I dati sono solo oggetti serializzabili, pronti per arrivare in futuro da un database.
+- **Immagini di un progetto**: file in `public/assets/img/projects/<slug>/`, poi `slug` e `images` del progetto nei file dei contenuti (con larghezza e altezza reali). Un progetto con immagini apre la galleria al clic.
+- **Link sotto un progetto** (articoli, post): campo `links`, solo per progetti senza `href` né galleria.
 
 Per aggiungere una lingua: nuovo file in `src/content/`, poi aggiungila a `locales` in `src/lib/i18n/locales.ts`, a `contents` in `src/lib/i18n/index.ts` e a `supported` in `public/index.html`.
 

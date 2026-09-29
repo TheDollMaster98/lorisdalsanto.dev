@@ -11,6 +11,7 @@ export const it: Content = {
     about: "Percorso",
     stack: "Tecnologie",
     contact: "Contatti",
+    cv: "CV",
   },
   hero: {
     role: "Full-Stack JavaScript & Flutter Mobile Developer",
@@ -66,7 +67,7 @@ export const it: Content = {
         context: "UniCredit, tramite Be | Shaping the Future",
         role: "Front-end developer",
         summary:
-          "Piattaforma per la gestione end-to-end del rischio di cambio delle aziende, premiata agli Euromoney Awards 2023. Componenti front-end, fix UX/UI e test unitari in un team distribuito tra Italia, Germania e Romania.",
+          "Piattaforma per la gestione end-to-end del rischio di cambio delle aziende, citata da Euromoney nel premio a UniCredit come Best FX Bank for Service and Support 2023. Componenti front-end, fix UX/UI e test unitari in un team distribuito tra Italia, Germania e Romania.",
         stack: ["Angular", "RxJS", "Bootstrap 5", "Karma", "Jasmine"],
         links: [
           {
@@ -74,7 +75,7 @@ export const it: Content = {
             href: "https://www.linkedin.com/feed/update/urn:li:activity:7059081868662423553/",
           },
           {
-            label: "LinkedIn, ottobre 2023",
+            label: "Premio Euromoney 2023",
             href: "https://www.linkedin.com/feed/update/urn:li:activity:7115278129404743680/",
           },
         ],
@@ -173,7 +174,7 @@ export const it: Content = {
       {
         period: "2025 - oggi",
         company: "EY AI & Data",
-        role: "Associate (Senior I), Front-End Developer",
+        role: "Senior Consultant (Senior I), Front-End Developer",
         summary:
           "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner.",
       },
@@ -219,7 +220,7 @@ export const it: Content = {
       },
       { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod" },
       {
-        area: "Back-end",
+        area: "Back-end (supporto)",
         items:
           "NestJS, Node.js ed Express, Firebase (Auth, Firestore, Hosting), MongoDB e database NoSQL",
       },
@@ -240,6 +241,7 @@ export const it: Content = {
     },
   },
   footer: {
+    localTime: "Ora a Milano",
     backToTop: "Torna su ↑",
     privacy: "Privacy",
   },
