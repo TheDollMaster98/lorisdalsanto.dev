@@ -1,4 +1,5 @@
 import { profile } from "@/content/profile";
+import { mailtoHref } from "@/lib/site/mailto";
 import type { Content } from "@/models/content.model";
 import { Section } from "./Section";
 
@@ -10,7 +11,7 @@ export function Contact({ contact }: { contact: Content["contact"] }) {
       </p>
       <a
         data-reveal
-        href={`mailto:${profile.email}`}
+        href={mailtoHref(contact.mail)}
         className="relative inline-block break-all pb-1 text-[clamp(1.75rem,5vw,4.5rem)] font-medium leading-none tracking-[-0.03em] transition-colors hover:text-ink-muted"
       >
         {profile.email}

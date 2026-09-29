@@ -23,7 +23,7 @@ export default async function LandingPage({
     <Motion>
       <Header locale={lang} nav={content.nav} />
       <main>
-        <Hero hero={content.hero} />
+        <Hero hero={content.hero} mail={content.contact.mail} />
         <Intro intro={content.intro} />
         <Work work={content.work} />
         <About about={content.about} />
