@@ -17,7 +17,7 @@ export const en: Content = {
     location: "Milan, Italy",
     availability: "Open to new opportunities",
     statement:
-      "I design and build web and mobile interfaces for large companies and small businesses, from the architecture to going live.",
+      "I design and build web and mobile applications for large companies and small businesses, from the architecture to going live.",
     cta: { contact: "Get in touch", cv: "View CV" },
   },
   intro: {
