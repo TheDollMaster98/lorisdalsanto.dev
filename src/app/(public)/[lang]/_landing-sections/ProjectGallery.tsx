@@ -34,11 +34,15 @@ type ProjectGalleryProps = {
 
 // Quanto bisogna "spingere" oltre la fine (o l'inizio) di un progetto per
 // passare al successivo (o al precedente): rotella e swipe, in pixel.
-const WHEEL_THRESHOLD = 120;
-const SWIPE_THRESHOLD = 60;
+const WHEEL_THRESHOLD = 50;
+const SWIPE_THRESHOLD = 40;
 // Dopo uno scroll vero si aspetta un attimo: l'inerzia del trackpad che arriva
-// in fondo non deve cambiare progetto da sola.
-const SCROLL_SETTLE_MS = 300;
+// in fondo non deve cambiare progetto da sola. Tenuto corto, altrimenti un gesto
+// continuo che arriva in fondo e prosegue viene scartato e va ripetuto.
+const SCROLL_SETTLE_MS = 120;
+// Durate del cambio progetto: la tendina copre, poi scopre il nuovo.
+const COVER_S = 0.2;
+const REVEAL_S = 0.5;
 
 // Popup con un progetto alla volta. Arrivati in fondo a un progetto, continuando
 // a scorrere il contenuto viene sostituito dal successivo con una tendina che
@@ -77,7 +81,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
         { scaleY: 0, transformOrigin: dir > 0 ? "top" : "bottom" },
         {
           scaleY: 1,
-          duration: 0.35,
+          duration: COVER_S,
           ease: "power2.in",
           onComplete: () => setActive(to),
         },
@@ -103,7 +107,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       { scaleY: 1, transformOrigin: dir > 0 ? "bottom" : "top" },
       {
         scaleY: 0,
-        duration: 0.8,
+        duration: REVEAL_S,
         ease: EASE,
         onComplete: () => {
           busy.current = false;
@@ -114,7 +118,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       gsap.fromTo(
         content,
         { y: -24 * dir },
-        { y: 0, duration: 0.8, ease: EASE, clearProps: "transform" },
+        { y: 0, duration: REVEAL_S, ease: EASE, clearProps: "transform" },
       );
     }
   }, [active]);
