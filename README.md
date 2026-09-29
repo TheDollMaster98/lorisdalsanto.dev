@@ -15,7 +15,7 @@ npm run lint
 
 | Cosa | Versione | Uso |
 | --- | --- | --- |
-| [Next.js](https://nextjs.org) | 16.1 | App Router, static export (`output: "export"`), route `[lang]` generate con `generateStaticParams`, `next/font`, `proxy.ts` |
+| [Next.js](https://nextjs.org) | 16.3 | App Router, static export (`output: "export"`), route `[lang]` generate con `generateStaticParams`, `next/font`, `proxy.ts` |
 | [React](https://react.dev) | 19.2 | Server Components per le sezioni, un solo Client Component (`Motion`) |
 | [TypeScript](https://www.typescriptlang.org) | 5.9 | Tipi dei contenuti in `src/models/` |
 | [Tailwind CSS](https://tailwindcss.com) | 4.3 | Stili; token di colore in `src/app/globals.css` via `@theme` |
