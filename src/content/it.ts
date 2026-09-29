@@ -164,6 +164,10 @@ export const it: Content = {
   contact: {
     label: "Contatti",
     intro: "Hai un progetto o una posizione aperta? Scrivimi.",
+    mail: {
+      subject: "Contatto dal tuo sito",
+      body: "Ciao Loris,\n\nti ho trovato dal tuo sito.\n\n",
+    },
   },
   footer: {
     backToTop: "Torna su ↑",

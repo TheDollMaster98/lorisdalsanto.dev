@@ -48,6 +48,11 @@ export type Content = {
   contact: {
     label: string;
     intro: string;
+    // Email precompilata aperta da "Scrivimi" e dall'indirizzo nei contatti.
+    mail: {
+      subject: string;
+      body: string;
+    };
   };
   footer: {
     backToTop: string;

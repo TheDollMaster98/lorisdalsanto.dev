@@ -164,6 +164,10 @@ export const en: Content = {
   contact: {
     label: "Contact",
     intro: "Have a project or an open role? Get in touch.",
+    mail: {
+      subject: "Hello from your website",
+      body: "Hi Loris,\n\nI found you through your website.\n\n",
+    },
   },
   footer: {
     backToTop: "Back to top ↑",
