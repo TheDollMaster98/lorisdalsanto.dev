@@ -55,7 +55,7 @@ export const it: Content = {
         title: "Piattaforma real estate",
         year: "2025",
         context: "EY, settore immobiliare",
-        role: "Unico sviluppatore front-end",
+        role: "Front-end owner",
         summary:
           "Gestisce i progetti immobiliari per circa 15 utenti, con tracking su dashboard di KPI e un editor rich text che genera documenti .docx strutturati. È nata come fork dell’intranet interna, riusando 10+ componenti, e ha sostituito un controllo fatto a mano.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
@@ -196,7 +196,7 @@ export const it: Content = {
         company: "Be | Shaping the Future",
         role: "Junior Front-End Developer, cliente UniCredit",
         summary:
-          "Progetti bancari Angular (13–19) a lungo termine: coverage dei test +15%, +10% e +5%, rilasci CI/CD su Jenkins, team IT/DE/RO.",
+          "Progetti bancari Angular (13–19) a lungo termine: UC Hedge, schermate nell’app mobile UniCredit (WebView), il portale interno dei tool e funzionalità per il ticketing interno. Coverage dei test +15%, +10% e +5%, rilasci CI/CD su Jenkins, team IT/DE/RO.",
       },
     ],
     educationLabel: "Formazione",
