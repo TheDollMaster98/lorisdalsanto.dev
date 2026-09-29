@@ -24,8 +24,9 @@ type ProjectGalleryProps = {
   labels: Content["work"]["gallery"];
 };
 
-// Un solo <dialog> con tutti i progetti in colonna: si apre sul progetto cliccato
-// e scorrendo si passa al successivo. I pulsanti che lo aprono sono in Work
+// Un solo <dialog> popup con tutti i progetti in colonna: si apre sul progetto
+// cliccato e scorrendo si passa al successivo. Si chiude con il pulsante, con Esc
+// o cliccando fuori. I pulsanti che lo aprono sono in Work
 // (data-gallery-open="<slug>"), così le righe restano Server Component.
 export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -64,10 +65,14 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
     <dialog
       ref={dialog}
       aria-labelledby="gallery-title"
-      className="m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto overscroll-contain bg-paper text-ink opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 ease-out backdrop:bg-ink/40 open:opacity-100 motion-reduce:transition-none starting:open:opacity-0"
+      // Il click sullo sfondo arriva al <dialog> stesso, quelli sul contenuto no.
+      onClick={(event) => {
+        if (event.target === event.currentTarget) event.currentTarget.close();
+      }}
+      className="m-auto h-[min(88dvh,56rem)] max-h-none w-[calc(100%-2rem)] max-w-5xl translate-y-3 overflow-y-auto overscroll-contain border border-line bg-paper text-ink opacity-0 transition-[opacity,translate,display,overlay] transition-discrete duration-300 ease-out backdrop:bg-ink/40 open:translate-y-0 open:opacity-100 motion-reduce:transition-none starting:open:translate-y-3 starting:open:opacity-0"
     >
       <div className="sticky top-0 z-10 border-b border-line bg-paper">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8">
+        <div className="flex h-14 items-center justify-between px-5 md:px-10">
           <p
             id="gallery-title"
             className="font-mono text-xs uppercase tracking-[0.08em] text-ink-muted"
@@ -90,14 +95,14 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
           key={project.slug}
           id={`gallery-${project.slug}`}
           aria-labelledby={`gallery-${project.slug}-title`}
-          className={`scroll-mt-16 ${i > 0 ? "border-t border-line" : ""}`}
+          className={`scroll-mt-14 ${i > 0 ? "border-t border-line" : ""}`}
         >
-          <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
-            <header className="mb-10 flex flex-wrap items-end justify-between gap-x-6 gap-y-3 md:mb-14">
+          <div className="px-5 py-10 md:px-10 md:py-14">
+            <header className="mb-8 flex flex-wrap items-end justify-between gap-x-6 gap-y-3 md:mb-10">
               <div>
                 <h2
                   id={`gallery-${project.slug}-title`}
-                  className="text-3xl font-medium tracking-[-0.02em] md:text-5xl"
+                  className="text-2xl font-medium tracking-[-0.02em] md:text-4xl"
                 >
                   {project.title}
                 </h2>
@@ -117,12 +122,12 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
               )}
             </header>
 
-            <div className="flex flex-col gap-12 md:gap-20">
+            <div className="flex flex-col gap-10 md:gap-14">
               {project.images.map((image) => (
                 <figure key={image.src}>
                   <div className="bg-paper-raised">
-                    {/* Altezza massima 80vh: anche gli screenshot verticali di un telefono
-                      restano interi sullo schermo. La larghezza è calcolata dalle
+                    {/* Altezza massima 65vh: anche gli screenshot verticali di un telefono
+                      restano interi nel popup. La larghezza è calcolata dalle
                       proporzioni, così lo spazio è riservato prima del caricamento e
                       lo scroll al progetto cliccato non si sposta. */}
                     <Image
@@ -133,7 +138,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
                       loading="lazy"
                       className="mx-auto h-auto"
                       style={{
-                        width: `min(100%, calc(80vh * ${image.width} / ${image.height}))`,
+                        width: `min(100%, calc(65vh * ${image.width} / ${image.height}))`,
                         aspectRatio: `${image.width} / ${image.height}`,
                       }}
                     />
