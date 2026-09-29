@@ -72,7 +72,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       }}
       className="size-full max-h-none max-w-none bg-transparent p-4 text-ink opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 ease-out backdrop:bg-ink/40 open:opacity-100 motion-reduce:transition-none starting:open:opacity-0 md:p-10"
     >
-      <div className="mx-auto h-full max-w-5xl overflow-y-auto overscroll-contain border border-line bg-paper">
+      <div className="mx-auto h-full max-w-5xl scrollbar-quiet overflow-y-auto overscroll-contain border border-line bg-paper">
         <div className="sticky top-0 z-10 border-b border-line bg-paper">
           <div className="flex h-14 items-center justify-between px-5 md:px-10">
             <p
