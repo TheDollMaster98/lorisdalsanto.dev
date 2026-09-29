@@ -27,6 +27,14 @@ export const en: Content = {
   },
   work: {
     label: "Work",
+    gallery: {
+      open: "View images",
+      close: "Close",
+      title: "Projects",
+      visit: "Visit the site",
+      next: "Next project",
+      previous: "Previous project",
+    },
     projects: [
       {
         title: "AI grants portal",
@@ -76,7 +84,40 @@ export const en: Content = {
           "React 18",
           "Angular 20",
         ],
-        href: "https://findora.it",
+        slug: "findora",
+        images: [
+          {
+            file: "01.webp",
+            alt: "Hero section of the Findora landing page",
+            caption:
+              "The hero section of the React landing page, with the three steps to get started.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "02.webp",
+            alt: "How it works section with three screens of the mobile app",
+            caption:
+              "How Findora works, with screens of the Flutter mobile app and the paths for clients and sellers.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "03.webp",
+            alt: "Enterprise suite section with the app search screen",
+            caption:
+              "The section for companies, with the search screen of the app.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "04.webp",
+            alt: "Ambassador and FAQ sections of the landing page",
+            caption: "The Ambassador programme and the FAQ.",
+            width: 1875,
+            height: 925,
+          },
+        ],
       },
       {
         title: "Fam Fanta",
@@ -84,7 +125,7 @@ export const en: Content = {
         context: "Personal project",
         role: "Design & development",
         summary:
-          "Fantasy league for competitive League of Legends, with private leagues, auctions, roles and scores imported from Leaguepedia.",
+          "Fantasy league for competitive League of Legends, built to play with my friends: it is live, but made for our group. Private leagues, auctions, roles and scores imported from Leaguepedia.",
         stack: [
           "Next.js 16",
           "TypeScript",
@@ -93,6 +134,25 @@ export const en: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
+        slug: "fam-fanta",
+        images: [
+          {
+            file: "01.webp",
+            alt: "List of the user’s leagues in Fam Fanta",
+            caption:
+              "The user’s leagues, with auction mode, budget and creator role.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "02.webp",
+            alt: "Live auction in progress on a player",
+            caption:
+              "A live auction in progress, with countdown, quick bids, everyone’s credits and bid history.",
+            width: 1865,
+            height: 1126,
+          },
+        ],
       },
     ],
   },

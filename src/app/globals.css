@@ -63,3 +63,14 @@ a:focus-visible {
   outline: 1px solid var(--ink);
   outline-offset: 4px;
 }
+
+/* Barra di scorrimento sottile nei colori del sito (usata nel popup della galleria).
+   Chrome, Edge e Firefox; Safari usa comunque le barre di sistema a scomparsa. */
+@utility scrollbar-quiet {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+
+  &:hover {
+    scrollbar-color: var(--ink-muted) transparent;
+  }
+}

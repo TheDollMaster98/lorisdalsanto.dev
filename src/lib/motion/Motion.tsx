@@ -8,7 +8,8 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
-const EASE = "expo.out";
+// Curva unica per tutte le animazioni del sito.
+export const EASE = "expo.out";
 
 // Animazioni della pagina, guidate da attributi data-* nel markup:
 // - data-hero-title: il titolo entra riga per riga da una maschera
