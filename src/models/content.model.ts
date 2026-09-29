@@ -64,6 +64,7 @@ export type Content = {
   };
   footer: {
     backToTop: string;
+    localTime: string;
     privacy: string;
   };
   privacy: {
