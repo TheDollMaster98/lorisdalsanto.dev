@@ -1,5 +1,5 @@
 export type ProjectImage = {
-  // Nome del file dentro public/projects/<slug>/, es. "01.jpg".
+  // Nome del file dentro public/assets/img/projects/<slug>/, es. "01.jpg".
   file: string;
   alt: string;
   caption?: string;

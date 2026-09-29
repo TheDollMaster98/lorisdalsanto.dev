@@ -36,7 +36,7 @@ export function pageMetadata(
         .map((code) => ogLocale[code]),
       images: [
         {
-          url: absoluteUrl("og.png"),
+          url: absoluteUrl("assets/img/og.png"),
           width: 1200,
           height: 630,
           alt: "Loris Dal Santo, Full-Stack JavaScript & Flutter Mobile Developer",
@@ -47,7 +47,7 @@ export function pageMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: [absoluteUrl("og.png")],
+      images: [absoluteUrl("assets/img/og.png")],
     },
   };
 }

@@ -35,7 +35,7 @@ export default async function LandingPage({
             year: project.year,
             href: project.href,
             images: project.images.map((image) => ({
-              src: asset(`projects/${project.slug}/${image.file}`),
+              src: asset(`assets/img/projects/${project.slug}/${image.file}`),
               alt: image.alt,
               caption: image.caption,
               width: image.width ?? 1600,
