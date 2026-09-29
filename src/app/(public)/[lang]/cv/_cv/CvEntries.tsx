@@ -30,9 +30,13 @@ export function CvEntries({ entries }: { entries: CvEntry[] }) {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="border-b border-line pb-0.5 transition-colors hover:border-ink"
+                    className="border-b border-line pb-0.5 transition-colors hover:border-ink print:border-0"
                   >
-                    {link.label} ↗
+                    {link.label}
+                    <span aria-hidden className="print:hidden">
+                      {" "}
+                      ↗
+                    </span>
                   </a>
                 </li>
               ))}
