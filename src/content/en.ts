@@ -18,6 +18,7 @@ export const en: Content = {
     availability: "Open to new opportunities",
     statement:
       "I design and build web and mobile interfaces for large companies and small businesses, from the architecture to going live.",
+    cta: { contact: "Get in touch", cv: "View CV" },
   },
   intro: {
     label: "Introduction",
@@ -166,5 +167,44 @@ export const en: Content = {
   },
   footer: {
     backToTop: "Back to top ↑",
+    privacy: "Privacy",
+  },
+  privacy: {
+    metaTitle: "Privacy | Loris Dal Santo",
+    metaDescription:
+      "Privacy notice for Loris Dal Santo's website: no cookies, no tracking.",
+    title: "Privacy",
+    updated: "Last updated: September 2026",
+    sections: [
+      {
+        heading: "Who runs this site",
+        body: "This is the personal portfolio of Loris Dal Santo. For any question about your data you can write to {email}.",
+      },
+      {
+        heading: "What the site collects",
+        body: "Nothing. The site uses no cookies, has no contact forms and no analytics or tracking tools. Fonts are served by the site itself, with no requests to Google.",
+      },
+      {
+        heading: "Hosting",
+        body: "The site is hosted on GitHub Pages. Like any web server, GitHub may log visitors’ IP addresses for security and to run the service, under its own privacy statement.",
+        link: {
+          label: "GitHub General Privacy Statement",
+          href: "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+        },
+      },
+      {
+        heading: "If you email me",
+        body: "I use your email address and the content of your message only to reply. I do not share them with anyone.",
+      },
+      {
+        heading: "External links",
+        body: "Links to LinkedIn, GitHub, Google Drive and the projects lead to sites with their own privacy notices.",
+      },
+      {
+        heading: "Your rights",
+        body: "You can ask at any time to see, correct or delete the data you sent me, by writing to {email}.",
+      },
+    ],
+    back: "Back to the site",
   },
 };

@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { IBM_Plex_Mono, Schibsted_Grotesk } from "next/font/google";
 import { getContent, isLocale, locales } from "@/lib/i18n";
+import { mono, sans } from "@/lib/site/fonts";
+import { pageMetadata } from "@/lib/site/metadata";
 import "../../globals.css";
-
-const sans = Schibsted_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-});
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -30,15 +20,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const { meta } = getContent(lang);
-
-  return {
-    metadataBase: new URL("https://lorisdalsanto.dev"),
-    title: meta.title,
-    description: meta.description,
-    alternates: {
-      languages: Object.fromEntries(locales.map((code) => [code, `/${code}/`])),
-    },
-  };
+  return pageMetadata(lang, meta);
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {

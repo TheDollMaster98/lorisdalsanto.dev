@@ -6,27 +6,30 @@ import type { Content } from "@/models/content.model";
 type HeaderProps = {
   locale: Locale;
   nav: Content["nav"];
+  // Pagina corrente dopo la lingua, es. "privacy/": il cambio lingua resta sulla stessa pagina.
+  path?: string;
 };
 
-export function Header({ locale, nav }: HeaderProps) {
+export function Header({ locale, nav, path = "" }: HeaderProps) {
+  const home = `/${locale}/`;
   const items = [
-    { label: nav.work, href: "#work" },
+    { label: nav.work, href: `${home}#work` },
     // Su mobile non c'è spazio per quattro voci: queste si raggiungono scorrendo.
-    { label: nav.about, href: "#about", secondary: true },
-    { label: nav.stack, href: "#stack", secondary: true },
-    { label: nav.contact, href: "#contact" },
+    { label: nav.about, href: `${home}#about`, secondary: true },
+    { label: nav.stack, href: `${home}#stack`, secondary: true },
+    { label: nav.contact, href: `${home}#contact` },
   ];
 
   return (
     <header className="sticky top-0 z-10 border-b border-line bg-paper/90 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 md:px-8">
-        <a href="#top" className="truncate text-sm font-medium">
+        <Link href={home} className="truncate text-sm font-medium">
           {profile.name}
-        </a>
+        </Link>
         <div className="flex items-center gap-4 text-sm text-ink-muted md:gap-8">
           <nav className="flex gap-4 md:gap-8">
             {items.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className={`transition-colors hover:text-ink ${
@@ -34,14 +37,14 @@ export function Header({ locale, nav }: HeaderProps) {
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="flex gap-3 font-mono text-xs uppercase">
             {locales.map((code) => (
               <Link
                 key={code}
-                href={`/${code}/`}
+                href={`/${code}/${path}`}
                 hrefLang={code}
                 aria-current={code === locale ? "page" : undefined}
                 className={
