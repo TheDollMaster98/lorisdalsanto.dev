@@ -174,7 +174,7 @@ export const en: Content = {
       {
         period: "2025 - now",
         company: "EY AI & Data",
-        role: "Senior Consultant (Senior I), Front-End Developer",
+        role: "Senior Consultant, Front-End Developer",
         summary:
           "Sole front-end owner of two internal enterprise products, end to end: architecture, development, documentation and demos to the Partners.",
       },
