@@ -43,15 +43,21 @@ src/
         layout.tsx          <html>, font, metadati
         page.tsx            la landing
         _landing-sections/  sezioni della landing (Hero, Work, About, Contact, Section)
+        privacy/page.tsx    informativa privacy
+    global-not-found.tsx    pagina 404 unica e bilingue
+    robots.ts, sitemap.ts   robots.txt e sitemap.xml
+    icon.png, apple-icon.png  favicon e icona per iOS
     globals.css
   components/layout/        componenti condivisi tra pagine (Header, Footer)
   content/                  testi per lingua (it.ts, en.ts) e dati comuni (profile.ts)
   lib/
     i18n/                   lingue supportate (locales.ts) e accesso ai testi (index.ts)
     motion/                 animazioni GSAP (Motion.tsx)
+    site/                   indirizzo del sito, metadati (Open Graph, canonical, hreflang), font
   models/                   tipi dei dati, un file *.model.ts per tipo
   proxy.ts                  redirect alla lingua (solo con hosting con server)
 public/index.html           "/" → lingua del browser sull'export statico
+public/og.png               immagine di anteprima per i social (1200x630)
 ```
 
 - Ogni pagina è un `page.tsx` con accanto i suoi componenti in una cartella `_nome/` (es. `_landing-sections/`): il trattino basso dice a Next che non è una route.
@@ -66,8 +72,12 @@ Ogni push su `main` pubblica il sito su GitHub Pages (`.github/workflows/deploy.
 Prerequisito, una volta sola: Settings → Pages → Source: **GitHub Actions**.
 
 Senza dominio il sito è su `https://thedollmaster98.github.io/lorisdalsanto.dev/`: il workflow
-passa la sottocartella a Next tramite `PAGES_BASE_PATH`. Con un dominio personalizzato il percorso
-diventa vuoto da solo.
+passa la sottocartella a Next tramite `PAGES_BASE_PATH` e l'indirizzo completo tramite `SITE_URL`
+(usato per canonical, hreflang, Open Graph, sitemap e robots). Con un dominio personalizzato
+entrambi si aggiornano da soli.
+
+`robots.txt` viene letto dai motori di ricerca solo alla radice del dominio: in sottocartella è
+presente ma inefficace, diventa utile con il dominio proprio.
 
 ## Design
 

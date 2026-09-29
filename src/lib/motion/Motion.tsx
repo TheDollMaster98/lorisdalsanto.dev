@@ -13,6 +13,7 @@ const EASE = "expo.out";
 // Animazioni della pagina, guidate da attributi data-* nel markup:
 // - data-hero-title: il titolo entra riga per riga da una maschera
 // - data-hero-meta: la riga sopra il titolo compare dopo il titolo
+// - data-hero-cta: i link sotto il titolo compaiono per ultimi
 // - data-line: le linee sottili si disegnano da sinistra entrando nel viewport
 // - data-reveal: il contenuto sale di poco e compare entrando nel viewport
 // Con "riduci animazioni" attivo nel sistema, tutto resta statico.
@@ -24,7 +25,8 @@ export function Motion({ children }: { children: React.ReactNode }) {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        const title = scope.current?.querySelector<HTMLElement>("[data-hero-title]");
+        const title =
+          scope.current?.querySelector<HTMLElement>("[data-hero-title]");
         const meta = gsap.utils.toArray<HTMLElement>("[data-hero-meta] > *");
 
         if (title) {
@@ -50,6 +52,15 @@ export function Motion({ children }: { children: React.ReactNode }) {
           duration: 0.8,
           stagger: 0.08,
           delay: 0.5,
+          ease: EASE,
+        });
+
+        gsap.from(gsap.utils.toArray<HTMLElement>("[data-hero-cta] > *"), {
+          autoAlpha: 0,
+          y: 8,
+          duration: 0.8,
+          stagger: 0.08,
+          delay: 0.9,
           ease: EASE,
         });
 

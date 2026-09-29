@@ -19,6 +19,10 @@ export type Content = {
     location: string;
     availability: string;
     statement: string;
+    cta: {
+      contact: string;
+      cv: string;
+    };
   };
   intro: {
     label: string;
@@ -47,5 +51,19 @@ export type Content = {
   };
   footer: {
     backToTop: string;
+    privacy: string;
+  };
+  privacy: {
+    metaTitle: string;
+    metaDescription: string;
+    title: string;
+    updated: string;
+    // "{email}" nel testo diventa un link all'indirizzo email.
+    sections: {
+      heading: string;
+      body: string;
+      link?: { label: string; href: string };
+    }[];
+    back: string;
   };
 };

@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   // Genera it/index.html ed en/index.html: funziona su qualsiasi hosting statico.
   trailingSlash: true,
   images: { unoptimized: true },
+  // Pagina 404 unica (src/app/global-not-found.tsx): il sito non ha un layout radice comune.
+  experimental: { globalNotFound: true },
 };
 
 export default nextConfig;
