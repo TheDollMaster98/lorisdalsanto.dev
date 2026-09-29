@@ -68,6 +68,16 @@ export const it: Content = {
         summary:
           "Piattaforma per la gestione end-to-end del rischio di cambio delle aziende, premiata agli Euromoney Awards 2023. Componenti front-end, fix UX/UI e test unitari in un team distribuito tra Italia, Germania e Romania.",
         stack: ["Angular", "RxJS", "Bootstrap 5", "Karma", "Jasmine"],
+        links: [
+          {
+            label: "LinkedIn, maggio 2023",
+            href: "https://www.linkedin.com/feed/update/urn:li:activity:7059081868662423553/",
+          },
+          {
+            label: "LinkedIn, ottobre 2023",
+            href: "https://www.linkedin.com/feed/update/urn:li:activity:7115278129404743680/",
+          },
+        ],
       },
       {
         title: "Findora",
