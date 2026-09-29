@@ -17,7 +17,7 @@ export const it: Content = {
     location: "Milano",
     availability: "Aperto a nuove opportunità",
     statement:
-      "Progetto e sviluppo interfacce web e mobile per grandi aziende e piccole imprese, dall’architettura alla messa online.",
+      "Progetto e sviluppo applicazioni web e mobile per grandi aziende e piccole imprese, dall’architettura alla messa online.",
     cta: { contact: "Scrivimi", cv: "Leggi il CV" },
   },
   intro: {
