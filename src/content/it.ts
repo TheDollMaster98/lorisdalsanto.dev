@@ -27,6 +27,14 @@ export const it: Content = {
   },
   work: {
     label: "Lavori",
+    gallery: {
+      open: "Vedi le immagini",
+      close: "Chiudi",
+      title: "Progetti",
+      visit: "Apri il sito",
+      next: "Progetto successivo",
+      previous: "Progetto precedente",
+    },
     projects: [
       {
         title: "Portale AI per i bandi",
@@ -76,7 +84,40 @@ export const it: Content = {
           "React 18",
           "Angular 20",
         ],
-        href: "https://findora.it",
+        slug: "findora",
+        images: [
+          {
+            file: "01.webp",
+            alt: "Sezione iniziale della landing page di Findora",
+            caption:
+              "La sezione iniziale della landing page in React, con i tre passi per iniziare.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "02.webp",
+            alt: "Sezione Come funziona con tre schermate dell’app mobile",
+            caption:
+              "Come funziona Findora, con le schermate dell’app mobile in Flutter e i percorsi per clienti e venditori.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "03.webp",
+            alt: "Sezione Suite Enterprise con la schermata di ricerca dell’app",
+            caption:
+              "La sezione dedicata alle aziende, con la schermata di ricerca dell’app.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "04.webp",
+            alt: "Sezioni Ambassador e domande frequenti della landing page",
+            caption: "Il programma Ambassador e le domande frequenti.",
+            width: 1875,
+            height: 925,
+          },
+        ],
       },
       {
         title: "Fam Fanta",
@@ -84,7 +125,7 @@ export const it: Content = {
         context: "Progetto personale",
         role: "Design & sviluppo",
         summary:
-          "Fantasy league per il competitivo di League of Legends, con leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
+          "Fantasy league per il competitivo di League of Legends, nata per giocare con i miei amici: è online, ma è pensata per il nostro gruppo. Leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
         stack: [
           "Next.js 16",
           "TypeScript",
@@ -93,6 +134,25 @@ export const it: Content = {
           "Leaguepedia API",
         ],
         href: "https://fam-fanta-app-be--fam-fanta-app.europe-west4.hosted.app/",
+        slug: "fam-fanta",
+        images: [
+          {
+            file: "01.webp",
+            alt: "Elenco delle leghe dell’utente in Fam Fanta",
+            caption:
+              "Le leghe dell’utente, con modalità d’asta, budget e ruolo di creatore.",
+            width: 1875,
+            height: 925,
+          },
+          {
+            file: "02.webp",
+            alt: "Asta live in corso su un giocatore",
+            caption:
+              "Un’asta live in corso, con countdown, offerte rapide, crediti dei partecipanti e storico delle offerte.",
+            width: 1865,
+            height: 1126,
+          },
+        ],
       },
     ],
   },

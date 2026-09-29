@@ -33,6 +33,14 @@ export type Content = {
   work: {
     label: string;
     projects: Project[];
+    gallery: {
+      open: string;
+      close: string;
+      title: string;
+      visit: string;
+      next: string;
+      previous: string;
+    };
   };
   about: {
     label: string;

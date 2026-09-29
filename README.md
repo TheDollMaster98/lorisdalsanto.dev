@@ -57,7 +57,7 @@ src/
   models/                   tipi dei dati, un file *.model.ts per tipo
   proxy.ts                  redirect alla lingua (solo con hosting con server)
 public/index.html           "/" → lingua del browser sull'export statico
-public/og.png               immagine di anteprima per i social (1200x630)
+public/assets/img/          immagini: og.png (anteprima social, 1200x630) e projects/<slug>/ (galleria)
 ```
 
 - Ogni pagina è un `page.tsx` con accanto i suoi componenti in una cartella `_nome/` (es. `_landing-sections/`): il trattino basso dice a Next che non è una route.
