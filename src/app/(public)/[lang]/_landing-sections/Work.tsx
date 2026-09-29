@@ -40,6 +40,22 @@ export function Work({ work }: { work: Content["work"] }) {
                   {project.role}
                   <span className="mt-1 block">{project.stack.join(", ")}</span>
                 </p>
+                {project.links && (
+                  <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                    {project.links.map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="border-b border-line pb-0.5 transition-colors hover:border-ink"
+                        >
+                          {link.label} ↗
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           );
