@@ -196,7 +196,7 @@ export const en: Content = {
         company: "Be | Shaping the Future",
         role: "Junior Front-End Developer, UniCredit client",
         summary:
-          "Long-running Angular (13–19) banking projects: UC Hedge, a mobile app in Angular, the internal portal that gathers the team’s tools and features for the internal ticket tracking app. Test coverage +15%, +10% and +5%, CI/CD releases on Jenkins, team across IT/DE/RO.",
+          "Long-running Angular (13–19) banking projects: UC Hedge, screens inside the UniCredit mobile app (WebView), the internal tools portal and features for the internal ticketing app. Test coverage +15%, +10% and +5%, CI/CD releases on Jenkins, team across IT/DE/RO.",
       },
     ],
     educationLabel: "Education",
