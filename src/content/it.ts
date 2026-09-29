@@ -125,7 +125,7 @@ export const it: Content = {
         context: "Progetto personale",
         role: "Design & sviluppo",
         summary:
-          "Fantasy league per il competitivo di League of Legends, con leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
+          "Fantasy league per il competitivo di League of Legends, nata per giocare con i miei amici: è online, ma è pensata per il nostro gruppo. Leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
         stack: [
           "Next.js 16",
           "TypeScript",
