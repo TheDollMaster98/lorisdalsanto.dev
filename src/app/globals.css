@@ -27,6 +27,15 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* Tailwind 4 toglie la manina ai pulsanti: la rimettiamo, così tutto ciò che è cliccabile
+   la mostra, come i link. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
 ::selection {
   background: var(--ink);
   color: var(--paper);

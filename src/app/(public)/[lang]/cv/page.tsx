@@ -32,12 +32,13 @@ export default async function CvPage({ params }: PageProps) {
   const { nav, footer } = getContent(lang);
   const cv = getCv(lang);
   const contacts = [
-    { label: profile.email, href: `mailto:${profile.email}` },
+    { label: profile.email, href: `mailto:${profile.email}`, external: false },
     ...profile.links.map((link) => ({
       label: bare(link.href),
       href: link.href,
+      external: true,
     })),
-    { label: bare(siteUrl), href: `${siteUrl}/${lang}/` },
+    { label: bare(siteUrl), href: `${siteUrl}/${lang}/`, external: true },
   ];
 
   return (
@@ -66,9 +67,17 @@ export default async function CvPage({ params }: PageProps) {
               <li key={contact.href}>
                 <a
                   href={contact.href}
-                  className="transition-colors hover:text-ink"
+                  target={contact.external ? "_blank" : undefined}
+                  rel={contact.external ? "noreferrer" : undefined}
+                  className="border-b border-line pb-0.5 transition-colors hover:border-ink hover:text-ink print:border-0"
                 >
                   {contact.label}
+                  {contact.external && (
+                    <span aria-hidden className="print:hidden">
+                      {" "}
+                      ↗
+                    </span>
+                  )}
                 </a>
               </li>
             ))}
