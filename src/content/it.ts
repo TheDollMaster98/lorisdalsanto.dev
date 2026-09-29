@@ -174,7 +174,7 @@ export const it: Content = {
       {
         period: "2025 - oggi",
         company: "EY AI & Data",
-        role: "Associate (Senior I), Front-End Developer",
+        role: "Senior Consultant (Senior I), Front-End Developer",
         summary:
           "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner.",
       },
@@ -220,7 +220,7 @@ export const it: Content = {
       },
       { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod" },
       {
-        area: "Back-end",
+        area: "Back-end (supporto)",
         items:
           "NestJS, Node.js ed Express, Firebase (Auth, Firestore, Hosting), MongoDB e database NoSQL",
       },

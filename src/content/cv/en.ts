@@ -26,7 +26,7 @@ export const cvEn: Cv = {
   experience: [
     {
       period: "07/2025 - now",
-      title: "Associate (Senior I), Front-End Developer",
+      title: "Senior Consultant (Senior I), Front-End Developer",
       org: "EY AI & Data, Milan",
       points: [
         "Front-end owner of an internal AI portal: architecture, setup and UI development in Next.js, TypeScript and Tailwind CSS, with reusable components built on shadcn/ui.",
@@ -148,7 +148,7 @@ export const cvEn: Cv = {
       items: "Tailwind CSS, Material Design, Bootstrap 5, shadcn/ui, WCAG",
     },
     {
-      area: "Back end",
+      area: "Back end (support)",
       items: "NestJS, Node.js and Express, Firebase, MongoDB",
     },
     {
