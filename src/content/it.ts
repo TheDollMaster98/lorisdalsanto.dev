@@ -32,6 +32,8 @@ export const it: Content = {
       close: "Chiudi",
       title: "Progetti",
       visit: "Apri il sito",
+      next: "Progetto successivo",
+      previous: "Progetto precedente",
     },
     projects: [
       {

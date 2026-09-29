@@ -38,6 +38,8 @@ export type Content = {
       close: string;
       title: string;
       visit: string;
+      next: string;
+      previous: string;
     };
   };
   about: {
