@@ -11,7 +11,7 @@ type FooterProps = {
 
 export function Footer({ locale, footer }: FooterProps) {
   return (
-    <footer className="border-t border-line">
+    <footer className="border-t border-line print:hidden">
       <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-x-6 gap-y-2 px-4 py-6 font-mono text-xs text-ink-muted md:px-8">
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <span>
