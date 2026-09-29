@@ -1,7 +1,10 @@
 "use client";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { EASE } from "@/lib/motion/Motion";
 import type { Content } from "@/models/content.model";
 
 export type GalleryProject = {
@@ -28,12 +31,16 @@ type ProjectGalleryProps = {
 // cliccato e scorrendo si passa al successivo. Si chiude con il pulsante, con Esc
 // o cliccando fuori. I pulsanti che lo aprono sono in Work
 // (data-gallery-open="<slug>"), così le righe restano Server Component.
+gsap.registerPlugin(ScrollTrigger);
+
 export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = dialog.current;
     if (!el) return;
+    let pages: gsap.Context | undefined;
 
     function onClick(event: MouseEvent) {
       const trigger = (event.target as Element).closest<HTMLElement>(
@@ -45,10 +52,12 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       document
         .getElementById(`gallery-${trigger.dataset.galleryOpen}`)
         ?.scrollIntoView({ block: "start" });
+      pages = turnPages(panel.current);
     }
 
     function onClose() {
       document.documentElement.style.overflow = "";
+      pages?.revert();
     }
 
     document.addEventListener("click", onClick);
@@ -72,7 +81,10 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       }}
       className="size-full max-h-none max-w-none bg-transparent p-4 text-ink opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 ease-out backdrop:bg-ink/40 open:opacity-100 motion-reduce:transition-none starting:open:opacity-0 md:p-10"
     >
-      <div className="mx-auto h-full max-w-5xl scrollbar-quiet overflow-y-auto overscroll-contain border border-line bg-paper">
+      <div
+        ref={panel}
+        className="mx-auto h-full max-w-6xl scrollbar-quiet overflow-x-hidden overflow-y-auto overscroll-contain border border-line bg-paper"
+      >
         <div className="sticky top-0 z-10 border-b border-line bg-paper">
           <div className="flex h-14 items-center justify-between px-5 md:px-10">
             <p
@@ -97,9 +109,12 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
             key={project.slug}
             id={`gallery-${project.slug}`}
             aria-labelledby={`gallery-${project.slug}-title`}
-            className={`scroll-mt-14 ${i > 0 ? "border-t border-line" : ""}`}
+            className={`scroll-mt-14 ${i > 0 ? "overflow-hidden border-t border-line perspective-distant perspective-origin-top" : ""}`}
           >
-            <div className="px-5 py-10 md:px-10 md:py-14">
+            <div
+              data-page={i > 0 || undefined}
+              className="px-5 py-10 backface-hidden md:px-10 md:py-14"
+            >
               <header className="mb-8 flex flex-wrap items-end justify-between gap-x-6 gap-y-3 md:mb-10">
                 <div>
                   <h2
@@ -159,4 +174,35 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       </div>
     </dialog>
   );
+}
+
+// Passata la riga che separa due progetti, il progetto successivo entra girando
+// come la pagina di un libro, con il dorso a sinistra. Tornando su si richiude.
+// Gli scroll trigger si creano a ogni apertura, perché con il <dialog> chiuso
+// il pannello non ha dimensioni da misurare.
+function turnPages(scroller: HTMLElement | null) {
+  if (
+    !scroller ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return;
+  }
+
+  return gsap.context(() => {
+    gsap.utils.toArray<HTMLElement>("[data-page]").forEach((page) => {
+      gsap.from(page, {
+        rotationY: -70,
+        autoAlpha: 0,
+        transformOrigin: "left center",
+        duration: 1,
+        ease: EASE,
+        scrollTrigger: {
+          trigger: page.parentElement,
+          scroller,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+  }, scroller);
 }
