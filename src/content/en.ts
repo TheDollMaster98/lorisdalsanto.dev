@@ -68,6 +68,16 @@ export const en: Content = {
         summary:
           "End-to-end platform for managing corporate FX risk, recognised at the Euromoney Awards 2023. Front-end components, UX/UI fixes and unit tests in a team spread across Italy, Germany and Romania.",
         stack: ["Angular", "RxJS", "Bootstrap 5", "Karma", "Jasmine"],
+        links: [
+          {
+            label: "LinkedIn, May 2023",
+            href: "https://www.linkedin.com/feed/update/urn:li:activity:7059081868662423553/",
+          },
+          {
+            label: "LinkedIn, October 2023",
+            href: "https://www.linkedin.com/feed/update/urn:li:activity:7115278129404743680/",
+          },
+        ],
       },
       {
         title: "Findora",
