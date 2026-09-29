@@ -1,8 +1,14 @@
 import { Fragment } from "react";
 import { profile } from "@/content/profile";
+import { mailtoHref } from "@/lib/site/mailto";
 import type { Content } from "@/models/content.model";
 
-export function Hero({ hero }: { hero: Content["hero"] }) {
+type HeroProps = {
+  hero: Content["hero"];
+  mail: Content["contact"]["mail"];
+};
+
+export function Hero({ hero, mail }: HeroProps) {
   const cv = profile.links.find((link) => link.label === "CV");
 
   return (
@@ -43,7 +49,7 @@ export function Hero({ hero }: { hero: Content["hero"] }) {
         className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 md:mt-16 md:text-lg"
       >
         <a
-          href={`mailto:${profile.email}`}
+          href={mailtoHref(mail)}
           className="border-b border-ink pb-0.5 font-medium transition-colors hover:border-ink-muted hover:text-ink-muted"
         >
           {hero.cta.contact} →
