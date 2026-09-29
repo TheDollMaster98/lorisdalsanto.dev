@@ -55,7 +55,7 @@ export const it: Content = {
         title: "Piattaforma real estate",
         year: "2025",
         context: "EY, settore immobiliare",
-        role: "Unico sviluppatore front-end",
+        role: "Front-end owner",
         summary:
           "Gestisce i progetti immobiliari per circa 15 utenti, con tracking su dashboard di KPI e un editor rich text che genera documenti .docx strutturati. È nata come fork dell’intranet interna, riusando 10+ componenti, e ha sostituito un controllo fatto a mano.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],

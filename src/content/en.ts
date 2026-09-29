@@ -55,7 +55,7 @@ export const en: Content = {
         title: "Real estate platform",
         year: "2025",
         context: "EY, real estate",
-        role: "Sole front-end developer",
+        role: "Front-end owner",
         summary:
           "It manages real estate projects for about 15 users, with tracking on KPI dashboards and a rich text editor that generates structured .docx documents. It started as a fork of the company intranet, reusing 10+ components, and replaced a manual review.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
