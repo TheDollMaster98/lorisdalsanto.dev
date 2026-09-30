@@ -20,7 +20,7 @@ export type Cv = {
     experience: string;
     projects: string;
     education: string;
-    courses: string;
+    traits: string;
     skills: string;
     languages: string;
     print: string;
@@ -33,7 +33,8 @@ export type Cv = {
   experience: CvEntry[];
   projects: CvEntry[];
   education: CvEntry[];
-  courses: CvEntry[];
+  // Caratteristiche personali (personalità, interessi).
+  traits: { label: string; text: string }[];
   skills: { area: string; items: string }[];
   languages: { name: string; level: string }[];
   consent: string;

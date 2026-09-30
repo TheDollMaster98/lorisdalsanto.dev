@@ -95,8 +95,11 @@ export default async function CvPage({ params }: PageProps) {
         <CvSection label={cv.labels.projects}>
           <CvEntries entries={cv.projects} />
         </CvSection>
+        <CvSection label={cv.labels.education}>
+          <CvEntries entries={cv.education} />
+        </CvSection>
         <CvSection label={cv.labels.skills}>
-          <dl className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[8rem_1fr]">
+          <dl className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[11rem_1fr]">
             {cv.skills.map((skill) => (
               <div key={skill.area} className="contents">
                 <dt className="font-mono text-xs leading-6 text-ink-muted">
@@ -107,12 +110,6 @@ export default async function CvPage({ params }: PageProps) {
             ))}
           </dl>
         </CvSection>
-        <CvSection label={cv.labels.education}>
-          <CvEntries entries={cv.education} />
-        </CvSection>
-        <CvSection label={cv.labels.courses}>
-          <CvEntries entries={cv.courses} />
-        </CvSection>
         <CvSection label={cv.labels.languages}>
           <ul className="flex flex-col gap-1 text-sm">
             {cv.languages.map((language) => (
@@ -122,6 +119,16 @@ export default async function CvPage({ params }: PageProps) {
               </li>
             ))}
           </ul>
+        </CvSection>
+        <CvSection label={cv.labels.traits}>
+          <dl className="flex flex-col gap-2 text-sm">
+            {cv.traits.map((trait) => (
+              <div key={trait.label}>
+                <dt className="inline font-medium">{trait.label}: </dt>
+                <dd className="inline text-ink-muted">{trait.text}</dd>
+              </div>
+            ))}
+          </dl>
         </CvSection>
 
         <p className="border-t border-line pt-6 text-xs leading-relaxed text-ink-muted print:pt-4">
