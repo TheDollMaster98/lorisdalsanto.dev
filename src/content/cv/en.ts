@@ -1,98 +1,83 @@
 import type { Cv } from "@/models/cv.model";
 
-// CV in English: page /en/cv/. Edit here and the page updates itself.
+// CV in English: page /en/cv/. Faithful translation of the Italian CV.
+// Edit here and the page updates itself.
 export const cvEn: Cv = {
   meta: {
     title: "CV | Loris Dal Santo",
     description:
-      "CV of Loris Dal Santo, full-stack JavaScript and Flutter mobile developer based in Milan.",
+      "CV of Loris Dal Santo, Front-End Developer and Flutter Developer based in Milan.",
   },
   labels: {
     profile: "Profile",
-    experience: "Experience",
-    projects: "Personal projects",
-    education: "Education",
-    courses: "Courses and certifications",
-    skills: "Skills",
+    experience: "Work experience",
+    projects: "Projects and collaborations",
+    education: "Education and training",
+    skills: "IT skills",
     languages: "Languages",
+    traits: "About me",
     print: "Print or save as PDF",
     updated: "Updated",
   },
-  headline: "Full-Stack JavaScript & Flutter Mobile Developer",
-  location: "Milan, Italy",
+  headline: "Front-End Developer & Flutter Developer",
+  location: "Milan (IT)",
   updated: "September 2026",
   profile:
-    "Full-stack JavaScript and Flutter mobile developer with four years of experience on complex enterprise projects (banking, AI & Data) and in startups. At EY I own the front-end of strategic internal portals end to end, from architecture to demos. I work with Angular, Next.js, React and Flutter, with a focus on UX, accessibility (WCAG) and code quality. I use AI tools for code review, bug hunting and refactoring, always under my direct supervision.",
+    "Front-End Developer with 4 years of experience in enterprise contexts (banking and consulting), specialised in Angular, React and Next.js with TypeScript, and Mobile Developer with Flutter and Dart. Technical ownership of Front-End products end to end, from architectural decisions to release, working directly with senior stakeholders (EY Partners, Product Owners and UniCredit multinational teams).",
   experience: [
     {
-      period: "07/2025 - now",
+      period: "07/2025 - present",
       title: "Senior Consultant, Front-End Developer",
-      org: "EY AI & Data, Milan",
+      org: "EY, AI & Data (AI Plus), Milan",
       points: [
-        "Front-end owner of an internal AI portal: architecture, setup and UI development in Next.js, TypeScript and Tailwind CSS, with reusable components built on shadcn/ui.",
-        "Authentication and integration with the NestJS back-end services.",
-        "Front-end technical documentation and demos to business and technical stakeholders.",
-        "Migration of a legacy portal: UI refactoring from Bootstrap 3 to 5, accessibility and responsiveness.",
+        "Sole Front-End owner of two internal enterprise products, with end-to-end ownership: architecture, development, documentation and demos to EY Partners on architectural choices.",
+        "AI portal for analysing regional funding calls (~20 users): built from scratch in Next.js 15 + TypeScript + TailwindCSS. Replaced a manual review process with AI-assisted generation of proposals, solutions and a graph of relations between calls, with a KPI dashboard. Built a library of 20+ reusable components (shadcn/ui). NestJS Back-End integration.",
+        "Real estate project management platform (~15 users): tracking with a KPI dashboard and a rich-text document editor (TinyMCE in Angular 16) that generates structured .docx documents. Built as a fork of the internal intranet, reusing 10+ components of the existing platform, it replaced a manual review process.",
+        "Migration of a legacy portal from Bootstrap 3 to Bootstrap 5 (WCAG accessibility, responsiveness).",
       ],
-      stack:
-        "Next.js, TypeScript, Tailwind CSS, shadcn/ui, NestJS, Bootstrap 5",
-    },
-    {
-      period: "04/2024 - 09/2025",
-      title: "Flutter Mobile & Front-End Developer",
-      org: "Findora, fintech startup",
-      points: [
-        "Cross-platform mobile app in FlutterFlow and Flutter 3.20, with Riverpod state management and Firebase integration (authentication, database).",
-        "Landing page in React 18 and Tailwind CSS, back-office portal in Angular 20 with Material Design.",
-        "Open beta with over 100 testers, whose feedback drove the UI and UX iterations.",
-      ],
-      stack: "Flutter, FlutterFlow, Riverpod, Firebase, React, Angular 20",
     },
     {
       period: "07/2022 - 07/2025",
-      title: "Front-End Developer",
-      org: "Be | Shaping the Future, UniCredit Europe client, Milan",
+      title: "Junior Front-End Developer",
+      org: "Be | Shaping the Future (Digitech Solution), UniCredit Europe client, Milan",
       points: [
-        "Development and maintenance of enterprise portals in Angular 13–19, with modular and accessible UIs (WCAG), across four UniCredit projects.",
-        "UC Hedge, a platform for managing corporate FX risk, cited by Euromoney when naming UniCredit Best FX Bank for Service and Support 2023.",
-        "Angular 19 and Signals screens inside the internal mobile app (WebView), the internal tools portal and features for the internal ticketing app.",
-        "Front-end test coverage up by 15%, 10% and 5% on three projects; CI/CD on Jenkins; Agile team across Italy, Germany and Romania.",
+        "Development, maintenance and refactoring of Angular (13–19) components across several long-term enterprise banking projects. Responsive design system (Bootstrap 5, Tailwind, Material Design) and state management (RxJS, NgRx, Signals).",
+        "Unit and automated tests (Karma, Jasmine): +15%, +5% and +10% coverage on three projects, CI/CD builds and releases on Jenkins, WCAG accessibility.",
+        "Agile/Scrum on Jira in distributed teams (Italy, Germany, Romania).",
       ],
-      stack: "Angular, RxJS, NgRx, Signals, Karma, Jasmine, Jenkins",
-    },
-    {
-      period: "07/2023 - 12/2024",
-      title: "Full-Stack Developer",
-      org: "Yggdrasill Project, startup",
-      points: [
-        "Full-stack blog in Angular 14 with Firebase (authentication, database, hosting) and an Express and MongoDB back end, with a modular architecture.",
-      ],
-      stack: "Angular, Firebase, Express, MongoDB",
     },
   ],
   projects: [
     {
-      period: "2026",
-      title: "Fam Fanta",
-      org: "Personal project",
+      period: "02/04/2024 - 16/09/2025",
+      title: "Flutter Mobile Developer & Front-End Developer",
+      org: "Findora, startup, Milan",
       points: [
-        "Fantasy league for competitive League of Legends, built to play with my friends: private leagues, live auctions, roles and scores imported from Leaguepedia.",
+        "Development of a cross-platform mobile app in FlutterFlow and Flutter 3.20, with Riverpod state management and full Firebase integration (auth, database).",
+        "Landing page in ReactTSX 18 + Tailwind 3, and back-office portal in Angular 20 + Material Design + Tailwind 3.",
       ],
-      stack: "Next.js, TypeScript, Tailwind CSS, Firebase",
     },
     {
       period: "Ongoing",
-      title: "Flutter guide",
+      title: "Flutter 3 Guide, Learning App",
       org: "Personal project",
       points: [
-        "Learning app to explore components, navigation and architecture in Flutter.",
+        "Educational mini-app in Flutter 3 with BLoC, Cubit, go_router and Firebase.",
+        "Personal project to explore Flutter components, navigation and architecture.",
       ],
-      stack: "Flutter 3, BLoC, Cubit, go_router, Firebase",
       links: [
         {
-          label: "github.com/TheDollMaster98/flutter_tutorial",
+          label: "GitHub",
           href: "https://github.com/TheDollMaster98/flutter_tutorial",
         },
+      ],
+    },
+    {
+      period: "08/07/2023 - 01/12/2024",
+      title: "Full-Stack Developer",
+      org: "Yggdrasill Project, startup",
+      points: [
+        "Full-stack blog built in Angular 14 with Firebase (auth, db, hosting) and Express + MongoDB on the back end. Focus on modular architecture, deployed on Firebase.",
       ],
     },
   ],
@@ -101,16 +86,18 @@ export const cvEn: Cv = {
       period: "Ongoing",
       title: "Computer Science for Digital Communication",
       org: "University of Milan",
-      points: ["Focus on social and mobile computing."],
+      points: [
+        "Focus: Social and Mobile Computing.",
+        "Projects: cooking platform (ReactJSX 18, TailwindCSS).",
+      ],
     },
-  ],
-  courses: [
     {
-      period: "11/2023 - 01/2025",
+      period: "November 2023 - January 2025",
       title: "Flutter course",
       org: "Fudeo",
       points: [
-        "Flutter 3.20, Riverpod, BLoC and Clean Architecture. Dart Begin and Flutter Start certifications.",
+        "Flutter 3.20, Riverpod, BloC, Clean Architecture.",
+        "Certifications: Dart Begin, Flutter Start.",
       ],
       links: [
         {
@@ -124,41 +111,43 @@ export const cvEn: Cv = {
       ],
     },
     {
-      period: "03/2022 - 06/2022",
-      title: "Junior Front-End Developer",
-      org: "Academy Software Inside",
+      period: "28/03/2022 - 06/06/2022",
+      title: "Junior Front-End Developer course",
+      org: "Academy Software Inside SRL, hybrid",
       points: [
-        "Intensive course with a final full-stack project in React and Express.",
+        "Intensive course with a final full-stack project in ReactJSX + ExpressJS.",
       ],
-      stack: "React 17, Express, Bootstrap 5, Git",
     },
   ],
   skills: [
+    { area: "Languages", items: "JavaScript, TypeScript, Dart" },
     {
-      area: "Front end",
-      items: "Angular 13–20, Next.js, React, TypeScript",
+      area: "Front-End",
+      items: "Angular (v13-19), React (v17-18), NextJS 15",
     },
+    { area: "Mobile (growing)", items: "Flutter (v3.20), FlutterFlow" },
     {
-      area: "State",
-      items: "RxJS, NgRx, Signals, React Context, Riverpod, BLoC and Cubit",
+      area: "State Management",
+      items: "RxJS, NgRx, Signals, React Context, Riverpod, BloC & Cubit",
     },
-    { area: "Mobile", items: "Flutter 3, FlutterFlow" },
-    {
-      area: "UI",
-      items: "Tailwind CSS, Material Design, Bootstrap 5, shadcn/ui, WCAG",
-    },
-    {
-      area: "Back end (support)",
-      items: "NestJS, Node.js and Express, Firebase, MongoDB",
-    },
-    {
-      area: "Tools",
-      items: "Git, Azure DevOps, Jenkins, Jira, Karma and Jasmine",
-    },
+    { area: "UI", items: "Bootstrap 5, Tailwind (v3-4), Material Design" },
+    { area: "Back-End (basic)", items: "NestJS, Express.js, Firebase" },
+    { area: "Testing & CI", items: "Karma, Jasmine, Vitest, Jenkins" },
+    { area: "Tools", items: "Git, Azure DevOps, Jira" },
   ],
   languages: [
-    { name: "Italian", level: "Native" },
-    { name: "English", level: "B2, written and spoken" },
+    { name: "Italian", level: "native" },
+    { name: "English", level: "B2 (intermediate, written and spoken)" },
+  ],
+  traits: [
+    {
+      label: "Personality",
+      text: "reflective (INTP-T), inclined to logical problem solving and continuous learning.",
+    },
+    {
+      label: "Interests",
+      text: "technology, science, geek culture, gaming, role-playing games (D&D), team games.",
+    },
   ],
   consent:
     "I authorise the processing of my personal data under Italian Legislative Decree 101/2018 and Article 13 of the GDPR (EU Regulation 2016/679) for recruitment purposes.",
