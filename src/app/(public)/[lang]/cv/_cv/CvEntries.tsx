@@ -2,7 +2,7 @@ import type { CvEntry } from "@/models/cv.model";
 
 export function CvEntries({ entries }: { entries: CvEntry[] }) {
   return (
-    <ol className="flex flex-col gap-8 print:gap-4">
+    <ol className="flex flex-col gap-8 print:gap-2.5">
       {entries.map((entry) => (
         <li key={`${entry.org}-${entry.title}`} className="break-inside-avoid">
           <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
@@ -11,7 +11,7 @@ export function CvEntries({ entries }: { entries: CvEntry[] }) {
           </div>
           <p className="text-sm text-ink-muted">{entry.org}</p>
           {entry.points && (
-            <ul className="mt-3 flex list-disc flex-col gap-1 pl-5 text-sm leading-relaxed text-ink-muted marker:text-line print:mt-2">
+            <ul className="mt-3 flex list-disc flex-col gap-1 pl-5 text-sm leading-relaxed text-ink-muted marker:text-line print:mt-1 print:gap-0 print:leading-snug">
               {entry.points.map((point) => (
                 <li key={point}>{point}</li>
               ))}

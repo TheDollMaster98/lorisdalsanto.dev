@@ -88,11 +88,11 @@ a:focus-visible {
 @media print {
   @page {
     size: A4;
-    margin: 14mm 16mm;
+    margin: 12mm 14mm;
   }
 
   html {
     background: #fff;
-    font-size: 10pt;
+    font-size: 9pt;
   }
 }
