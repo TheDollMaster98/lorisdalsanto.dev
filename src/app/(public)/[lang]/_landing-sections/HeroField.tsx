@@ -2,21 +2,25 @@
 
 import { useEffect, useRef } from "react";
 
-// Campo di trattini dietro la hero: una griglia leggermente irregolare di segni
-// corti che oscillano piano, orientati da un flusso che cambia nel tempo. Vicino
-// al cursore i segni si scostano, si scuriscono e ruotano attorno al puntatore.
-// Monocromatico, nei colori delle linee e del testo secondario.
+// Campo dietro la hero, ispirato alla struttura della hero di antigravity.google
+// ma scritto da zero e nei colori del sito:
+// - una griglia irregolare di puntini tenui su tutta la superficie;
+// - dove la griglia attraversa un grande anello, i puntini diventano trattini
+//   orientati verso il centro, più lunghi e più scuri al centro dell'anello;
+// - il centro dell'anello segue il cursore con ritardo, l'anello respira piano.
+// Monocromatico: colore delle linee per i puntini, testo secondario per i trattini.
 //
-// Costo: 2D su <canvas>, poche centinaia di segni disegnati in tre passate.
-// Si ferma quando la hero esce dallo schermo o la scheda è nascosta; con
-// "riduci animazioni" viene disegnato una volta sola, fermo.
+// Costo: 2D su <canvas>, segni disegnati in poche passate raggruppate.
+// Si ferma fuori schermo o con la scheda nascosta; con "riduci animazioni"
+// viene disegnato una volta sola, fermo.
 
-const SPACING = 34; // distanza media tra i segni, in pixel CSS
-const SPACING_TOUCH = 46;
-const RADIUS = 160; // raggio d'influenza del cursore
-const PUSH = 18; // spostamento massimo vicino al cursore
+const SPACING = 26; // distanza media tra i segni, in pixel CSS
+const SPACING_TOUCH = 34;
+const RING = 0.42; // raggio dell'anello, in proporzione al lato corto
+const RING_WIDTH = 0.16; // spessore dell'anello, stessa proporzione
+const FOLLOW = 0.035; // quanto velocemente il centro insegue il cursore
 
-type Mark = { x: number; y: number; phase: number; len: number };
+type Mark = { x: number; y: number; phase: number };
 
 export function HeroField() {
   const canvas = useRef<HTMLCanvasElement>(null);
@@ -39,9 +43,14 @@ export function HeroField() {
     let height = 0;
     let frame = 0;
     let running = false;
-    // Cursore: posizione inseguita con un ritardo, e quanto conta (0 = assente).
-    const target = { x: 0, y: 0, on: 0 };
-    const pointer = { x: 0, y: 0, on: 0 };
+    // Centro dell'anello: dove vuole andare (cursore o centro) e dove si trova.
+    const target = { x: 0, y: 0, pointer: false };
+    const center = { x: 0, y: 0 };
+
+    function home() {
+      // Senza cursore l'anello sta un po' sotto il centro, dietro il titolo.
+      return { x: width * 0.5, y: height * 0.55 };
+    }
 
     function layout() {
       const rect = el!.getBoundingClientRect();
@@ -57,67 +66,77 @@ export function HeroField() {
       for (let y = step / 2; y < height; y += step) {
         for (let x = step / 2; x < width; x += step) {
           marks.push({
-            x: x + (Math.random() - 0.5) * step * 0.6,
-            y: y + (Math.random() - 0.5) * step * 0.6,
+            x: x + (Math.random() - 0.5) * step * 0.7,
+            y: y + (Math.random() - 0.5) * step * 0.7,
             phase: Math.random() * Math.PI * 2,
-            len: 3 + Math.random() * 4,
           });
         }
+      }
+      if (!target.pointer) {
+        const h = home();
+        target.x = center.x = h.x;
+        target.y = center.y = h.y;
       }
     }
 
     function draw(time: number) {
       const t = time / 1000;
-      pointer.x += (target.x - pointer.x) * 0.08;
-      pointer.y += (target.y - pointer.y) * 0.08;
-      pointer.on += (target.on - pointer.on) * 0.05;
+      if (!target.pointer) {
+        // Deriva lenta attorno alla posizione di riposo.
+        const h = home();
+        target.x = h.x + Math.sin(t * 0.21) * width * 0.04;
+        target.y = h.y + Math.cos(t * 0.17) * height * 0.04;
+      }
+      center.x += (target.x - center.x) * FOLLOW;
+      center.y += (target.y - center.y) * FOLLOW;
+
+      const side = Math.min(width, height * 1.6);
+      const radius = side * RING * (1 + Math.sin(t * 0.5) * 0.04);
+      const band = side * RING_WIDTH;
 
       ctx!.clearRect(0, 0, width, height);
-      // Tre gruppi per intensità: un beginPath per gruppo invece che per segno.
-      const groups: Path2D[] = [new Path2D(), new Path2D(), new Path2D()];
+      // Gruppi per intensità: un solo stroke per gruppo invece che per segno.
+      const dots = new Path2D();
+      const strokes = [new Path2D(), new Path2D(), new Path2D()];
 
       for (const m of marks) {
-        // Flusso lento: l'angolo dipende dalla posizione e dal tempo.
-        let angle =
-          Math.sin(m.x * 0.004 + t * 0.25) + Math.cos(m.y * 0.005 - t * 0.2);
-        // Respiro: piccola oscillazione attorno alla posizione di partenza.
-        let x = m.x + Math.sin(t * 0.6 + m.phase) * 1.5;
-        let y = m.y + Math.cos(t * 0.5 + m.phase) * 1.5;
-        let level = 0;
+        const wobble = Math.sin(t * 0.8 + m.phase);
+        const dx = m.x - center.x;
+        const dy = m.y - center.y;
+        const dist = Math.hypot(dx, dy) || 1;
+        // Quanto il segno sta dentro l'anello: 1 al centro della fascia, 0 fuori.
+        const k = Math.exp(-(((dist - radius) / band) ** 2) * 2.2);
 
-        if (pointer.on > 0.01) {
-          const dx = x - pointer.x;
-          const dy = y - pointer.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < RADIUS && dist > 0.001) {
-            const f = (1 - dist / RADIUS) ** 2 * pointer.on;
-            x += (dx / dist) * PUSH * f;
-            y += (dy / dist) * PUSH * f;
-            // Vicino al cursore i segni girano attorno al puntatore.
-            const tangent = Math.atan2(dy, dx) + Math.PI / 2;
-            angle = angle * (1 - f) + tangent * f;
-            level = f > 0.45 ? 2 : f > 0.1 ? 1 : 0;
-          }
+        if (k < 0.08) {
+          dots.rect(m.x + wobble * 0.6, m.y, 1, 1);
+          continue;
         }
-
-        const half = m.len / 2;
-        const cx = Math.cos(angle) * half;
-        const cy = Math.sin(angle) * half;
-        groups[level].moveTo(x - cx, y - cy);
-        groups[level].lineTo(x + cx, y + cy);
+        // Nell'anello i segni si allungano verso il centro e si spostano appena.
+        const ux = dx / dist;
+        const uy = dy / dist;
+        const shift = (k * 6 + wobble * 2) * k;
+        const x = m.x + ux * shift;
+        const y = m.y + uy * shift;
+        const half = (1.5 + k * 4.5) / 2;
+        const group = k > 0.7 ? 2 : k > 0.35 ? 1 : 0;
+        strokes[group].moveTo(x - ux * half, y - uy * half);
+        strokes[group].lineTo(x + ux * half, y + uy * half);
       }
 
+      ctx!.globalAlpha = 1;
+      ctx!.fillStyle = light;
+      ctx!.fill(dots);
       ctx!.lineCap = "round";
-      ctx!.lineWidth = 1.25;
+      ctx!.lineWidth = 1.6;
       const passes: [string, number][] = [
         [light, 1],
-        [dark, 0.45],
-        [dark, 0.9],
+        [dark, 0.35],
+        [dark, 0.6],
       ];
       passes.forEach(([color, alpha], i) => {
         ctx!.strokeStyle = color;
         ctx!.globalAlpha = alpha;
-        ctx!.stroke(groups[i]);
+        ctx!.stroke(strokes[i]);
       });
       ctx!.globalAlpha = 1;
 
@@ -138,19 +157,17 @@ export function HeroField() {
     function onPointerMove(event: PointerEvent) {
       if (event.pointerType === "touch") return;
       const rect = el!.getBoundingClientRect();
-      target.x = event.clientX - rect.left;
-      target.y = event.clientY - rect.top;
-      const inside = target.y >= 0 && target.y <= rect.height && target.x >= 0;
-      if (inside && pointer.on < 0.01) {
-        // Primo ingresso: parte dal punto giusto invece di scivolare da (0, 0).
-        pointer.x = target.x;
-        pointer.y = target.y;
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      target.pointer = y >= 0 && y <= rect.height;
+      if (target.pointer) {
+        target.x = x;
+        target.y = y;
       }
-      target.on = inside ? 1 : 0;
     }
 
     function onLeave() {
-      target.on = 0;
+      target.pointer = false;
     }
 
     layout();
