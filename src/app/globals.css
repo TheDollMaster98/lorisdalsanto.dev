@@ -41,7 +41,7 @@ html {
   color: var(--paper);
 }
 
-/* Il titolo resta nascosto finché GSAP non lo divide in righe, così non "salta" al primo paint.
+/* Il titolo resta nascosto finché GSAP non lo prepara per la scrittura, così non "salta" al primo paint.
    Se lo script non parte, dopo 2.5s si mostra comunque. */
 .js [data-hero-title] {
   visibility: hidden;
@@ -54,11 +54,26 @@ html {
   }
 }
 
-/* Le maschere di SplitText sono alte quanto la riga: con un'interlinea stretta taglierebbero
-   le discendenti (g, p). Si allungano verso il basso senza spostare il testo. */
-[data-hero-title] > div {
-  padding-bottom: 0.14em;
-  margin-bottom: -0.14em;
+/* Cursore del titolo che si scrive da solo: una barra sottile alta quanto le maiuscole.
+   Fermo mentre scrive, lampeggia quando ha finito. */
+.type-cursor {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.8em;
+  margin-left: 0.04em;
+  vertical-align: baseline;
+  background: var(--ink);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.type-cursor.is-typing {
+  animation: none;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
