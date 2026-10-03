@@ -39,7 +39,7 @@ export function pageMetadata(
           url: absoluteUrl("assets/img/og.png"),
           width: 1200,
           height: 630,
-          alt: "Loris Dal Santo, Full-Stack JavaScript & Flutter Mobile Developer",
+          alt: "Loris Dal Santo, Front-End & Flutter Mobile Developer",
         },
       ],
     },
