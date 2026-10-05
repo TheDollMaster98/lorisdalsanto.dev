@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { profile } from "@/content/profile";
 import { locales, type Locale } from "@/lib/i18n";
+import { MotionToggle } from "./MotionToggle";
 import type { Content } from "@/models/content.model";
 
 type HeaderProps = {
@@ -41,6 +42,7 @@ export function Header({ locale, nav, path = "" }: HeaderProps) {
               </Link>
             ))}
           </nav>
+          <MotionToggle label={nav.motion} />
           <div className="flex gap-3 font-mono text-xs uppercase">
             {locales.map((code) => (
               <Link

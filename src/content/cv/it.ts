@@ -19,7 +19,7 @@ export const cvIt: Cv = {
     print: "Stampa o salva in PDF",
     updated: "Aggiornato a",
   },
-  headline: "Front-End Developer & Flutter Developer",
+  headline: "Front-End & Flutter Mobile Developer",
   location: "Milano (IT)",
   updated: "settembre 2026",
   profile:

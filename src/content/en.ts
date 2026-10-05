@@ -2,9 +2,9 @@ import type { Content } from "@/models/content.model";
 
 export const en: Content = {
   meta: {
-    title: "Loris Dal Santo | Full-Stack JavaScript & Flutter Mobile Developer",
+    title: "Loris Dal Santo | Front-End & Flutter Mobile Developer",
     description:
-      "Full-stack JavaScript and Flutter mobile developer in Milan. Angular, Next.js, Node.js and Flutter for banking, enterprise and startups.",
+      "Front-end and Flutter mobile developer in Milan. Angular, React, Next.js and Flutter for banking, enterprise and startups.",
   },
   nav: {
     work: "Work",
@@ -12,9 +12,10 @@ export const en: Content = {
     stack: "Tech stack",
     contact: "Contact",
     cv: "CV",
+    motion: "Animations",
   },
   hero: {
-    role: "Full-Stack JavaScript & Flutter Mobile Developer",
+    role: "Front-End & Flutter Mobile Developer",
     location: "Milan, Italy",
     availability: "Open to new opportunities",
     statement:
@@ -23,7 +24,7 @@ export const en: Content = {
   },
   intro: {
     label: "Introduction",
-    text: "Full-stack JavaScript and Flutter mobile developer with four years of experience, mostly in banking and enterprise. I have worked as a consultant for UniCredit Europe, on internal portals for EY AI & Data Italy, on a fintech mobile app in Flutter and on startup projects. At EY I now own the front-end of two internal projects, from architecture and components to documentation, release and demos for the Partners. I work with Angular, Next.js, Node.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
+    text: "Front-end and Flutter mobile developer with four years of experience, mostly in banking and enterprise. I have worked as a consultant for UniCredit Europe, on internal portals for EY AI & Data Italy, on a fintech mobile app in Flutter and on startup projects. At EY I now own the front-end of two internal projects, from architecture and components to documentation, release and demos for the Partners. I work with Angular, React, Next.js and Flutter, with a focus on accessibility, testing and code that is still readable a year later.",
     ai: "I use AI tools in development, always under my direct supervision. Where a client or project rules them out, I work without them, fully independently.",
   },
   work: {

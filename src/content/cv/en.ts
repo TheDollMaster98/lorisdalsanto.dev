@@ -19,7 +19,7 @@ export const cvEn: Cv = {
     print: "Print or save as PDF",
     updated: "Updated",
   },
-  headline: "Front-End Developer & Flutter Developer",
+  headline: "Front-End & Flutter Mobile Developer",
   location: "Milan (IT)",
   updated: "September 2026",
   profile:
