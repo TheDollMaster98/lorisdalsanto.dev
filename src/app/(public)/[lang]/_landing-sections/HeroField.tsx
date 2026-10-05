@@ -14,9 +14,10 @@ import { motionEnabled, subscribeMotion } from "@/lib/motion/preference";
 // Costo: 2D su <canvas>, segni disegnati in poche passate raggruppate.
 // Si ferma fuori schermo o con la scheda nascosta; con "riduci animazioni" o
 // con l'interruttore dell'header spento viene disegnato una volta sola, fermo.
+// Solo con mouse o trackpad: col tocco l'anello non ha un cursore da seguire e
+// il dito serve a scorrere, quindi sui dispositivi touch il campo non c'è.
 
 const SPACING = 26; // distanza media tra i segni, in pixel CSS
-const SPACING_TOUCH = 34;
 const RING = 0.42; // raggio dell'anello, in proporzione al lato corto
 const RING_WIDTH = 0.16; // spessore dell'anello, stessa proporzione
 const FOLLOW = 0.035; // quanto velocemente il centro insegue il cursore
@@ -28,10 +29,10 @@ export function HeroField() {
 
   useEffect(() => {
     const el = canvas.current;
-    const ctx = el?.getContext("2d");
-    if (!el || !ctx) return;
+    if (!el || !window.matchMedia("(pointer: fine)").matches) return;
+    const ctx = el.getContext("2d");
+    if (!ctx) return;
 
-    const touch = window.matchMedia("(pointer: coarse)").matches;
     const styles = getComputedStyle(document.documentElement);
     const light = styles.getPropertyValue("--line").trim() || "#d9d5cd";
     const dark = styles.getPropertyValue("--ink-muted").trim() || "#5e5b55";
@@ -59,13 +60,12 @@ export function HeroField() {
       el!.height = Math.round(height * dpr);
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const step = touch ? SPACING_TOUCH : SPACING;
       marks = [];
-      for (let y = step / 2; y < height; y += step) {
-        for (let x = step / 2; x < width; x += step) {
+      for (let y = SPACING / 2; y < height; y += SPACING) {
+        for (let x = SPACING / 2; x < width; x += SPACING) {
           marks.push({
-            x: x + (Math.random() - 0.5) * step * 0.7,
-            y: y + (Math.random() - 0.5) * step * 0.7,
+            x: x + (Math.random() - 0.5) * SPACING * 0.7,
+            y: y + (Math.random() - 0.5) * SPACING * 0.7,
             phase: Math.random() * Math.PI * 2,
           });
         }
@@ -153,7 +153,6 @@ export function HeroField() {
     }
 
     function onPointerMove(event: PointerEvent) {
-      if (event.pointerType === "touch") return;
       const rect = el!.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -217,7 +216,7 @@ export function HeroField() {
     <canvas
       ref={canvas}
       aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10 size-full"
+      className="pointer-events-none absolute inset-0 -z-10 hidden size-full pointer-fine:block"
     />
   );
 }
