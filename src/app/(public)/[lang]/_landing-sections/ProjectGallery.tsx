@@ -10,6 +10,7 @@ import {
   useState,
 } from "react";
 import { EASE } from "@/lib/motion/Motion";
+import { motionEnabled } from "@/lib/motion/preference";
 import type { Content } from "@/models/content.model";
 
 export type GalleryProject = {
@@ -71,7 +72,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       direction.current = dir;
       activeRef.current = to;
 
-      if (reducedMotion() || !cover.current) {
+      if (!motionEnabled() || !cover.current) {
         setActive(to);
         return;
       }
@@ -97,7 +98,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
     scroller.scrollTop = 0;
     const dir = direction.current;
     direction.current = 0;
-    if (!dir || reducedMotion() || !cover.current) {
+    if (!dir || !motionEnabled() || !cover.current) {
       busy.current = false;
       return;
     }
@@ -395,8 +396,4 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
-}
-
-function reducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }

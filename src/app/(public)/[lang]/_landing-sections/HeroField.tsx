@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { motionEnabled, subscribeMotion } from "@/lib/motion/preference";
 
 // Campo dietro la hero, ispirato alla struttura della hero di antigravity.google
 // ma scritto da zero e nei colori del sito:
@@ -11,8 +12,8 @@ import { useEffect, useRef } from "react";
 // Monocromatico: colore delle linee per i puntini, testo secondario per i trattini.
 //
 // Costo: 2D su <canvas>, segni disegnati in poche passate raggruppate.
-// Si ferma fuori schermo o con la scheda nascosta; con "riduci animazioni"
-// viene disegnato una volta sola, fermo.
+// Si ferma fuori schermo o con la scheda nascosta; con "riduci animazioni" o
+// con l'interruttore dell'header spento viene disegnato una volta sola, fermo.
 
 const SPACING = 26; // distanza media tra i segni, in pixel CSS
 const SPACING_TOUCH = 34;
@@ -30,9 +31,6 @@ export function HeroField() {
     const ctx = el?.getContext("2d");
     if (!el || !ctx) return;
 
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
     const touch = window.matchMedia("(pointer: coarse)").matches;
     const styles = getComputedStyle(document.documentElement);
     const light = styles.getPropertyValue("--line").trim() || "#d9d5cd";
@@ -144,7 +142,7 @@ export function HeroField() {
     }
 
     function start() {
-      if (running || reduced) return;
+      if (running || !motionEnabled()) return;
       running = true;
       frame = requestAnimationFrame(draw);
     }
@@ -190,12 +188,23 @@ export function HeroField() {
       else if (el!.getBoundingClientRect().bottom > 0) start();
     }
 
+    // Interruttore delle animazioni: spento, il campo resta disegnato ma fermo.
+    const unsubscribe = subscribeMotion(() => {
+      if (motionEnabled()) {
+        if (el!.getBoundingClientRect().bottom > 0) start();
+      } else {
+        stop();
+        draw(performance.now());
+      }
+    });
+
     window.addEventListener("pointermove", onPointerMove, { passive: true });
     document.documentElement.addEventListener("pointerleave", onLeave);
     document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
       stop();
+      unsubscribe();
       resize.disconnect();
       visible.disconnect();
       window.removeEventListener("pointermove", onPointerMove);

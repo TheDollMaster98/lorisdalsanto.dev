@@ -43,7 +43,7 @@ html {
 
 /* Il titolo resta nascosto finché GSAP non lo prepara per la scrittura, così non "salta" al primo paint.
    Se lo script non parte, dopo 2.5s si mostra comunque. */
-.js [data-hero-title] {
+.js:not(.no-motion) [data-hero-title] {
   visibility: hidden;
   animation: reveal-fallback 0s 2.5s forwards;
 }

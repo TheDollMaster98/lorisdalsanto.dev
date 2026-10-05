@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useMotionEnabled } from "./preference";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -16,12 +17,19 @@ export const EASE = "expo.out";
 // - data-hero-cta: i link sotto il titolo compaiono per ultimi
 // - data-line: le linee sottili si disegnano da sinistra entrando nel viewport
 // - data-reveal: il contenuto sale di poco e compare entrando nel viewport
-// Con "riduci animazioni" attivo nel sistema, tutto resta statico.
+// Con "riduci animazioni" attivo nel sistema, o con l'interruttore dell'header
+// spento, tutto resta statico. Spegnendo l'interruttore le animazioni in corso
+// vengono annullate e la pagina torna al suo stato naturale.
 export function Motion({ children }: { children: React.ReactNode }) {
   const scope = useRef<HTMLDivElement>(null);
+  const enabled = useMotionEnabled();
 
   useGSAP(
     () => {
+      if (!enabled) {
+        gsap.set("[data-hero-title]", { visibility: "visible" });
+        return;
+      }
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
@@ -75,7 +83,9 @@ export function Motion({ children }: { children: React.ReactNode }) {
         gsap.set("[data-hero-title]", { visibility: "visible" });
       });
     },
-    { scope },
+    // Cambiando la preferenza si annulla tutto (anche il titolo spezzato in
+    // lettere) e si riparte da capo.
+    { scope, dependencies: [enabled], revertOnUpdate: true },
   );
 
   return <div ref={scope}>{children}</div>;
