@@ -14,6 +14,7 @@ export type Content = {
     stack: string;
     contact: string;
     cv: string;
+    motion: string;
   };
   hero: {
     role: string;

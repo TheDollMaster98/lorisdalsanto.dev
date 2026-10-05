@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getContent, isLocale, locales } from "@/lib/i18n";
 import { mono, sans } from "@/lib/site/fonts";
+import { motionBootScript } from "@/lib/motion/boot";
 import { pageMetadata } from "@/lib/site/metadata";
 import "../../globals.css";
 
@@ -30,7 +31,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   if (!isLocale(lang)) notFound();
 
   return (
-    // suppressHydrationWarning: lo script qui sotto aggiunge la classe "js" prima di React.
+    // suppressHydrationWarning: lo script qui sotto aggiunge le classi "js" e,
+    // se le animazioni sono spente, "no-motion" prima di React.
     <html
       lang={lang}
       className={`${sans.variable} ${mono.variable}`}
@@ -39,7 +41,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js')",
+            __html: `document.documentElement.classList.add('js');${motionBootScript}`,
           }}
         />
       </head>

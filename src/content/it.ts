@@ -12,6 +12,7 @@ export const it: Content = {
     stack: "Tecnologie",
     contact: "Contatti",
     cv: "CV",
+    motion: "Animazioni",
   },
   hero: {
     role: "Front-End & Flutter Mobile Developer",
