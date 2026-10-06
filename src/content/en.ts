@@ -46,7 +46,7 @@ export const en: Content = {
         summary:
           "It analyses regional grants with AI for about 20 users and replaced a manual review. It generates proposals, solutions and a graph of relations between grants, with KPI dashboards. I built it from scratch, with a library of 20+ reusable components and a NestJS back-end integration.",
         stack: [
-          "Next.js 15",
+          "Next.js 16",
           "TypeScript",
           "Tailwind CSS",
           "shadcn/ui",
@@ -59,7 +59,7 @@ export const en: Content = {
         context: "EY, real estate",
         role: "Front-end owner",
         summary:
-          "It manages real estate projects for about 15 users, with tracking on KPI dashboards and a rich text editor that generates structured .docx documents. It started as a fork of the company intranet, reusing 10+ components, and replaced a manual review.",
+          "It manages real estate projects for about 15 users, with tracking on KPI dashboards and a rich text editor that generates structured .docx documents. It started as a fork of the company intranet, reusing 30+ components, and replaced a manual review.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {
@@ -175,7 +175,7 @@ export const en: Content = {
       {
         period: "2025 - now",
         company: "EY AI & Data",
-        role: "Senior Consultant, Front-End Developer",
+        role: "Associate (Senior I), Front-End Developer",
         summary:
           "Sole front-end owner of two internal enterprise products, end to end: architecture, development, documentation and demos to the Partners. Migration of a legacy portal from Bootstrap 3 to 5, with WCAG accessibility and a responsive layout.",
       },

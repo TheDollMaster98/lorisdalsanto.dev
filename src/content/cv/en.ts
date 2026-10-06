@@ -23,17 +23,17 @@ export const cvEn: Cv = {
   location: "Milan (IT)",
   updated: "September 2026",
   profile:
-    "Front-End Developer with 4 years of experience in enterprise contexts (banking and consulting), specialised in Angular, React and Next.js with TypeScript, and Mobile Developer with Flutter and Dart. Technical ownership of Front-End products end to end, from architectural decisions to release, working directly with senior stakeholders (EY Partners, Product Owners and UniCredit multinational teams).",
+    "Front-End Developer with 4 years of experience in enterprise contexts (banking and consulting), specialised in Angular, React and Next.js with TypeScript, and Mobile Developer with Flutter and Dart. Technical ownership of internal EY Front-End products end to end, from architectural decisions to release, working directly with senior stakeholders (EY Partners, Product Owners and UniCredit multinational teams).",
   experience: [
     {
       period: "07/2025 - present",
-      title: "Senior Consultant, Front-End Developer",
+      title: "Associate (Senior I), Front-End Developer",
       org: "EY, AI & Data (AI Plus), Milan",
       points: [
-        "Sole Front-End owner of two internal enterprise products, with end-to-end ownership: architecture, development, documentation and demos to EY Partners on architectural choices.",
-        "AI portal for analysing regional funding calls (~20 users): built from scratch in Next.js 15 + TypeScript + TailwindCSS. Replaced a manual review process with AI-assisted generation of proposals, solutions and a graph of relations between calls, with a KPI dashboard. Built a library of 20+ reusable components (shadcn/ui). NestJS Back-End integration.",
-        "Real estate project management platform (~15 users): tracking with a KPI dashboard and a rich-text document editor (TinyMCE in Angular 16) that generates structured .docx documents. Built as a fork of the internal intranet, reusing 10+ components of the existing platform, it replaced a manual review process.",
-        "Migration of a legacy enterprise portal from Bootstrap 3 to Bootstrap 5 in vanilla HTML, CSS and JavaScript: refactoring, WCAG accessibility and responsiveness.",
+        "Sole Front-End owner of two internal enterprise products, with end-to-end ownership: architectural choices, development, documentation and demos to EY Partners.",
+        "AI portal for analysing regional funding calls (~20 users): built with Next.js 16 in TypeScript and TailwindCSS. Replaced a manual review process with AI-assisted generation of proposals, solutions and a graph of relations between sections, with a KPI dashboard. Built a library of 20+ reusable components (shadcn/ui). NestJS Back-End integration.",
+        "Real estate project management platform (~15 users): tracking with a KPI dashboard and a rich-text document editor (TinyMCE in Angular 16) that generates structured .docx documents. Built as a fork of the internal intranet, reusing 30+ components of the existing platform, it replaced a manual review process.",
+        "Migration of a legacy portal from Bootstrap 3 to Bootstrap 5 (WCAG accessibility, responsiveness).",
       ],
     },
     {

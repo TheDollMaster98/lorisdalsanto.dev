@@ -23,17 +23,17 @@ export const cvIt: Cv = {
   location: "Milano (IT)",
   updated: "settembre 2026",
   profile:
-    "Front-End Developer con 4 anni di esperienza in contesti enterprise (banking e consulenza), specializzato in Angular, React e Next.js con TypeScript, Mobile Developer con Flutter e Dart. Ownership tecnica di prodotti Front-End end-to-end, dalle decisioni architetturali al rilascio, con confronto diretto con i referenti di alto livello (Partner EY, Product Owner e team multinazionali UniCredit).",
+    "Front-End Developer con 4 anni di esperienza in contesti enterprise (banking e consulenza), specializzato in Angular, React e Next.js con TypeScript, Mobile Developer con Flutter e Dart. Ownership tecnica di prodotti Front-End end-to-end interni EY, dalle decisioni architetturali al rilascio, con confronto diretto con i referenti di alto livello (Partner EY, Product Owner e team multinazionali UniCredit).",
   experience: [
     {
       period: "07/2025 - presente",
-      title: "Senior Consultant, Front-End Developer",
+      title: "Associate (Senior I), Front-End Developer",
       org: "EY, AI & Data (AI Plus), Milano",
       points: [
-        "Unico Front-End owner di due prodotti enterprise interni, con ownership end-to-end: architettura, sviluppo, documentazione e demo ai Partner EY sulle scelte architetturali.",
-        "Portale AI per l’analisi dei bandi regionali (~20 utenti): impostato da zero in Next.js 15 + TypeScript + TailwindCSS. Ha sostituito un processo di controllo manuale con generazione AI-assistita di proposte, soluzioni e grafo delle relazioni tra bandi, con dashboard di KPI. Costruita una libreria di 20+ componenti riutilizzabili (shadcn/ui). Integrazione Back-End NestJS.",
-        "Piattaforma di gestione dei progetti real estate (~15 utenti): tracking con dashboard di KPI ed editor documentale rich-text (TinyMCE in Angular 16) per la generazione di documenti .docx strutturati. Sviluppata come fork dell’intranet interna, riutilizzando 10+ componenti della piattaforma esistente, ha sostituito un processo di controllo manuale.",
-        "Migrazione di un portale legacy enterprise da Bootstrap 3 a Bootstrap 5 in HTML, CSS e JavaScript vanilla: refactoring, accessibilità WCAG e responsività.",
+        "Unico Front-End owner di due prodotti enterprise interni, con ownership end-to-end: scelte architetturali, sviluppo, documentazione e demo ai Partner EY.",
+        "Portale AI per l’analisi dei bandi regionali (~20 utenti): utilizzo di Next.js 16 in TypeScript e TailwindCSS. Ha sostituito un processo di controllo manuale con generazione AI-assistita di proposte, soluzioni e grafo delle relazioni tra le varie sezioni, con dashboard di KPI. Costruita una libreria di 20+ componenti riutilizzabili (shadcn/ui). Integrazione Back-End NestJS.",
+        "Piattaforma di gestione dei progetti real estate (~15 utenti): tracking con dashboard di KPI ed editor documentale rich-text (TinyMCE in Angular 16) per la generazione di documenti .docx strutturati. Sviluppata come fork dell’intranet interna, riutilizzando 30+ componenti della piattaforma esistente, ha sostituito un processo di controllo manuale.",
+        "Migrazione di un portale legacy da Bootstrap 3 a Bootstrap 5 (accessibilità WCAG, responsività).",
       ],
     },
     {
