@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  // Sottocartella di GitHub Pages (es. /lorisdalsanto.dev); vuoto con un dominio proprio.
+  // Sottocartella di GitHub Pages senza dominio proprio (es. /lorisdalsanto.dev); vuoto su lorisdalsanto.it.
   basePath: process.env.PAGES_BASE_PATH ?? "",
   // Genera it/index.html ed en/index.html: funziona su qualsiasi hosting statico.
   trailingSlash: true,
