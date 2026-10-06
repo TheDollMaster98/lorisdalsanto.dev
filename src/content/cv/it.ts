@@ -30,10 +30,9 @@ export const cvIt: Cv = {
       title: "Senior Consultant, Front-End Developer",
       org: "EY, AI & Data (AI Plus), Milano",
       points: [
-        "Front-End technical owner del portale AI per la gestione di bandi, proposte e portafoglio clienti (~20 utenti, ha sostituito un controllo manuale): architettura Next.js 15 + TypeScript + TailwindCSS, autenticazione Microsoft Entra ID, integrazione di 7 famiglie di API Back-End (NestJS), Word-Agent per l’editing DOCX con cronologia delle versioni. Libreria di 42 componenti condivisi su 202 file TypeScript/TSX.",
-        "Dashboard multi-entità con KPI in tempo reale (bandi, clienti, progetti, soluzioni) e visualizzazione a grafo delle relazioni. Allineamento diretto con i Partner EY sulle scelte architetturali.",
-        "Unico sviluppatore Front-End della piattaforma enterprise per l’automazione dei report di due diligence M&A (~15 utenti, 5 tipologie DOCX tra cui PMR, TDD e TEDD): workflow AI-assisted con ruoli distinti (Master, Supervisor, Collaborator), compilazione assistita, approvazione delle sezioni e generazione del documento finale. 33 componenti Angular, dashboard di KPI con distribuzione geografica e fee analytics.",
-        "Integrazione TinyMCE con due editor configurati (compatto e full-page): toolbar personalizzata, gestione immagini, protezione dei campi e section-lock per l’editing concorrente.",
+        "Unico Front-End owner di due prodotti enterprise interni, con ownership end-to-end: architettura, sviluppo, documentazione e demo ai Partner EY sulle scelte architetturali.",
+        "Portale AI per l’analisi dei bandi regionali (~20 utenti): impostato da zero in Next.js 15 + TypeScript + TailwindCSS. Ha sostituito un processo di controllo manuale con generazione AI-assistita di proposte, soluzioni e grafo delle relazioni tra bandi, con dashboard di KPI. Costruita una libreria di 20+ componenti riutilizzabili (shadcn/ui). Integrazione Back-End NestJS.",
+        "Piattaforma di gestione dei progetti real estate (~15 utenti): tracking con dashboard di KPI ed editor documentale rich-text (TinyMCE in Angular 16) per la generazione di documenti .docx strutturati. Sviluppata come fork dell’intranet interna, riutilizzando 10+ componenti della piattaforma esistente, ha sostituito un processo di controllo manuale.",
         "Migrazione di un portale legacy enterprise da Bootstrap 3 a Bootstrap 5 in HTML, CSS e JavaScript vanilla: refactoring, accessibilità WCAG e responsività.",
       ],
     },

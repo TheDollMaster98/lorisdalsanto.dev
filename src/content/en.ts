@@ -39,28 +39,27 @@ export const en: Content = {
     },
     projects: [
       {
-        title: "AI portal for grants and proposals",
+        title: "AI grants portal",
         year: "2025",
         context: "EY AI & Data",
-        role: "Front-end technical owner",
+        role: "Front-end owner",
         summary:
-          "Internal AI platform for managing public grants, proposals and the client portfolio, used by about 20 people in place of a manual review. Users sign in with Microsoft Entra ID, analyse documents with AI, work on proposals through a Word-Agent that edits DOCX files with version history, and follow a real-time KPI dashboard on grants, clients, projects and solutions, with a graph of the relations between entities. I defined the front-end architecture, integrated 7 families of back-end APIs and built a library of 42 shared components, aligning the main architectural choices directly with the EY Partners.",
+          "It analyses regional grants with AI for about 20 users and replaced a manual review. It generates proposals, solutions and a graph of relations between grants, with KPI dashboards. I built it from scratch, with a library of 20+ reusable components and a NestJS back-end integration.",
         stack: [
           "Next.js 15",
           "TypeScript",
           "Tailwind CSS",
           "shadcn/ui",
-          "Microsoft Entra ID",
           "NestJS",
         ],
       },
       {
-        title: "M&A due diligence platform",
+        title: "Real estate platform",
         year: "2025",
-        context: "EY AI & Data",
-        role: "Sole front-end developer",
+        context: "EY, real estate",
+        role: "Front-end owner",
         summary:
-          "It automates M&A due diligence reports for about 15 users, in five standard DOCX types including PMR, TDD and TEDD. Users upload source documents (PDF, DOC, DOCX), AI extracts and prefills the fields, collaborators fill in the sections with distinct roles (Master, Supervisor, Collaborator) and the system generates the final report. I built 33 Angular components, the KPI dashboard with geographic distribution and fee analytics, and two TinyMCE editors, compact and full-page, with a custom toolbar, section locking for concurrent editing and field protection on save.",
+          "It manages real estate projects for about 15 users, with tracking on KPI dashboards and a rich text editor that generates structured .docx documents. It started as a fork of the company intranet, reusing 10+ components, and replaced a manual review.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {
