@@ -46,7 +46,7 @@ export const it: Content = {
         summary:
           "Analizza i bandi regionali con l’AI per circa 20 utenti e ha sostituito un controllo fatto a mano. Genera proposte, soluzioni e il grafo delle relazioni tra bandi, con dashboard di KPI. L’ho impostato da zero, con una libreria di 20+ componenti riutilizzabili e l’integrazione con il back-end NestJS.",
         stack: [
-          "Next.js 15",
+          "Next.js 16",
           "TypeScript",
           "Tailwind CSS",
           "shadcn/ui",
@@ -59,7 +59,7 @@ export const it: Content = {
         context: "EY, settore immobiliare",
         role: "Front-end owner",
         summary:
-          "Gestisce i progetti immobiliari per circa 15 utenti, con tracking su dashboard di KPI e un editor rich text che genera documenti .docx strutturati. È nata come fork dell’intranet interna, riusando 10+ componenti, e ha sostituito un controllo fatto a mano.",
+          "Gestisce i progetti immobiliari per circa 15 utenti, con tracking su dashboard di KPI e un editor rich text che genera documenti .docx strutturati. È nata come fork dell’intranet interna, riusando 30+ componenti, e ha sostituito un controllo fatto a mano.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {
@@ -175,7 +175,7 @@ export const it: Content = {
       {
         period: "2025 - oggi",
         company: "EY AI & Data",
-        role: "Senior Consultant, Front-End Developer",
+        role: "Associate (Senior I), Front-End Developer",
         summary:
           "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner. Migrazione di un portale legacy da Bootstrap 3 a 5, con accessibilità WCAG e layout responsive.",
       },
