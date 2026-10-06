@@ -3,6 +3,13 @@
 
 export const MOTION_KEY = "motion";
 
+// Interruttore nell'header disattivato: la preferenza salvata viene ignorata,
+// così chi l'aveva spento rivede le animazioni. Per riattivarlo: true qui e
+// decommentare <MotionToggle /> in Header.tsx.
+export const MOTION_TOGGLE = false;
+
 // Gira in <head> prima di React: se le animazioni sono spente mette la classe
 // "no-motion" su <html>, così al caricamento non si vede nemmeno un frame animato.
-export const motionBootScript = `try{if(localStorage.getItem(${JSON.stringify(MOTION_KEY)})==="off")document.documentElement.classList.add("no-motion")}catch(e){}`;
+export const motionBootScript = !MOTION_TOGGLE
+  ? ""
+  : `try{if(localStorage.getItem(${JSON.stringify(MOTION_KEY)})==="off")document.documentElement.classList.add("no-motion")}catch(e){}`;
