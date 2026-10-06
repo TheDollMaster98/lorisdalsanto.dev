@@ -33,7 +33,7 @@ export const cvEn: Cv = {
         "Sole Front-End owner of two internal enterprise products, with end-to-end ownership: architecture, development, documentation and demos to EY Partners on architectural choices.",
         "AI portal for analysing regional funding calls (~20 users): built from scratch in Next.js 15 + TypeScript + TailwindCSS. Replaced a manual review process with AI-assisted generation of proposals, solutions and a graph of relations between calls, with a KPI dashboard. Built a library of 20+ reusable components (shadcn/ui). NestJS Back-End integration.",
         "Real estate project management platform (~15 users): tracking with a KPI dashboard and a rich-text document editor (TinyMCE in Angular 16) that generates structured .docx documents. Built as a fork of the internal intranet, reusing 10+ components of the existing platform, it replaced a manual review process.",
-        "Migration of a legacy portal from Bootstrap 3 to Bootstrap 5 (WCAG accessibility, responsiveness).",
+        "Migration of a legacy enterprise portal from Bootstrap 3 to Bootstrap 5 in vanilla HTML, CSS and JavaScript: refactoring, WCAG accessibility and responsiveness.",
       ],
     },
     {

@@ -33,7 +33,7 @@ export const cvIt: Cv = {
         "Unico Front-End owner di due prodotti enterprise interni, con ownership end-to-end: architettura, sviluppo, documentazione e demo ai Partner EY sulle scelte architetturali.",
         "Portale AI per l’analisi dei bandi regionali (~20 utenti): impostato da zero in Next.js 15 + TypeScript + TailwindCSS. Ha sostituito un processo di controllo manuale con generazione AI-assistita di proposte, soluzioni e grafo delle relazioni tra bandi, con dashboard di KPI. Costruita una libreria di 20+ componenti riutilizzabili (shadcn/ui). Integrazione Back-End NestJS.",
         "Piattaforma di gestione dei progetti real estate (~15 utenti): tracking con dashboard di KPI ed editor documentale rich-text (TinyMCE in Angular 16) per la generazione di documenti .docx strutturati. Sviluppata come fork dell’intranet interna, riutilizzando 10+ componenti della piattaforma esistente, ha sostituito un processo di controllo manuale.",
-        "Migrazione di un portale legacy da Bootstrap 3 a Bootstrap 5 (accessibilità WCAG, responsività).",
+        "Migrazione di un portale legacy enterprise da Bootstrap 3 a Bootstrap 5 in HTML, CSS e JavaScript vanilla: refactoring, accessibilità WCAG e responsività.",
       ],
     },
     {
