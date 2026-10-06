@@ -137,7 +137,7 @@ export const en: Content = {
         context: "Personal project",
         role: "Design & development",
         summary:
-          "Fantasy league for competitive League of Legends, built to play with my friends: it is live, but made for our group. Private leagues, auctions, roles and scores imported from Leaguepedia.",
+          "Fantasy league for competitive League of Legends, used by a private league. Live auctions with a countdown, budgets and rosters synced in real time across participants, with budget updates in a transaction to keep them consistent. Private leagues with join requests and roles, player data imported from Leaguepedia through an API route that proxies requests and handles errors.",
         stack: [
           "Next.js 16",
           "TypeScript",
@@ -177,7 +177,7 @@ export const en: Content = {
         company: "EY AI & Data",
         role: "Senior Consultant, Front-End Developer",
         summary:
-          "Sole front-end owner of two internal enterprise products, end to end: architecture, development, documentation and demos to the Partners.",
+          "Sole front-end owner of two internal enterprise products, end to end: architecture, development, documentation and demos to the Partners. Migration of a legacy portal from Bootstrap 3 to 5, with WCAG accessibility and a responsive layout.",
       },
       {
         period: "2024 - 2025",

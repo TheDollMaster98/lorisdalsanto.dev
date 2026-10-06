@@ -137,7 +137,7 @@ export const it: Content = {
         context: "Progetto personale",
         role: "Design & sviluppo",
         summary:
-          "Fantasy league per il competitivo di League of Legends, nata per giocare con i miei amici: è online, ma è pensata per il nostro gruppo. Leghe private, aste, ruoli e punteggi importati da Leaguepedia.",
+          "Fantasy league per il competitivo di League of Legends, in uso da una lega privata. Aste live con countdown, budget e rose sincronizzati in tempo reale tra i partecipanti, con il budget aggiornato in transazione per restare coerente. Leghe private con richieste di adesione e ruoli, dati dei giocatori importati da Leaguepedia tramite una API route che fa da proxy e gestisce gli errori.",
         stack: [
           "Next.js 16",
           "TypeScript",
@@ -177,7 +177,7 @@ export const it: Content = {
         company: "EY AI & Data",
         role: "Senior Consultant, Front-End Developer",
         summary:
-          "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner.",
+          "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner. Migrazione di un portale legacy da Bootstrap 3 a 5, con accessibilità WCAG e layout responsive.",
       },
       {
         period: "2024 - 2025",
