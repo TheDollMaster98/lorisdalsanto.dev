@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { MOTION_KEY as KEY } from "./boot";
+import { MOTION_KEY as KEY, MOTION_TOGGLE } from "./boot";
 
 // Preferenza "animazioni sì/no", scelta dall'interruttore nell'header e ricordata
 // nel browser (localStorage). Le animazioni sono spente anche quando il sistema
@@ -15,6 +15,7 @@ export function systemReducesMotion() {
 }
 
 function userDisabled() {
+  if (!MOTION_TOGGLE) return false;
   try {
     return localStorage.getItem(KEY) === "off";
   } catch {
