@@ -39,27 +39,28 @@ export const en: Content = {
     },
     projects: [
       {
-        title: "AI grants portal",
+        title: "AI portal for grants and proposals",
         year: "2025",
         context: "EY AI & Data",
-        role: "Front-end owner",
+        role: "Front-end technical owner",
         summary:
-          "It analyses regional grants with AI for about 20 users and replaced a manual review. It generates proposals, solutions and a graph of relations between grants, with KPI dashboards. I built it from scratch, with a library of 20+ reusable components and a NestJS back-end integration.",
+          "Internal AI platform for managing public grants, proposals and the client portfolio, used by about 20 people in place of a manual review. Users sign in with Microsoft Entra ID, analyse documents with AI, work on proposals through a Word-Agent that edits DOCX files with version history, and follow a real-time KPI dashboard on grants, clients, projects and solutions, with a graph of the relations between entities. I defined the front-end architecture, integrated 7 families of back-end APIs and built a library of 42 shared components, aligning the main architectural choices directly with the EY Partners.",
         stack: [
           "Next.js 15",
           "TypeScript",
           "Tailwind CSS",
           "shadcn/ui",
+          "Microsoft Entra ID",
           "NestJS",
         ],
       },
       {
-        title: "Real estate platform",
+        title: "M&A due diligence platform",
         year: "2025",
-        context: "EY, real estate",
-        role: "Front-end owner",
+        context: "EY AI & Data",
+        role: "Sole front-end developer",
         summary:
-          "It manages real estate projects for about 15 users, with tracking on KPI dashboards and a rich text editor that generates structured .docx documents. It started as a fork of the company intranet, reusing 10+ components, and replaced a manual review.",
+          "It automates M&A due diligence reports for about 15 users, in five standard DOCX types including PMR, TDD and TEDD. Users upload source documents (PDF, DOC, DOCX), AI extracts and prefills the fields, collaborators fill in the sections with distinct roles (Master, Supervisor, Collaborator) and the system generates the final report. I built 33 Angular components, the KPI dashboard with geographic distribution and fee analytics, and two TinyMCE editors, compact and full-page, with a custom toolbar, section locking for concurrent editing and field protection on save.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {

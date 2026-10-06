@@ -30,9 +30,10 @@ export const cvEn: Cv = {
       title: "Senior Consultant, Front-End Developer",
       org: "EY, AI & Data (AI Plus), Milan",
       points: [
-        "Sole Front-End owner of two internal enterprise products, with end-to-end ownership: architecture, development, documentation and demos to EY Partners on architectural choices.",
-        "AI portal for analysing regional funding calls (~20 users): built from scratch in Next.js 15 + TypeScript + TailwindCSS. Replaced a manual review process with AI-assisted generation of proposals, solutions and a graph of relations between calls, with a KPI dashboard. Built a library of 20+ reusable components (shadcn/ui). NestJS Back-End integration.",
-        "Real estate project management platform (~15 users): tracking with a KPI dashboard and a rich-text document editor (TinyMCE in Angular 16) that generates structured .docx documents. Built as a fork of the internal intranet, reusing 10+ components of the existing platform, it replaced a manual review process.",
+        "Front-End technical owner of the AI portal for managing grants, proposals and the client portfolio (~20 users, replaced a manual review): Next.js 15 + TypeScript + TailwindCSS architecture, Microsoft Entra ID authentication, integration of 7 families of Back-End APIs (NestJS), Word-Agent for DOCX editing with version history. Library of 42 shared components across 202 TypeScript/TSX files.",
+        "Multi-entity dashboard with real-time KPIs (grants, clients, projects, solutions) and graph visualisation of relations. Direct alignment with EY Partners on architectural choices.",
+        "Sole Front-End developer of the enterprise platform automating M&A due diligence reports (~15 users, 5 DOCX types including PMR, TDD and TEDD): AI-assisted workflow with distinct roles (Master, Supervisor, Collaborator), assisted compilation, section approval and final document generation. 33 Angular components, KPI dashboard with geographic distribution and fee analytics.",
+        "TinyMCE integration with two configured editors (compact and full-page): custom toolbar, image handling, field protection and section locking for concurrent editing.",
         "Migration of a legacy enterprise portal from Bootstrap 3 to Bootstrap 5 in vanilla HTML, CSS and JavaScript: refactoring, WCAG accessibility and responsiveness.",
       ],
     },

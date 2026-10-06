@@ -39,27 +39,28 @@ export const it: Content = {
     },
     projects: [
       {
-        title: "Portale AI per i bandi",
+        title: "Portale AI per bandi e proposte",
         year: "2025",
         context: "EY AI & Data",
-        role: "Front-end owner",
+        role: "Front-end technical owner",
         summary:
-          "Analizza i bandi regionali con l’AI per circa 20 utenti e ha sostituito un controllo fatto a mano. Genera proposte, soluzioni e il grafo delle relazioni tra bandi, con dashboard di KPI. L’ho impostato da zero, con una libreria di 20+ componenti riutilizzabili e l’integrazione con il back-end NestJS.",
+          "Piattaforma AI interna per la gestione di bandi pubblici, proposte e portafoglio clienti, usata da circa 20 persone al posto di un controllo fatto a mano. Si accede con Microsoft Entra ID, si analizzano i documenti con l’AI, si lavora sulle proposte con un Word-Agent che modifica i DOCX con cronologia delle versioni e si consulta una dashboard di KPI in tempo reale su bandi, clienti, progetti e soluzioni, con il grafo delle relazioni tra entità. Ho definito l’architettura front-end, integrato 7 famiglie di API del back-end e costruito una libreria di 42 componenti condivisi, allineando le scelte architetturali principali direttamente con i Partner EY.",
         stack: [
           "Next.js 15",
           "TypeScript",
           "Tailwind CSS",
           "shadcn/ui",
+          "Microsoft Entra ID",
           "NestJS",
         ],
       },
       {
-        title: "Piattaforma real estate",
+        title: "Piattaforma due diligence M&A",
         year: "2025",
-        context: "EY, settore immobiliare",
-        role: "Front-end owner",
+        context: "EY AI & Data",
+        role: "Unico sviluppatore front-end",
         summary:
-          "Gestisce i progetti immobiliari per circa 15 utenti, con tracking su dashboard di KPI e un editor rich text che genera documenti .docx strutturati. È nata come fork dell’intranet interna, riusando 10+ componenti, e ha sostituito un controllo fatto a mano.",
+          "Automatizza i report di due diligence M&A per circa 15 utenti, in cinque tipologie standard di DOCX tra cui PMR, TDD e TEDD. Si caricano i documenti sorgente (PDF, DOC, DOCX), l’AI estrae e precompila i campi, i collaboratori compilano le sezioni con ruoli distinti (Master, Supervisor, Collaborator) e il sistema genera il report finale. Ho costruito 33 componenti Angular, la dashboard di KPI con distribuzione geografica e analisi delle fee e due editor TinyMCE, compatto e a pagina intera, con toolbar personalizzata, blocco delle sezioni per l’editing concorrente e protezione dei campi durante il salvataggio.",
         stack: ["Angular 16", "TinyMCE", "Material Design", "Bootstrap 5"],
       },
       {
