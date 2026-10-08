@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
+import { Mark } from "@/components/brand/Mark";
 import { Header } from "@/components/layout/Header";
 import { profile } from "@/content/profile";
 import { getContent, getCv, isLocale } from "@/lib/i18n";
@@ -55,6 +56,7 @@ export default async function CvPage({ params }: PageProps) {
             </span>
             <PrintButton label={cv.labels.print} />
           </div>
+          <Mark size={44} className="mb-6 print:mb-4" />
           <h1 className="text-4xl font-medium tracking-[-0.03em] md:text-6xl print:text-4xl">
             {profile.name}
           </h1>

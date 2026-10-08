@@ -21,7 +21,7 @@ export const cvEn: Cv = {
   },
   headline: "Front-End & Flutter Mobile Developer",
   location: "Milan (IT)",
-  updated: "September 2026",
+  updated: "October 2026",
   profile:
     "Front-End Developer with 4 years of experience in enterprise contexts (banking and consulting), specialised in Angular, React and Next.js with TypeScript, and Mobile Developer with Flutter and Dart. Technical ownership of internal EY Front-End products end to end, from architectural decisions to release, working directly with senior stakeholders (EY Partners, Product Owners and UniCredit multinational teams).",
   experience: [
