@@ -1,59 +1,85 @@
-# Check del design, ottobre 2026
+# Revisione completa del design, ottobre 2026
 
-Branch: `design/brand-review`. Stato di partenza: sito su lorisdalsanto.it più le modifiche di questo branch (animazioni, pulizia, marchio).
-Stack: Next.js 16 export statico, Tailwind 4, GSAP. Nessuna modifica fatta finché questo file non è approvato.
+Branch: `design/brand-review`. Controllo dell'intero sito (home, galleria progetti, CV, privacy, 404) con i criteri di design di Apple: risposta, interrompibilità, coerenza spaziale, materiali, tipografia, orientamento, accessibilità. Nessuna modifica fatta: questo file raccoglie i risultati.
 
-## Cosa è già a posto (non toccare)
+## Verdetto
 
-- **Font con carattere.** Schibsted Grotesk e IBM Plex Mono, caricati con `next/font`. Pesi 400 e 500, tracking negativo sui titoli.
-- **Palette.** Un solo accento (verde, solo per la disponibilità), grigi tutti caldi, niente nero puro, niente gradienti.
-- **Contenitore.** `max-w-7xl` ovunque, griglia a 12 colonne, paragrafi entro 46-60 caratteri.
-- **Pagine di servizio.** 404 personalizzata, privacy, metadati e anteprima social, favicon con il marchio, `lang` e alternative IT/EN.
-- **Immagini.** Tutte con testo alternativo descrittivo.
-- **Nessun cookie.** Quindi niente banner, corretto così.
+Il design generale regge e non va rifatto. Palette, tipografia, griglia e ritmo sono coerenti e sobri, adatti a un portfolio da sviluppatore. I problemi veri sono due: **il marchio** (sotto) e alcuni **dettagli di interazione** nella galleria e nella navigazione. Il resto è rifinitura.
 
-## Cosa manca, in ordine di priorità
+## 1. Marchio: perché non convince
 
-### A. Fatto (commit "Revisione gruppo A")
+Confronto completo: [`logo-alternative.png`](logo-alternative.png) (16, 24, 32, 64 px e nella scheda del browser).
 
-1. **Link "Salta al contenuto".** Manca: chi naviga da tastiera deve passare tutta la navbar a ogni pagina. Un link nascosto che compare al primo Tab.
-2. **Focus visibile sui pulsanti.** Lo stile di focus c'è solo per i link (`a:focus-visible`). Le righe dei progetti con galleria, le frecce della galleria e il pulsante di stampa sono `<button>` e usano il contorno del browser, diverso dal resto. Stesso stile per tutti.
-3. **Scorrimento morbido sui link interni.** "Lavori", "Percorso", "Contatti" nella navbar saltano di colpo. `scroll-behavior: smooth`, disattivato con "riduci animazioni".
-4. **Titoli senza parole orfane.** Nessun `text-wrap: balance` sui titoli: su alcune larghezze l'ultima riga resta con una parola sola. `text-balance` su titolo della hero e titoli dei progetti, `text-pretty` sui paragrafi.
-5. **Copia dell'email.** Il contatto è solo un link `mailto:`: su un computer senza client di posta configurato (frequente in azienda) il clic non fa niente. Un pulsante "Copia" accanto all'indirizzo, con conferma "Copiato".
-6. **404 con `min-h-screen`.** Su iPhone l'altezza salta con la barra di Safari: `min-h-dvh`.
+**Problemi del marchio attuale ("campo e cursore")**
+- **Sembra un'icona di caricamento.** Un anello di trattini radiali è il simbolo universale di "attendere": è letteralmente l'indicatore di attività di macOS e iOS. A 16 px nella scheda del browser chi lo vede pensa che la pagina stia ancora caricando. Viola il principio di familiarità: usa un simbolo noto con un significato diverso da quello che ha.
+- **Non dice chi sei.** Nessun legame con il nome: senza la scritta accanto è anonimo.
+- **Due versioni diverse.** 28 segni in grande, 12 in piccolo: un marchio che cambia forma a seconda della misura è più debole.
+- **Il cursore al centro** si legge come una "I" o una barra di pausa.
 
-### B. Dipendono da te (aggiornato)
+**Alternative**
 
-7. **Fatto: email `contatti@lorisdalsanto.it` su sito e CV.** Prima: Il cambio a `contatti@lorisdalsanto.it` è pronto sul branch `feat/custom-domain`. Serve la casella attiva e provata.
-8. **HTTPS forzato dal codice** (`src/lib/site/https.ts`), attivo dal prossimo deploy. Resta da spuntare "Enforce HTTPS" su GitHub. Prima: `http://lorisdalsanto.it` risponde ancora senza passare a https (verificato ora). Spuntare "Enforce HTTPS" in Settings, Pages; se è ancora grigio: Remove, Save, attendere.
-9. **Rimandato: testi dei progetti con parole tue.** Restano la cosa che pesa di più sulla percezione del sito.
+| | Pro | Contro |
+| --- | --- | --- |
+| **A. `ld` + cursore** | Iniziali, stesso font del sito, riprende il cursore del titolo | A 16 px diventa tre aste verticali (`l`, `d`, cursore): si confonde |
+| **B. `L` + cursore** | Leggibile a 16 px, legato al nome e al titolo che si scrive da solo, una sola forma a tutte le misure | Una sola iniziale |
+| **C. `LDS` in mono** | Tutte le iniziali | Illeggibile sotto i 32 px, sembra un'etichetta, non un marchio |
 
-### C. Da valutare (cambiano qualcosa di visibile)
+**Consiglio: B, `L` seguita dal cursore.** È il segno più semplice che regge da 16 px al biglietto da visita, usa il tuo font e racconta la stessa cosa della hero: qualcuno che sta scrivendo. Se scelto: rifare favicon, icona iOS, anteprima social e marchio nel CV, aggiornare la board in `public/design/brand-kit/`.
 
-10. **Fatto: CV in PDF scaricabile**, generato a ogni deploy (`npm run cv:pdf`). Resta di 2 pagine: per una sola servirebbe tagliare circa un terzo del contenuto. Oggi c'è solo "Stampa o salva in PDF", che dipende dal browser. Un recruiter si aspetta un file da scaricare con un clic. Generarlo dalla pagina `/cv` a ogni deploy e linkarlo accanto. Il CV stampato è di 2 pagine: valutare di portarlo a 1.
-11. **Fatto: miniature nella lista dei progetti.** Le righe di Findora e Fam Fanta sono solo testo, eppure hanno screenshot veri. Una miniatura nella riga darebbe un appiglio visivo alla sezione più importante. Le righe EY e UniCredit restano testo (NDA).
-12. **Rimandato: statistiche senza cookie (GoatCounter).** Servono per sapere se i recruiter aprono il sito. GoatCounter non usa cookie, quindi niente banner. Passaggi per te:
-    1. Vai su **https://www.goatcounter.com** e premi **Sign up**.
-    2. In **Code** scrivi `lorisdalsanto`: il pannello sarà su `https://lorisdalsanto.goatcounter.com`. Se è già preso, scegline un altro e annotalo.
-    3. Come **Site domain** scrivi `lorisdalsanto.it`.
-    4. Inserisci email e password, accetta i termini e conferma l'account dal link che arriva per email.
-    5. Nelle impostazioni del sito (**Settings**) spunta **"Don't track my own pageviews"**, così le tue visite non falsano i numeri.
-    6. Mandami il codice scelto (es. `lorisdalsanto`).
+## 2. Interazione e motion
 
-    Poi io: aggiungo lo script di GoatCounter nel layout (solo in produzione, non in locale), una riga sulle statistiche nella pagina privacy (IT/EN) e verifico nel pannello che la prima visita venga contata.
+| # | Priorità | Dove | Problema | Proposta |
+| --- | --- | --- | --- | --- |
+| 1 | Media | Galleria progetti | Durante il cambio progetto (0,45 s) gli input vengono scartati (`busy`). Principio Apple: mai bloccare l'input durante una transizione. | Se arriva un nuovo comando durante il cambio, chiudere subito l'animazione in corso e partire dalla posizione attuale verso il nuovo progetto. |
+| 2 | Media | Galleria progetti | Per passare al progetto successivo si accumula scroll o swipe oltre la fine, ma niente lo mostra finché non scatta: per l'utente "non succede niente" e poi cambia di colpo. | Feedback continuo: la riga "Progetto successivo" in fondo si riempie in proporzione alla spinta, con resistenza crescente (effetto elastico). Spento con riduci animazioni. |
+| 3 | Bassa | Link, righe dei progetti, pulsanti | Nessun feedback alla pressione: solo hover, che sul telefono non esiste. | Stato `:active` immediato (colore attenuato, nessuno schiacciamento: i CTA sono link sottolineati). |
+| 4 | Ok | Hero | Campo di segni a tutta larghezza in movimento continuo: Apple sconsiglia sfondi in movimento su tutto lo schermo. | Già mitigato: lento, si ferma fuori schermo, rispetta riduci animazioni, assente su touch. Nessuna azione. |
+| 5 | Ok | Galleria | Entrata e uscita sullo stesso percorso, tendina nel verso dello scorrimento, cambio istantaneo da tastiera. | Nessuna azione. |
 
-### D. Scartato apposta
+## 3. Orientamento e navigazione
 
-- **Grana, texture, foto di sfondo, vetro.** La procedura le suggerisce contro i fondi "piatti". Qui il fondo piatto è un'identità (bianco perla, campo di segni nella hero): aggiungerle rovinerebbe il sito.
-- **Cambio font.** Quelli attuali hanno già carattere.
-- **Feedback alla pressione sui pulsanti** (`scale(0.98)`). I CTA sono link sottolineati, non pulsanti pieni: lo schiacciamento sembrerebbe un errore.
-- **Evidenziare la sezione corrente nella navbar mentre si scorre.** Utile su pagine lunghe; qui le sezioni sono sei e la navbar ne ha quattro. Costa più di quanto rende.
-- **Tema scuro.** Funzione nuova, non un difetto: dopo le candidature.
-- **Codice dell'interruttore animazioni commentato.** La regola chiede di togliere il codice morto, ma l'hai voluto tenere tu per riattivarlo.
+| # | Priorità | Dove | Problema | Proposta |
+| --- | --- | --- | --- | --- |
+| 6 | Bassa | Navbar nelle pagine CV e privacy | "Dove sono?" Sulla pagina CV la voce "CV" della navbar non è evidenziata (solo la lingua lo è). | Voce corrente in `text-ink` con `aria-current="page"`. |
+| 7 | Ok | Tutto il sito | Etichette specifiche ("Lavori", "Percorso"), cambio lingua che resta sulla stessa pagina, 404 con ritorno al sito, link "Salta al contenuto". | Nessuna azione. |
 
-## Stato
+## 4. Materiali e accessibilità
 
-- **Fatto:** gruppo A, punti 7, 10, 11, HTTPS forzato dal codice.
-- **Da fare da te:** spuntare "Enforce HTTPS" in GitHub, Settings, Pages (se è grigio: Remove, Save, attendere); creare l'account GoatCounter (punto 12).
-- **Rimandato:** testi dei progetti con parole tue (punto 9), tema scuro.
+| # | Priorità | Dove | Problema | Proposta |
+| --- | --- | --- | --- | --- |
+| 8 | Bassa | Navbar | Fondo semitrasparente con sfocatura: con "riduci trasparenza" attivo nel sistema resta trasparente. | `prefers-reduced-transparency`: fondo pieno, senza sfocatura. |
+| 9 | Bassa | Tutto il sito | Con "aumenta contrasto" attivo i grigi chiari (linee `#d9d5cd`, testo secondario) restano uguali. | `prefers-contrast: more`: linee e testo secondario più scuri. |
+| 10 | Media | Tutto il sito | Nessun tema scuro: il sito resta chiaro anche con il sistema in modalità scura. Apple lo considera parte della cura del dettaglio. | Da valutare dopo le candidature: richiede una seconda palette e la verifica di tutte le immagini. |
+
+## 5. Tipografia
+
+| # | Priorità | Dove | Problema | Proposta |
+| --- | --- | --- | --- | --- |
+| 11 | Bassa | Hero su telefono | A 390 px il titolo va su 7 righe e occupa quasi tutta la prima schermata. | Corpo minimo da 36 a 32 px: 6 righe, bottoni più in alto. |
+| 12 | Ok | Tutto il sito | Spaziatura delle lettere diversa per misura (negativa sui titoli, positiva sulle etichette mono), interlinea stretta sui titoli e comoda sul testo, gerarchia con peso 500 invece della sola dimensione, unità in `rem`. | Nessuna azione. |
+
+## 6. Cosa va già bene
+
+- **Palette**: un solo accento, usato solo per la disponibilità; grigi caldi coerenti; niente nero puro né gradienti.
+- **Risposta**: niente ritardi artificiali, animazioni brevi, contenuto della hero visibile entro un secondo.
+- **Riduci animazioni**: rispettato ovunque, dal primo frame.
+- **Contenuti**: email copiabile, CV scaricabile in PDF, miniature dei progetti, nessun cookie.
+
+## Ordine consigliato
+
+1. Marchio: scegliere tra attuale, A, B, C (consiglio B) e applicarlo ovunque.
+2. Punti 1 e 2 (galleria): sono quelli che si sentono di più usando il sito.
+3. Punti 3, 6, 8, 9, 11: piccoli, si fanno in un solo commit.
+4. Punto 10 (tema scuro): dopo le candidature.
+
+## Attività aperte (dalle revisioni precedenti)
+
+- **Enforce HTTPS su GitHub** (tu): Settings, Pages, spuntare "Enforce HTTPS"; se è grigio: Remove, Save, attendere. Il sito reindirizza già da codice dopo il prossimo deploy.
+- **Statistiche GoatCounter** (rimandato, tu):
+  1. Vai su **https://www.goatcounter.com** e premi **Sign up**.
+  2. In **Code** scrivi `lorisdalsanto` (pannello su `https://lorisdalsanto.goatcounter.com`); se è preso, scegline un altro.
+  3. In **Site domain** scrivi `lorisdalsanto.it`.
+  4. Email e password, poi conferma l'account dal link via email.
+  5. In **Settings** spunta "Don't track my own pageviews".
+  6. Mandami il codice: aggiungo lo script (solo in produzione), una riga nella privacy IT/EN e verifico la prima visita.
+- **Testi dei progetti con parole tue**: rimandato.
