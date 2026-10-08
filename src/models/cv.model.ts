@@ -23,7 +23,7 @@ export type Cv = {
     traits: string;
     skills: string;
     languages: string;
-    print: string;
+    download: string;
     updated: string;
   };
   headline: string;

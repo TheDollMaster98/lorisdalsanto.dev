@@ -13,6 +13,7 @@ export const it: Content = {
     contact: "Contatti",
     cv: "CV",
     motion: "Animazioni",
+    skip: "Salta al contenuto",
   },
   hero: {
     role: "Front-End & Flutter Mobile Developer",
@@ -198,7 +199,7 @@ export const it: Content = {
         company: "Be | Shaping the Future",
         role: "Junior Front-End Developer, cliente UniCredit",
         summary:
-          "Progetti bancari Angular (13–19) a lungo termine: UC Hedge, schermate nell’app mobile UniCredit (WebView), il portale interno dei tool e funzionalità per il ticketing interno. Coverage dei test +15%, +10% e +5%, rilasci CI/CD su Jenkins, team IT/DE/RO.",
+          "Progetti bancari Angular (13-19) a lungo termine: UC Hedge, schermate nell’app mobile UniCredit (WebView), il portale interno dei tool e funzionalità per il ticketing interno. Coverage dei test +15%, +10% e +5%, rilasci CI/CD su Jenkins, team IT/DE/RO.",
       },
     ],
     educationLabel: "Formazione",
@@ -217,7 +218,7 @@ export const it: Content = {
     skills: [
       {
         area: "Web",
-        items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals",
+        items: "Angular 13-20, Next.js, React, TypeScript, RxJS, NgRx, Signals",
       },
       { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod" },
       {
@@ -236,13 +237,14 @@ export const it: Content = {
   contact: {
     label: "Contatti",
     intro: "Hai un progetto o una posizione aperta? Scrivimi.",
+    copy: "Copia indirizzo",
+    copied: "Indirizzo copiato",
     mail: {
       subject: "Contatto dal tuo sito",
       body: "Ciao Loris,\n\nti ho trovato dal tuo sito.\n\n",
     },
   },
   footer: {
-    localTime: "Ora a Milano",
     backToTop: "Torna su ↑",
     privacy: "Privacy",
   },

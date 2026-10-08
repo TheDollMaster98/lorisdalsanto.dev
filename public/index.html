@@ -11,6 +11,9 @@
     -->
     <meta http-equiv="refresh" content="0; url=./it/" />
     <script>
+      // Prima di tutto: da http a https (vedi src/lib/site/https.ts).
+      if (location.protocol === "http:" && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname))
+        location.replace("https:" + location.href.slice(5));
       var supported = ["it", "en"];
       var lang = (navigator.language || "").slice(0, 2).toLowerCase();
       location.replace(

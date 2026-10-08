@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
+import { Mark } from "@/components/brand/Mark";
 import { Header } from "@/components/layout/Header";
 import { profile } from "@/content/profile";
 import { getContent, getCv, isLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/site/metadata";
+import { asset } from "@/lib/site/asset";
 import { siteUrl } from "@/lib/site/site";
 import { CvEntries } from "./_cv/CvEntries";
 import { CvSection } from "./_cv/CvSection";
-import { PrintButton } from "./_cv/PrintButton";
 
 type PageProps = { params: Promise<{ lang: string }> };
 
@@ -45,7 +46,7 @@ export default async function CvPage({ params }: PageProps) {
     <>
       <Header locale={lang} nav={nav} path="cv/" />
       <main
-        id="top"
+        id="main"
         className="mx-auto max-w-5xl px-4 pb-24 pt-16 md:px-8 md:pb-32 md:pt-24 print:max-w-none print:p-0"
       >
         <header className="pb-10 md:pb-14 print:pb-6">
@@ -53,8 +54,16 @@ export default async function CvPage({ params }: PageProps) {
             <span>
               {cv.labels.updated} {cv.updated}
             </span>
-            <PrintButton label={cv.labels.print} />
+            {/* PDF generato a ogni deploy da questa stessa pagina (scripts/cv-pdf.mjs). */}
+            <a
+              href={asset(`assets/cv/loris-dal-santo-cv-${lang}.pdf`)}
+              download
+              className="border-b border-ink pb-0.5 font-medium transition-colors hover:border-ink-muted hover:text-ink-muted"
+            >
+              {cv.labels.download} ↓
+            </a>
           </div>
+          <Mark size={40} className="mb-6 print:mb-4" />
           <h1 className="text-4xl font-medium tracking-[-0.03em] md:text-6xl print:text-4xl">
             {profile.name}
           </h1>

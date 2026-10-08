@@ -48,7 +48,7 @@ export default async function PrivacyPage({ params }: PageProps) {
     <>
       <Header locale={lang} nav={nav} path="privacy/" />
       <main
-        id="top"
+        id="main"
         className="mx-auto max-w-7xl px-4 pb-24 pt-24 md:px-8 md:pb-32 md:pt-32"
       >
         <div className="max-w-2xl">
