@@ -47,6 +47,19 @@ Tra le varianti di A la più solida è **A2** (blocco), seguita da A1 se vuoi il
 
 **Consiglio aggiornato: 1, la legatura.**
 
+**Combinazioni di A e taglio** ([`logo-taglio-cursore.png`](logo-taglio-cursore.png)), su tua richiesta:
+
+| | Idea | A 16 px | Giudizio |
+| --- | --- | --- | --- |
+| **M1** | Taglio nella d + cursore dopo | Debole | Due cursori (inciso ed esterno): ridondante, quattro aste fitte |
+| **M2** | d piena senza taglio + cursore dopo | Discreta | La pancia piena separa bene il cursore, ma la d sembra una macchia |
+| **M3** | Taglio rinforzato (aste e taglio più spessi) | Buona | La versione più solida del taglio alle misure piccole |
+| **M4** | Il taglio scende e apre la pancia | Debole | Dentro la d si legge una "n": ambiguo |
+| **M5** | Pancia ad anello con il cursore pieno dentro | Discreta | Originale, ma a 16 px l'anello si chiude |
+| **M6** | `l` del font (con il piede curvo) + d con taglio | Buona | La sintesi esatta di A e taglio: carattere tipografico più segno disegnato |
+
+**Preferite in questo giro: M6, poi M3.**
+
 **Consiglio: B, `L` seguita dal cursore.** È il segno più semplice che regge da 16 px al biglietto da visita, usa il tuo font e racconta la stessa cosa della hero: qualcuno che sta scrivendo. Se scelto: rifare favicon, icona iOS, anteprima social e marchio nel CV, aggiornare la board in `public/design/brand-kit/`.
 
 ## 2. Interazione e motion
