@@ -6,7 +6,11 @@ Branch: `design/brand-review`. Controllo dell'intero sito (home, galleria proget
 
 Il design generale regge e non va rifatto. Palette, tipografia, griglia e ritmo sono coerenti e sobri, adatti a un portfolio da sviluppatore. I problemi veri sono due: **il marchio** (sotto) e alcuni **dettagli di interazione** nella galleria e nella navigazione. Il resto è rifinitura.
 
-## 1. Marchio: perché non convince
+## 1. Marchio
+
+**Deciso: versione A, `ld` + cursore**, applicata a favicon, icona iOS, anteprima social, CV e brand kit. Il resto di questa sezione resta come storico delle opzioni valutate.
+
+### Perché il precedente non convinceva
 
 Confronto completo: [`logo-alternative.png`](logo-alternative.png) (16, 24, 32, 64 px e nella scheda del browser).
 

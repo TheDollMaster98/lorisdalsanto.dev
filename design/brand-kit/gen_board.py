@@ -5,35 +5,36 @@ import math, random, sys
 random.seed(7)
 PAPER="#f4f2ee"; RAISED="#ebe8e2"; INK="#151515"; MUTED="#5e5b55"; LINE="#d9d5cd"; SIGNAL="#3f7a4a"; CANVAS="#1c1c1b"
 
-def mark(size, fg, bg=None, cursor=True, ticks=28):
-    # anello di trattini radiali (il campo della hero) + barra del cursore al centro
-    c=size/2; r=size*0.36; L=size*0.11; w=max(1.2,size*0.028)
-    out=[f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" xmlns="http://www.w3.org/2000/svg">']
+def mark(size, fg, bg=None, **_):
+    # Marchio: "ld" + cursore, stesse proporzioni di src/components/brand/Mark.tsx.
+    # Con bg: riquadro pieno (icone), il segno occupa il 62% dell'altezza.
+    h = size*0.62 if bg else size
+    fs = h*0.8; cw = max(1.5, h*0.07); ch = h*0.66
+    tw = 0.738*fs                     # larghezza visibile di "ld" in Schibsted 500 (misurata), -0.04em
+    x0 = (size - (tw + h*0.13 + cw))/2
+    base = size/2 + 0.36*fs           # testo centrato in verticale sul cursore
+    out = [f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" xmlns="http://www.w3.org/2000/svg">']
     if bg: out.append(f'<rect width="{size}" height="{size}" rx="{size*0.22}" fill="{bg}"/>')
-    for i in range(ticks):
-        a=2*math.pi*i/ticks - math.pi/2
-        k=0.55+0.45*math.cos(a+math.pi/2)**2  # trattini più lunghi in alto e in basso
-        l=L*k
-        x1=c+(r-l/2)*math.cos(a); y1=c+(r-l/2)*math.sin(a)
-        x2=c+(r+l/2)*math.cos(a); y2=c+(r+l/2)*math.sin(a)
-        out.append(f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" stroke="{fg}" stroke-width="{w:.2f}" stroke-linecap="round"/>')
-    if cursor:
-        cw=size*0.07; ch=size*0.30
-        out.append(f'<rect x="{c-cw/2:.2f}" y="{c-ch/2:.2f}" width="{cw:.2f}" height="{ch:.2f}" fill="{fg}"/>')
+    out.append(f'<text x="{x0:.2f}" y="{base:.2f}" font-family="Schibsted Grotesk" font-weight="500" font-size="{fs:.2f}" letter-spacing="{-0.04*fs:.2f}" fill="{fg}">ld</text>')
+    out.append(f'<rect x="{x0+tw+h*0.07:.2f}" y="{(size-ch)/2:.2f}" width="{cw:.2f}" height="{ch:.2f}" fill="{fg}"/>')
     out.append('</svg>'); return "".join(out)
 
 def construction(size):
-    c=size/2; r=size*0.36; L=size*0.11
-    s=[f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" xmlns="http://www.w3.org/2000/svg">']
-    s.append(f'<g stroke="{LINE}" stroke-width="1" fill="none">')
-    for rr in (r-L/2, r, r+L/2): s.append(f'<circle cx="{c}" cy="{c}" r="{rr:.1f}"/>')
-    s.append(f'<line x1="0" y1="{c}" x2="{size}" y2="{c}"/><line x1="{c}" y1="0" x2="{c}" y2="{size}"/>')
-    s.append(f'<line x1="{c-r}" y1="{c-r}" x2="{c+r}" y2="{c+r}" stroke-dasharray="3 4"/></g>')
-    s.append(mark(size, INK, cursor=True).split('>',1)[1].rsplit('</svg>',1)[0])
-    f='font-family="IBM Plex Mono" font-size="11" fill="'+MUTED+'"'
-    s.append(f'<text x="{c+r+L/2-58}" y="{c+r+L/2+18}" {f}>r 0.36</text>')
-    s.append(f'<text x="{c+8}" y="{c-r-L/2-8}" {f}>28 segni</text>')
-    s.append(f'<text x="{c+size*0.06}" y="{c+size*0.16}" {f}>cursore</text>')
+    # Linee guida tipografiche del marchio: ascendente, altezza x, linea di base, cursore.
+    h = size*0.62; fs = h*0.8; tw = 0.738*fs
+    x0 = (size - (tw + h*0.13 + max(1.5, h*0.07)))/2
+    base = size/2 + 0.36*fs; asc = base - fs*0.72; xh = base - fs*0.52
+    cx = x0 + tw + h*0.13 + max(1.5, h*0.07)/2
+    f = 'font-family="IBM Plex Mono" font-size="11" fill="'+MUTED+'"'
+    s = [f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" xmlns="http://www.w3.org/2000/svg"><g stroke="{LINE}" stroke-width="1">']
+    for y in (asc, xh, base):
+        s.append(f'<line x1="0" y1="{y:.1f}" x2="{size}" y2="{y:.1f}"/>')
+    s.append(f'<line x1="{cx:.1f}" y1="0" x2="{cx:.1f}" y2="{size}" stroke-dasharray="3 4"/></g>')
+    s.append(mark(size, INK, bg="none").split('>',1)[1].rsplit('</svg>',1)[0])
+    s.append(f'<text x="4" y="{asc-6:.1f}" {f}>ascendente</text>')
+    s.append(f'<text x="4" y="{xh-6:.1f}" {f}>altezza x</text>')
+    s.append(f'<text x="4" y="{base+16:.1f}" {f}>linea di base</text>')
+    s.append(f'<text x="{cx+8:.1f}" y="{size-8}" {f}>cursore</text>')
     s.append('</svg>'); return "".join(s)
 
 def field(w,h,step=18):

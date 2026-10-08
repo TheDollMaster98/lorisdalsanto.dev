@@ -63,7 +63,7 @@ export default async function CvPage({ params }: PageProps) {
               {cv.labels.download} ↓
             </a>
           </div>
-          <Mark size={44} className="mb-6 print:mb-4" />
+          <Mark size={40} className="mb-6 print:mb-4" />
           <h1 className="text-4xl font-medium tracking-[-0.03em] md:text-6xl print:text-4xl">
             {profile.name}
           </h1>
