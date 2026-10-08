@@ -37,6 +37,16 @@ Confronto completo: [`logo-alternative.png`](logo-alternative.png) (16, 24, 32, 
 
 Tra le varianti di A la più solida è **A2** (blocco), seguita da A1 se vuoi il colore.
 
+**Marchi disegnati** ([`logo-disegnati.png`](logo-disegnati.png)). Le varianti A sono lettere scritte con un font dentro un quadrato: soluzione standard dei portfolio da sviluppatore, quindi generica. Tre direzioni con le lettere costruite a mano:
+
+| | Idea | A 16 px | Note |
+| --- | --- | --- | --- |
+| **1. Legatura** | La `d` non ha un'asta: la sua asta è il cursore, più alto della `l` | Buona | Un solo segno che contiene nome e cursore; il più riconoscibile. Bozza: proporzioni da rifinire |
+| **2. Pixel** | `ld` e cursore su una griglia di pixel | Discreta | Richiama il codice, ma ha un sapore retrò; per essere nitido va allineato alla griglia di 16 px |
+| **3. Taglio** | `d` piena, il cursore la incide in negativo | Discreta | Elegante in grande, sotto i 24 px il taglio si chiude |
+
+**Consiglio aggiornato: 1, la legatura.**
+
 **Consiglio: B, `L` seguita dal cursore.** È il segno più semplice che regge da 16 px al biglietto da visita, usa il tuo font e racconta la stessa cosa della hero: qualcuno che sta scrivendo. Se scelto: rifare favicon, icona iOS, anteprima social e marchio nel CV, aggiornare la board in `public/design/brand-kit/`.
 
 ## 2. Interazione e motion
