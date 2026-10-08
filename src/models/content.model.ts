@@ -15,6 +15,7 @@ export type Content = {
     contact: string;
     cv: string;
     motion: string;
+    skip: string;
   };
   hero: {
     role: string;
@@ -58,6 +59,8 @@ export type Content = {
   contact: {
     label: string;
     intro: string;
+    copy: string;
+    copied: string;
     // Email precompilata aperta da "Scrivimi" e dall'indirizzo nei contatti.
     mail: {
       subject: string;
@@ -66,7 +69,6 @@ export type Content = {
   };
   footer: {
     backToTop: string;
-    localTime: string;
     privacy: string;
   };
   privacy: {

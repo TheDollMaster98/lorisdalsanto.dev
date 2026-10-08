@@ -16,12 +16,12 @@ export const cvEn: Cv = {
     skills: "IT skills",
     languages: "Languages",
     traits: "About me",
-    print: "Print or save as PDF",
+    download: "Download PDF",
     updated: "Updated",
   },
   headline: "Front-End & Flutter Mobile Developer",
   location: "Milan (IT)",
-  updated: "September 2026",
+  updated: "October 2026",
   profile:
     "Front-End Developer with 4 years of experience in enterprise contexts (banking and consulting), specialised in Angular, React and Next.js with TypeScript, and Mobile Developer with Flutter and Dart. Technical ownership of internal EY Front-End products end to end, from architectural decisions to release, working directly with senior stakeholders (EY Partners, Product Owners and UniCredit multinational teams).",
   experience: [
@@ -41,7 +41,7 @@ export const cvEn: Cv = {
       title: "Junior Front-End Developer",
       org: "Be | Shaping the Future (Digitech Solution), UniCredit Europe client, Milan",
       points: [
-        "Development, maintenance and refactoring of Angular (13–19) components across several long-term enterprise banking projects. Responsive design system (Bootstrap 5, Tailwind, Material Design) and state management (RxJS, NgRx, Signals).",
+        "Development, maintenance and refactoring of Angular (13-19) components across several long-term enterprise banking projects. Responsive design system (Bootstrap 5, Tailwind, Material Design) and state management (RxJS, NgRx, Signals).",
         "Unit and automated tests (Karma, Jasmine): +15%, +5% and +10% coverage on three projects, CI/CD builds and releases on Jenkins, WCAG accessibility.",
         "Agile/Scrum on Jira in distributed teams (Italy, Germany, Romania).",
       ],

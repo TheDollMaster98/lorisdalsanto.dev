@@ -1,10 +1,12 @@
+import Image from "next/image";
+import { asset } from "@/lib/site/asset";
 import type { Content } from "@/models/content.model";
 import type { Project } from "@/models/project.model";
 import { Section } from "./Section";
 
 export function Work({ work }: { work: Content["work"] }) {
   return (
-    <Section id="work" index="01" label={work.label}>
+    <Section id="work" label={work.label}>
       <ol>
         {work.projects.map((project) => {
           const content = (
@@ -13,7 +15,7 @@ export function Work({ work }: { work: Content["work"] }) {
               className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10"
             >
               <div className="col-span-8 md:col-span-5">
-                <h3 className="text-2xl font-medium tracking-[-0.02em] md:text-3xl">
+                <h3 className="text-balance text-2xl font-medium tracking-[-0.02em] md:text-3xl">
                   {project.title}
                   {(project.href || hasGallery(project)) && (
                     <span
@@ -25,6 +27,21 @@ export function Work({ work }: { work: Content["work"] }) {
                   )}
                 </h3>
                 <p className="mt-2 text-sm text-ink-muted">{project.context}</p>
+                {hasGallery(project) && project.images?.[0] && (
+                  // Prima schermata del progetto: un appiglio visivo nella lista.
+                  <div className="mt-6 max-w-sm overflow-hidden border border-line">
+                    <Image
+                      src={asset(
+                        `assets/img/projects/${project.slug}/${project.images[0].file}`,
+                      )}
+                      alt=""
+                      width={project.images[0].width ?? 1600}
+                      height={project.images[0].height ?? 1000}
+                      sizes="(min-width: 768px) 24rem, 100vw"
+                      className="h-auto w-full transition-transform duration-500 ease-out motion-safe:group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
                 {hasGallery(project) && (
                   <p className="mt-3 font-mono text-xs uppercase tracking-[0.08em] underline decoration-line underline-offset-4 transition-colors group-hover:decoration-ink">
                     {work.gallery.open}
@@ -35,7 +52,7 @@ export function Work({ work }: { work: Content["work"] }) {
                 {project.year}
               </p>
               <div className="col-span-12 md:col-span-5">
-                <p className="text-ink-muted">{project.summary}</p>
+                <p className="text-pretty text-ink-muted">{project.summary}</p>
                 <p className="mt-4 font-mono text-xs text-ink-muted">
                   {project.role}
                   <span className="mt-1 block">{project.stack.join(", ")}</span>

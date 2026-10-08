@@ -49,7 +49,7 @@ export default async function LandingPage({
   return (
     <Motion>
       <Header locale={lang} nav={content.nav} />
-      <main>
+      <main id="main">
         <Hero locale={lang} hero={content.hero} mail={content.contact.mail} />
         <Intro intro={content.intro} />
         <Work work={content.work} />
@@ -59,7 +59,7 @@ export default async function LandingPage({
         <Contact
           locale={lang}
           contact={content.contact}
-          cvLabel={content.nav.cv}
+          cvLabel={content.hero.cta.cv}
         />
       </main>
       <Footer locale={lang} footer={content.footer} />

@@ -3,14 +3,14 @@ import { Section } from "./Section";
 
 export function Stack({ stack }: { stack: Content["stack"] }) {
   return (
-    <Section id="stack" index="03" label={stack.label}>
-      <dl data-reveal className="max-w-3xl text-sm md:text-base">
+    <Section id="stack" label={stack.label}>
+      <dl
+        data-reveal
+        className="grid max-w-4xl grid-cols-1 gap-x-12 gap-y-10 text-sm md:grid-cols-2 md:text-base"
+      >
         {stack.skills.map((skill) => (
-          <div
-            key={skill.area}
-            className="grid grid-cols-[5.5rem_1fr] gap-4 border-t border-line py-4 md:grid-cols-[8.5rem_1fr]"
-          >
-            <dt className="font-mono text-xs leading-5 text-ink-muted md:leading-6">
+          <div key={skill.area}>
+            <dt className="mb-2 font-mono text-xs text-ink-muted">
               {skill.area}
             </dt>
             <dd>{skill.items}</dd>

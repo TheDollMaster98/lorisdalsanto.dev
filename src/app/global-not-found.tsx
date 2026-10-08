@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { mono, sans } from "@/lib/site/fonts";
+import { httpsRedirectScript } from "@/lib/site/https";
 import "./globals.css";
 
 // Pagina 404 unica per tutto il sito: non sa in che lingua è il visitatore, quindi è bilingue.
@@ -12,8 +13,11 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
   return (
     <html lang="it" className={`${sans.variable} ${mono.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: httpsRedirectScript }} />
+      </head>
       <body className="bg-paper font-sans text-ink">
-        <main className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 py-24 md:px-8">
+        <main className="mx-auto flex min-h-dvh max-w-7xl flex-col justify-center px-4 py-24 md:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.08em] text-ink-muted">
             404
           </p>

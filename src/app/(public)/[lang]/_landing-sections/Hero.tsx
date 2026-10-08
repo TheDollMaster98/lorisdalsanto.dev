@@ -19,7 +19,7 @@ export function Hero({ locale, hero, mail }: HeroProps) {
       <HeroField />
       <section
         id="top"
-        className="mx-auto max-w-7xl px-4 pb-20 pt-24 md:px-8 md:pb-32 md:pt-40"
+        className="mx-auto max-w-7xl px-4 pb-20 pt-20 md:px-8 md:pb-28 md:pt-24"
       >
         <div
           data-hero-meta
@@ -45,7 +45,7 @@ export function Hero({ locale, hero, mail }: HeroProps) {
         </div>
         <h1
           data-hero-title
-          className="max-w-[20ch] text-[clamp(2.5rem,6.5vw,6rem)] font-medium leading-[0.98] tracking-[-0.035em]"
+          className="max-w-[34ch] text-balance text-[clamp(2.25rem,4.6vw,4rem)] font-medium leading-[1.02] tracking-[-0.035em]"
         >
           {hero.statement}
         </h1>

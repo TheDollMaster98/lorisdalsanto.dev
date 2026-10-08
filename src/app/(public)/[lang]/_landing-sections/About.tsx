@@ -3,11 +3,7 @@ import type { Entry } from "@/models/entry.model";
 import { Section } from "./Section";
 
 function Heading({ children }: { children: React.ReactNode }) {
-  return (
-    <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.08em] text-ink-muted">
-      {children}
-    </h3>
-  );
+  return <h3 className="mb-4 text-sm text-ink-muted">{children}</h3>;
 }
 
 function Timeline({ entries }: { entries: Entry[] }) {
@@ -36,7 +32,7 @@ function Timeline({ entries }: { entries: Entry[] }) {
 
 export function About({ about }: { about: Content["about"] }) {
   return (
-    <Section id="about" index="02" label={about.label}>
+    <Section id="about" label={about.label}>
       <div className="grid max-w-3xl grid-cols-1 gap-16">
         <div data-reveal>
           <Heading>{about.experienceLabel}</Heading>
