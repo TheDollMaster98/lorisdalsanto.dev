@@ -1,3 +1,6 @@
+# Genera il brand kit 3x3 (HTML). Uso:
+#   python3 -I design/brand-kit/gen_board.py public/design/brand-kit/index.html
+# Pubblicato su lorisdalsanto.it/design/brand-kit/ (non linkato, noindex).
 import math, random, sys
 random.seed(7)
 PAPER="#f4f2ee"; RAISED="#ebe8e2"; INK="#151515"; MUTED="#5e5b55"; LINE="#d9d5cd"; SIGNAL="#3f7a4a"; CANVAS="#1c1c1b"
@@ -54,7 +57,7 @@ def field(w,h,step=18):
 
 W,H=1600,1200; G=14; PW=(W-G*4)//3; PH=(H-G*4)//3
 def lab(n,t,col=MUTED): return f'<div class="lab" style="color:{col}"><span>{n}</span><span>{t}</span></div>'
-html=f'''<!doctype html><html><head><meta charset="utf-8"><title>Brand kit, Loris Dal Santo</title>
+html=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Brand kit, Loris Dal Santo</title>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{{box-sizing:border-box;margin:0}} body{{background:{CANVAS};width:{W}px;height:{H}px;padding:{G}px;display:grid;grid-template-columns:repeat(3,{PW}px);grid-template-rows:repeat(3,{PH}px);gap:{G}px;font-family:"Schibsted Grotesk",sans-serif;color:{INK}}}
