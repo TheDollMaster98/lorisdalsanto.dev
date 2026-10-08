@@ -41,9 +41,11 @@ html {
   color: var(--paper);
 }
 
-/* Il titolo resta nascosto finché GSAP non lo prepara per la scrittura, così non "salta" al primo paint.
-   Se lo script non parte, dopo 2.5s si mostra comunque. */
-.js:not(.no-motion) [data-hero-title] {
+/* Titolo, riga sopra e link sotto restano nascosti finché GSAP non li prepara, così non
+   compaiono e spariscono al primo paint. Se lo script non parte, dopo 2.5s si mostrano comunque. */
+.js:not(.no-motion) [data-hero-title],
+.js:not(.no-motion) [data-hero-meta] > *,
+.js:not(.no-motion) [data-hero-cta] > * {
   visibility: hidden;
   animation: reveal-fallback 0s 2.5s forwards;
 }
@@ -77,7 +79,9 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js [data-hero-title] {
+  .js:not(.no-motion) [data-hero-title],
+  .js:not(.no-motion) [data-hero-meta] > *,
+  .js:not(.no-motion) [data-hero-cta] > * {
     visibility: visible;
     animation: none;
   }
