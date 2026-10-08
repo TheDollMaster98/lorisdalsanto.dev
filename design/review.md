@@ -24,6 +24,19 @@ Confronto completo: [`logo-alternative.png`](logo-alternative.png) (16, 24, 32, 
 | **B. `L` + cursore** | Leggibile a 16 px, legato al nome e al titolo che si scrive da solo, una sola forma a tutte le misure | Una sola iniziale |
 | **C. `LDS` in mono** | Tutte le iniziali | Illeggibile sotto i 32 px, sembra un'etichetta, non un marchio |
 
+**Varianti dell'idea A** ([`logo-varianti-a.png`](logo-varianti-a.png)), per togliere la confusione a 16 px tra il cursore e le aste di `l` e `d`:
+
+| | Lettura a 16 px | Note |
+| --- | --- | --- |
+| **A. `ld|`** | Debole: tre aste uguali | Originale |
+| **A1. `ld|` con cursore verde** | Discreta: il colore separa il cursore | Usa l'accento verde, finora riservato alla disponibilità: ne diluisce il significato |
+| **A2. `ld` + cursore a blocco** | Buona: il blocco pieno non si confonde con le lettere | Cursore da terminale, forte anche in piccolo |
+| **A3. `ld_`** | Debole: il trattino sparisce sotto i 24 px | Elegante in grande |
+| **A4. `ld_` in mono** | Pessima: in IBM Plex Mono la `l` sembra un `1` ("1d") | Scartata |
+| **A5. `lds|` verde** | Pessima: tre lettere sono troppe a 16 px | Scartata |
+
+Tra le varianti di A la più solida è **A2** (blocco), seguita da A1 se vuoi il colore.
+
 **Consiglio: B, `L` seguita dal cursore.** È il segno più semplice che regge da 16 px al biglietto da visita, usa il tuo font e racconta la stessa cosa della hero: qualcuno che sta scrivendo. Se scelto: rifare favicon, icona iOS, anteprima social e marchio nel CV, aggiornare la board in `public/design/brand-kit/`.
 
 ## 2. Interazione e motion
