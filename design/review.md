@@ -33,7 +33,15 @@ Stack: Next.js 16 export statico, Tailwind 4, GSAP. Nessuna modifica fatta finch
 
 10. **Fatto: CV in PDF scaricabile**, generato a ogni deploy (`npm run cv:pdf`). Resta di 2 pagine: per una sola servirebbe tagliare circa un terzo del contenuto. Oggi c'è solo "Stampa o salva in PDF", che dipende dal browser. Un recruiter si aspetta un file da scaricare con un clic. Generarlo dalla pagina `/cv` a ogni deploy e linkarlo accanto. Il CV stampato è di 2 pagine: valutare di portarlo a 1.
 11. **Fatto: miniature nella lista dei progetti.** Le righe di Findora e Fam Fanta sono solo testo, eppure hanno screenshot veri. Una miniatura nella riga darebbe un appiglio visivo alla sezione più importante. Le righe EY e UniCredit restano testo (NDA).
-12. **In attesa del codice GoatCounter: statistiche senza cookie.** Senza, non saprai mai se i recruiter aprono il sito. GoatCounter o Cloudflare Web Analytics, nessun banner richiesto.
+12. **Rimandato: statistiche senza cookie (GoatCounter).** Servono per sapere se i recruiter aprono il sito. GoatCounter non usa cookie, quindi niente banner. Passaggi per te:
+    1. Vai su **https://www.goatcounter.com** e premi **Sign up**.
+    2. In **Code** scrivi `lorisdalsanto`: il pannello sarà su `https://lorisdalsanto.goatcounter.com`. Se è già preso, scegline un altro e annotalo.
+    3. Come **Site domain** scrivi `lorisdalsanto.it`.
+    4. Inserisci email e password, accetta i termini e conferma l'account dal link che arriva per email.
+    5. Nelle impostazioni del sito (**Settings**) spunta **"Don't track my own pageviews"**, così le tue visite non falsano i numeri.
+    6. Mandami il codice scelto (es. `lorisdalsanto`).
+
+    Poi io: aggiungo lo script di GoatCounter nel layout (solo in produzione, non in locale), una riga sulle statistiche nella pagina privacy (IT/EN) e verifico nel pannello che la prima visita venga contata.
 
 ### D. Scartato apposta
 
@@ -44,6 +52,8 @@ Stack: Next.js 16 export statico, Tailwind 4, GSAP. Nessuna modifica fatta finch
 - **Tema scuro.** Funzione nuova, non un difetto: dopo le candidature.
 - **Codice dell'interruttore animazioni commentato.** La regola chiede di togliere il codice morto, ma l'hai voluto tenere tu per riattivarlo.
 
-## Proposta
+## Stato
 
-Approvato questo file: faccio il gruppo A in un commit, poi il punto 10 e l'11 se li vuoi. Il gruppo B è tuo.
+- **Fatto:** gruppo A, punti 7, 10, 11, HTTPS forzato dal codice.
+- **Da fare da te:** spuntare "Enforce HTTPS" in GitHub, Settings, Pages (se è grigio: Remove, Save, attendere); creare l'account GoatCounter (punto 12).
+- **Rimandato:** testi dei progetti con parole tue (punto 9), tema scuro.
