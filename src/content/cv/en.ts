@@ -16,7 +16,7 @@ export const cvEn: Cv = {
     skills: "IT skills",
     languages: "Languages",
     traits: "About me",
-    print: "Print or save as PDF",
+    download: "Download PDF",
     updated: "Updated",
   },
   headline: "Front-End & Flutter Mobile Developer",

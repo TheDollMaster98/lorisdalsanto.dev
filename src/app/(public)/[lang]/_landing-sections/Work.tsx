@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { asset } from "@/lib/site/asset";
 import type { Content } from "@/models/content.model";
 import type { Project } from "@/models/project.model";
 import { Section } from "./Section";
@@ -25,6 +27,21 @@ export function Work({ work }: { work: Content["work"] }) {
                   )}
                 </h3>
                 <p className="mt-2 text-sm text-ink-muted">{project.context}</p>
+                {hasGallery(project) && project.images?.[0] && (
+                  // Prima schermata del progetto: un appiglio visivo nella lista.
+                  <div className="mt-6 max-w-sm overflow-hidden border border-line">
+                    <Image
+                      src={asset(
+                        `assets/img/projects/${project.slug}/${project.images[0].file}`,
+                      )}
+                      alt=""
+                      width={project.images[0].width ?? 1600}
+                      height={project.images[0].height ?? 1000}
+                      sizes="(min-width: 768px) 24rem, 100vw"
+                      className="h-auto w-full transition-transform duration-500 ease-out motion-safe:group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
                 {hasGallery(project) && (
                   <p className="mt-3 font-mono text-xs uppercase tracking-[0.08em] underline decoration-line underline-offset-4 transition-colors group-hover:decoration-ink">
                     {work.gallery.open}

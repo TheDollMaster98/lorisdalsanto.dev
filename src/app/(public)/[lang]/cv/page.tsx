@@ -6,10 +6,10 @@ import { Header } from "@/components/layout/Header";
 import { profile } from "@/content/profile";
 import { getContent, getCv, isLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/site/metadata";
+import { asset } from "@/lib/site/asset";
 import { siteUrl } from "@/lib/site/site";
 import { CvEntries } from "./_cv/CvEntries";
 import { CvSection } from "./_cv/CvSection";
-import { PrintButton } from "./_cv/PrintButton";
 
 type PageProps = { params: Promise<{ lang: string }> };
 
@@ -54,7 +54,14 @@ export default async function CvPage({ params }: PageProps) {
             <span>
               {cv.labels.updated} {cv.updated}
             </span>
-            <PrintButton label={cv.labels.print} />
+            {/* PDF generato a ogni deploy da questa stessa pagina (scripts/cv-pdf.mjs). */}
+            <a
+              href={asset(`assets/cv/loris-dal-santo-cv-${lang}.pdf`)}
+              download
+              className="border-b border-ink pb-0.5 font-medium transition-colors hover:border-ink-muted hover:text-ink-muted"
+            >
+              {cv.labels.download} ↓
+            </a>
           </div>
           <Mark size={44} className="mb-6 print:mb-4" />
           <h1 className="text-4xl font-medium tracking-[-0.03em] md:text-6xl print:text-4xl">

@@ -23,17 +23,17 @@ Stack: Next.js 16 export statico, Tailwind 4, GSAP. Nessuna modifica fatta finch
 5. **Copia dell'email.** Il contatto è solo un link `mailto:`: su un computer senza client di posta configurato (frequente in azienda) il clic non fa niente. Un pulsante "Copia" accanto all'indirizzo, con conferma "Copiato".
 6. **404 con `min-h-screen`.** Su iPhone l'altezza salta con la barra di Safari: `min-h-dvh`.
 
-### B. Da fare, ma dipendono da te
+### B. Dipendono da te (aggiornato)
 
-7. **Email del sito ancora Hotmail.** Il cambio a `contatti@lorisdalsanto.it` è pronto sul branch `feat/custom-domain`. Serve la casella attiva e provata.
-8. **HTTPS non forzato.** `http://lorisdalsanto.it` risponde ancora senza passare a https (verificato ora). Spuntare "Enforce HTTPS" in Settings, Pages; se è ancora grigio: Remove, Save, attendere.
-9. **Testi dei progetti con parole tue.** Restano la cosa che pesa di più sulla percezione del sito.
+7. **Fatto: email `contatti@lorisdalsanto.it` su sito e CV.** Prima: Il cambio a `contatti@lorisdalsanto.it` è pronto sul branch `feat/custom-domain`. Serve la casella attiva e provata.
+8. **HTTPS forzato dal codice** (`src/lib/site/https.ts`), attivo dal prossimo deploy. Resta da spuntare "Enforce HTTPS" su GitHub. Prima: `http://lorisdalsanto.it` risponde ancora senza passare a https (verificato ora). Spuntare "Enforce HTTPS" in Settings, Pages; se è ancora grigio: Remove, Save, attendere.
+9. **Rimandato: testi dei progetti con parole tue.** Restano la cosa che pesa di più sulla percezione del sito.
 
 ### C. Da valutare (cambiano qualcosa di visibile)
 
-10. **CV in PDF scaricabile.** Oggi c'è solo "Stampa o salva in PDF", che dipende dal browser. Un recruiter si aspetta un file da scaricare con un clic. Generarlo dalla pagina `/cv` a ogni deploy e linkarlo accanto. Il CV stampato è di 2 pagine: valutare di portarlo a 1.
-11. **Anteprime nella lista dei progetti.** Le righe di Findora e Fam Fanta sono solo testo, eppure hanno screenshot veri. Una miniatura nella riga darebbe un appiglio visivo alla sezione più importante. Le righe EY e UniCredit restano testo (NDA).
-12. **Statistiche senza cookie.** Senza, non saprai mai se i recruiter aprono il sito. GoatCounter o Cloudflare Web Analytics, nessun banner richiesto.
+10. **Fatto: CV in PDF scaricabile**, generato a ogni deploy (`npm run cv:pdf`). Resta di 2 pagine: per una sola servirebbe tagliare circa un terzo del contenuto. Oggi c'è solo "Stampa o salva in PDF", che dipende dal browser. Un recruiter si aspetta un file da scaricare con un clic. Generarlo dalla pagina `/cv` a ogni deploy e linkarlo accanto. Il CV stampato è di 2 pagine: valutare di portarlo a 1.
+11. **Fatto: miniature nella lista dei progetti.** Le righe di Findora e Fam Fanta sono solo testo, eppure hanno screenshot veri. Una miniatura nella riga darebbe un appiglio visivo alla sezione più importante. Le righe EY e UniCredit restano testo (NDA).
+12. **In attesa del codice GoatCounter: statistiche senza cookie.** Senza, non saprai mai se i recruiter aprono il sito. GoatCounter o Cloudflare Web Analytics, nessun banner richiesto.
 
 ### D. Scartato apposta
 
