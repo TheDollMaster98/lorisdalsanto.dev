@@ -13,7 +13,7 @@ export function Work({ work }: { work: Content["work"] }) {
               className="grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10"
             >
               <div className="col-span-8 md:col-span-5">
-                <h3 className="text-2xl font-medium tracking-[-0.02em] md:text-3xl">
+                <h3 className="text-balance text-2xl font-medium tracking-[-0.02em] md:text-3xl">
                   {project.title}
                   {(project.href || hasGallery(project)) && (
                     <span
@@ -35,7 +35,7 @@ export function Work({ work }: { work: Content["work"] }) {
                 {project.year}
               </p>
               <div className="col-span-12 md:col-span-5">
-                <p className="text-ink-muted">{project.summary}</p>
+                <p className="text-pretty text-ink-muted">{project.summary}</p>
                 <p className="mt-4 font-mono text-xs text-ink-muted">
                   {project.role}
                   <span className="mt-1 block">{project.stack.join(", ")}</span>

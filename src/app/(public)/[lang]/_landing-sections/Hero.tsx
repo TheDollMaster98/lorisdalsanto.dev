@@ -45,7 +45,7 @@ export function Hero({ locale, hero, mail }: HeroProps) {
         </div>
         <h1
           data-hero-title
-          className="max-w-[34ch] text-[clamp(2.25rem,4.6vw,4rem)] font-medium leading-[1.02] tracking-[-0.035em]"
+          className="max-w-[34ch] text-balance text-[clamp(2.25rem,4.6vw,4rem)] font-medium leading-[1.02] tracking-[-0.035em]"
         >
           {hero.statement}
         </h1>

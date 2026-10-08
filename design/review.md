@@ -14,7 +14,7 @@ Stack: Next.js 16 export statico, Tailwind 4, GSAP. Nessuna modifica fatta finch
 
 ## Cosa manca, in ordine di priorità
 
-### A. Da fare (piccole, sicure, nessun cambio di stile)
+### A. Fatto (commit "Revisione gruppo A")
 
 1. **Link "Salta al contenuto".** Manca: chi naviga da tastiera deve passare tutta la navbar a ogni pagina. Un link nascosto che compare al primo Tab.
 2. **Focus visibile sui pulsanti.** Lo stile di focus c'è solo per i link (`a:focus-visible`). Le righe dei progetti con galleria, le frecce della galleria e il pulsante di stampa sono `<button>` e usano il contorno del browser, diverso dal resto. Stesso stile per tutti.

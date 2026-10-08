@@ -46,7 +46,7 @@ export default async function CvPage({ params }: PageProps) {
     <>
       <Header locale={lang} nav={nav} path="cv/" />
       <main
-        id="top"
+        id="main"
         className="mx-auto max-w-5xl px-4 pb-24 pt-16 md:px-8 md:pb-32 md:pt-24 print:max-w-none print:p-0"
       >
         <header className="pb-10 md:pb-14 print:pb-6">

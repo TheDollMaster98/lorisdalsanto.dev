@@ -87,9 +87,21 @@ html {
   }
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
   outline: 1px solid var(--ink);
   outline-offset: 4px;
+}
+
+/* Link interni (navbar): scorrimento morbido, fermo sotto la navbar fissa (h-14). */
+html {
+  scroll-padding-top: 3.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Barra di scorrimento sottile nei colori del sito (usata nel popup della galleria).

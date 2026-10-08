@@ -13,6 +13,7 @@ export const en: Content = {
     contact: "Contact",
     cv: "CV",
     motion: "Animations",
+    skip: "Skip to content",
   },
   hero: {
     role: "Front-End & Flutter Mobile Developer",
@@ -236,6 +237,8 @@ export const en: Content = {
   contact: {
     label: "Contact",
     intro: "Have a project or an open role? Get in touch.",
+    copy: "Copy address",
+    copied: "Address copied",
     mail: {
       subject: "Hello from your website",
       body: "Hi Loris,\n\nI found you through your website.\n\n",
