@@ -27,7 +27,7 @@ export const cvIt: Cv = {
   experience: [
     {
       period: "07/2025 - presente",
-      title: "Associate (Senior I), Front-End Developer",
+      title: "Senior Associate, Front-End Developer",
       org: "EY, AI & Data (AI Plus), Milano",
       points: [
         "Unico Front-End owner di due prodotti enterprise interni, con ownership end-to-end: scelte architetturali, sviluppo, documentazione e demo ai Partner EY.",

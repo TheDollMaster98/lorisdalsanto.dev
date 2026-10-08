@@ -175,7 +175,7 @@ export const it: Content = {
       {
         period: "2025 - oggi",
         company: "EY AI & Data",
-        role: "Associate (Senior I), Front-End Developer",
+        role: "Senior Associate, Front-End Developer",
         summary:
           "Unico front-end owner di due prodotti enterprise interni, end-to-end: architettura, sviluppo, documentazione e demo ai Partner. Migrazione di un portale legacy da Bootstrap 3 a 5, con accessibilità WCAG e layout responsive.",
       },
