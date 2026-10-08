@@ -41,7 +41,7 @@ export const cvEn: Cv = {
       title: "Junior Front-End Developer",
       org: "Be | Shaping the Future (Digitech Solution), UniCredit Europe client, Milan",
       points: [
-        "Development, maintenance and refactoring of Angular (13–19) components across several long-term enterprise banking projects. Responsive design system (Bootstrap 5, Tailwind, Material Design) and state management (RxJS, NgRx, Signals).",
+        "Development, maintenance and refactoring of Angular (13-19) components across several long-term enterprise banking projects. Responsive design system (Bootstrap 5, Tailwind, Material Design) and state management (RxJS, NgRx, Signals).",
         "Unit and automated tests (Karma, Jasmine): +15%, +5% and +10% coverage on three projects, CI/CD builds and releases on Jenkins, WCAG accessibility.",
         "Agile/Scrum on Jira in distributed teams (Italy, Germany, Romania).",
       ],

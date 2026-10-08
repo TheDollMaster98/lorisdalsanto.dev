@@ -59,7 +59,7 @@ export default async function LandingPage({
         <Contact
           locale={lang}
           contact={content.contact}
-          cvLabel={content.nav.cv}
+          cvLabel={content.hero.cta.cv}
         />
       </main>
       <Footer locale={lang} footer={content.footer} />

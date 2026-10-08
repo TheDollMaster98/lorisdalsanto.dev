@@ -4,7 +4,7 @@ import { Section } from "./Section";
 
 export function Work({ work }: { work: Content["work"] }) {
   return (
-    <Section id="work" index="01" label={work.label}>
+    <Section id="work" label={work.label}>
       <ol>
         {work.projects.map((project) => {
           const content = (

@@ -198,7 +198,7 @@ export const en: Content = {
         company: "Be | Shaping the Future",
         role: "Junior Front-End Developer, UniCredit client",
         summary:
-          "Long-running Angular (13–19) banking projects: UC Hedge, screens inside the UniCredit mobile app (WebView), the internal tools portal and features for the internal ticketing app. Test coverage +15%, +10% and +5%, CI/CD releases on Jenkins, team across IT/DE/RO.",
+          "Long-running Angular (13-19) banking projects: UC Hedge, screens inside the UniCredit mobile app (WebView), the internal tools portal and features for the internal ticketing app. Test coverage +15%, +10% and +5%, CI/CD releases on Jenkins, team across IT/DE/RO.",
       },
     ],
     educationLabel: "Education",
@@ -217,7 +217,7 @@ export const en: Content = {
     skills: [
       {
         area: "Web",
-        items: "Angular 13–20, Next.js, React, TypeScript, RxJS, NgRx, Signals",
+        items: "Angular 13-20, Next.js, React, TypeScript, RxJS, NgRx, Signals",
       },
       { area: "Mobile", items: "Flutter 3, FlutterFlow, Riverpod" },
       {

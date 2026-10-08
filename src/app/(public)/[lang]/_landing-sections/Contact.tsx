@@ -13,7 +13,7 @@ type ContactProps = {
 
 export function Contact({ locale, contact, cvLabel }: ContactProps) {
   return (
-    <Section id="contact" index="04" label={contact.label}>
+    <Section id="contact" label={contact.label}>
       <p data-reveal className="mb-6 text-ink-muted">
         {contact.intro}
       </p>

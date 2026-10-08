@@ -3,7 +3,7 @@ import { Section } from "./Section";
 
 export function Intro({ intro }: { intro: Content["intro"] }) {
   return (
-    <Section id="intro" index="00" label={intro.label}>
+    <Section id="intro" label={intro.label}>
       <p
         data-reveal
         className="max-w-[46ch] text-xl leading-snug tracking-[-0.015em] md:text-2xl"

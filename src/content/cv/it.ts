@@ -41,7 +41,7 @@ export const cvIt: Cv = {
       title: "Junior Front-End Developer",
       org: "Be | Shaping the Future (Digitech Solution), cliente UniCredit Europa, Milano",
       points: [
-        "Sviluppo, manutenzione e refactoring di componenti Angular (13–19) su più progetti enterprise bancari a lungo termine. Design system responsive (Bootstrap 5, Tailwind, Material Design) e gestione dello stato (RxJS, NgRx, Signals).",
+        "Sviluppo, manutenzione e refactoring di componenti Angular (13-19) su più progetti enterprise bancari a lungo termine. Design system responsive (Bootstrap 5, Tailwind, Material Design) e gestione dello stato (RxJS, NgRx, Signals).",
         "Test unitari/automatizzati (Karma, Jasmine): +15%, +5% e +10% di coverage su tre progetti, build e rilasci CI/CD su Jenkins, accessibilità WCAG.",
         "Agile/Scrum su Jira in team distribuiti (Italia, Germania, Romania).",
       ],

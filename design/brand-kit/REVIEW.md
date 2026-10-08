@@ -34,3 +34,20 @@ Branch di lavoro: `design/brand-review`. Niente qui va online finché non viene 
 3. Riscrivere i testi dei progetti con parole tue, 2 o 3 frasi ciascuno.
 
 Il resto del design non va toccato: è già sopra la media e cambiarlo adesso è tempo tolto alle candidature.
+
+## Pulizia dei segnali da AI (fatto in questo branch)
+
+- **Etichette numerate tolte.** `00 / Presentazione`, `01 / Lavori` e così via erano il segnale più riconoscibile: numerare le sezioni non dice niente a chi legge. Ora sono titoli di sezione veri (`h2`, collegati con `aria-labelledby`), senza numero e senza maiuscoletto. Prima la pagina non aveva nessun `h2`.
+- **Meno maiuscoletto mono.** Restano solo nella riga sopra il titolo della hero e nelle etichette di dati (anni, ruoli, stack). I sottotitoli di Percorso sono in testo normale.
+- **Tecnologie senza righe sottili.** Sei righe con un divisore ciascuna diventano una griglia a due colonne, con spazio al posto delle linee.
+- **Hero su 3 righe invece di 4 a desktop**, con lo stesso testo: corpo più piccolo (max 64px) e riga più larga. Padding in alto ridotto da 160px a 96px. I bottoni stanno nella prima schermata sia a desktop sia a 390px.
+- **Un'etichetta per intento.** Il link al CV nei contatti ora dice "Leggi il CV" come nella hero.
+- **Trattini lunghi negli intervalli** (`13–19`, `13–20`) sostituiti con il trattino normale, su sito e CV.
+
+### Lasciato apposta
+
+- **Ora di Milano con i secondi nel footer.** È uno dei segnali da AI più tipici dei portfolio, ma l'hai chiesta tu. Consiglio di toglierla: a un recruiter non serve.
+- **Pallino verde di disponibilità.** Indica uno stato reale: va bene così, uno solo.
+- **"Milano" nella hero.** Informazione utile per chi assume, non decorazione.
+- **Testi dei progetti e della presentazione.** Sono la parte che suona più da AI, ma vanno riscritti con parole tue: non li tocco io.
+- **Tema scuro assente.** Non è un segnale da AI ma una funzione mancante; valutare dopo le candidature.
