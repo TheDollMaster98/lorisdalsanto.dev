@@ -42,9 +42,8 @@ const SWIPE_THRESHOLD = 40;
 // continuo che arriva in fondo e prosegue viene scartato e va ripetuto.
 const SCROLL_SETTLE_MS = 120;
 // Durate del cambio progetto: la tendina copre, poi scopre il nuovo.
-// Da tastiera il cambio è istantaneo.
-const COVER_S = 0.15;
-const REVEAL_S = 0.3;
+const COVER_S = 0.2;
+const REVEAL_S = 0.5;
 
 // Popup con un progetto alla volta. Arrivati in fondo a un progetto, continuando
 // a scorrere il contenuto viene sostituito dal successivo con una tendina che
@@ -63,7 +62,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
   const direction = useRef<1 | -1 | 0>(0);
 
   const go = useCallback(
-    (to: number, instant = false) => {
+    (to: number) => {
       const from = activeRef.current;
       if (busy.current || to === from || to < 0 || to >= projects.length) {
         return;
@@ -73,8 +72,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       direction.current = dir;
       activeRef.current = to;
 
-      if (instant || !motionEnabled() || !cover.current) {
-        direction.current = 0;
+      if (!motionEnabled() || !cover.current) {
         setActive(to);
         return;
       }
@@ -85,7 +83,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
         {
           scaleY: 1,
           duration: COVER_S,
-          ease: "power3.inOut",
+          ease: "power2.in",
           onComplete: () => setActive(to),
         },
       );
@@ -209,9 +207,9 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
 
     function onKeyDown(event: KeyboardEvent) {
       if (["ArrowDown", "PageDown"].includes(event.key) && atEnd()) {
-        go(activeRef.current + 1, true);
+        go(activeRef.current + 1);
       } else if (["ArrowUp", "PageUp"].includes(event.key) && atStart()) {
-        go(activeRef.current - 1, true);
+        go(activeRef.current - 1);
       }
     }
 
@@ -237,11 +235,10 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
       aria-labelledby="gallery-title"
       // Il <dialog> copre lo schermo ed è trasparente: il pannello sta dentro, con
       // un margine intorno. Un click sul margine arriva al <dialog> stesso e chiude.
-      // Entra salendo di 8px in 250ms, esce più in fretta (150ms).
       onClick={(event) => {
         if (event.target === event.currentTarget) event.currentTarget.close();
       }}
-      className="size-full max-h-none max-w-none bg-transparent p-4 text-ink translate-y-2 opacity-0 transition-[opacity,translate,display,overlay] transition-discrete duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] backdrop:bg-ink/40 open:translate-y-0 open:opacity-100 open:duration-250 motion-reduce:transition-none starting:open:translate-y-2 starting:open:opacity-0 md:p-10"
+      className="size-full max-h-none max-w-none bg-transparent p-4 text-ink opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 ease-out backdrop:bg-ink/40 open:opacity-100 motion-reduce:transition-none starting:open:opacity-0 md:p-10"
     >
       <div className="relative mx-auto h-full max-w-6xl overflow-hidden border border-line bg-paper">
         <div
@@ -267,7 +264,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
                     type="button"
                     aria-label={labels.previous}
                     disabled={active === 0}
-                    onClick={(event) => go(active - 1, event.detail === 0)}
+                    onClick={() => go(active - 1)}
                     className="transition-colors hover:text-ink-muted disabled:text-line"
                   >
                     ↑
@@ -276,7 +273,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
                     type="button"
                     aria-label={labels.next}
                     disabled={active === projects.length - 1}
-                    onClick={(event) => go(active + 1, event.detail === 0)}
+                    onClick={() => go(active + 1)}
                     className="transition-colors hover:text-ink-muted disabled:text-line"
                   >
                     ↓
@@ -360,7 +357,7 @@ export function ProjectGallery({ projects, labels }: ProjectGalleryProps) {
               {i < projects.length - 1 && (
                 <button
                   type="button"
-                  onClick={(event) => go(i + 1, event.detail === 0)}
+                  onClick={() => go(i + 1)}
                   className="group flex w-full items-center justify-between gap-6 border-t border-line px-5 py-8 text-left transition-colors hover:bg-paper-raised md:px-10 md:py-10"
                 >
                   <span>

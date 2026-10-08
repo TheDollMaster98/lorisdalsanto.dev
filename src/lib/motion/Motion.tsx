@@ -11,9 +11,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 // Curva unica per tutte le animazioni del sito.
 export const EASE = "expo.out";
 
-// Elementi della hero nascosti dal CSS prima del primo paint (vedi globals.css).
-const HERO = "[data-hero-title], [data-hero-meta] > *, [data-hero-cta] > *";
-
 // Animazioni della pagina, guidate da attributi data-* nel markup:
 // - data-hero-title: il titolo si scrive lettera per lettera, con un cursore che lampeggia
 // - data-hero-meta: la riga sopra il titolo compare dopo il titolo
@@ -30,7 +27,7 @@ export function Motion({ children }: { children: React.ReactNode }) {
   useGSAP(
     () => {
       if (!enabled) {
-        gsap.set(HERO, { visibility: "visible" });
+        gsap.set("[data-hero-title]", { visibility: "visible" });
         return;
       }
       const mm = gsap.matchMedia();
@@ -40,43 +37,30 @@ export function Motion({ children }: { children: React.ReactNode }) {
           scope.current?.querySelector<HTMLElement>("[data-hero-title]");
         const meta = gsap.utils.toArray<HTMLElement>("[data-hero-meta] > *");
 
-        // Il titolo si scrive da solo. La riga sopra e i link sotto compaiono subito,
-        // senza aspettare la fine della scrittura: le azioni restano raggiungibili.
+        // Il titolo si scrive da solo; i link sotto compaiono quando ha finito.
         const intro = gsap.timeline({ delay: 0.3 });
         const restore = title ? typeTitle(title, intro) : undefined;
 
-        // fromTo: partono già nascosti dal CSS, quindi serve dichiarare l'arrivo.
-        gsap.fromTo(
-          meta,
-          { autoAlpha: 0, y: 8 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.5,
-            stagger: 0.06,
-            delay: 0.3,
-            ease: EASE,
-          },
-        );
+        gsap.from(meta, {
+          autoAlpha: 0,
+          y: 8,
+          duration: 0.8,
+          stagger: 0.08,
+          delay: 0.5,
+          ease: EASE,
+        });
 
-        gsap.fromTo(
+        intro.from(
           gsap.utils.toArray<HTMLElement>("[data-hero-cta] > *"),
-          { autoAlpha: 0, y: 8 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.5,
-            stagger: 0.06,
-            delay: 0.5,
-            ease: EASE,
-          },
+          { autoAlpha: 0, y: 8, duration: 0.8, stagger: 0.08, ease: EASE },
+          title ? "typed" : 0.6,
         );
 
         gsap.utils.toArray<HTMLElement>("[data-line]").forEach((line) => {
           gsap.from(line, {
             scaleX: 0,
             transformOrigin: "left center",
-            duration: 0.8,
+            duration: 1.4,
             ease: EASE,
             scrollTrigger: { trigger: line, start: "top 92%", once: true },
           });
@@ -85,8 +69,8 @@ export function Motion({ children }: { children: React.ReactNode }) {
         gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
           gsap.from(el, {
             autoAlpha: 0,
-            y: 12,
-            duration: 0.6,
+            y: 24,
+            duration: 1,
             ease: EASE,
             scrollTrigger: { trigger: el, start: "top 88%", once: true },
           });
@@ -96,7 +80,7 @@ export function Motion({ children }: { children: React.ReactNode }) {
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(HERO, { visibility: "visible" });
+        gsap.set("[data-hero-title]", { visibility: "visible" });
       });
     },
     // Cambiando la preferenza si annulla tutto (anche il titolo spezzato in
@@ -112,9 +96,8 @@ export function Motion({ children }: { children: React.ReactNode }) {
 // riservato (le lettere sono nel layout, solo invisibili): la pagina non salta.
 // Le parole restano intere per andare a capo nel punto giusto. Ai lettori di
 // schermo arriva il titolo intero, tramite aria-label.
-const TYPE_SPEED = 0.026; // secondi per lettera, al massimo
-const TYPE_TOTAL = 1.2; // durata massima della scrittura, in secondi
-const TYPE_PAUSE = 0.12; // pausa dopo virgola e punto
+const TYPE_SPEED = 0.026; // secondi per lettera
+const TYPE_PAUSE = 0.22; // pausa dopo virgola e punto
 
 function typeTitle(title: HTMLElement, timeline: gsap.core.Timeline) {
   const text = title.textContent ?? "";
@@ -149,11 +132,9 @@ function typeTitle(title: HTMLElement, timeline: gsap.core.Timeline) {
   letters[0]?.before(cursor);
   gsap.set(title, { visibility: "visible" });
 
-  // Titoli lunghi scrivono più in fretta: la durata totale resta sotto TYPE_TOTAL.
-  const speed = Math.min(TYPE_SPEED, TYPE_TOTAL / Math.max(letters.length, 1));
   letters.forEach((letter, i) => {
     const previous = letters[i - 1]?.textContent ?? "";
-    const gap = i === 0 ? 0 : /[,.]/.test(previous) ? TYPE_PAUSE : speed;
+    const gap = i === 0 ? 0 : /[,.]/.test(previous) ? TYPE_PAUSE : TYPE_SPEED;
     timeline.call(
       () => {
         letter.style.visibility = "visible";
