@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { mailtoHref } from "@/lib/site/mailto";
 import type { Content } from "@/models/content.model";
 import { HeroField } from "./HeroField";
+import { Seal } from "./Seal";
 
 type HeroProps = {
   locale: Locale;
@@ -19,8 +20,9 @@ export function Hero({ locale, hero, mail }: HeroProps) {
       <HeroField />
       <section
         id="top"
-        className="mx-auto max-w-7xl px-4 pb-20 pt-20 md:px-8 md:pb-28 md:pt-24"
+        className="relative mx-auto max-w-7xl px-4 pb-20 pt-20 md:px-8 md:pb-28 md:pt-24"
       >
+        <Seal />
         <div
           data-hero-meta
           className="mb-12 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.08em] text-ink-muted"
