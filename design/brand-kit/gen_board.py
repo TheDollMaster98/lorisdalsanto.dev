@@ -19,6 +19,20 @@ def mark(size, fg, bg=None, **_):
     out.append(f'<rect x="{x0+tw+h*0.07:.2f}" y="{(size-ch)/2:.2f}" width="{cw:.2f}" height="{ch:.2f}" fill="{fg}"/>')
     out.append('</svg>'); return "".join(out)
 
+_seals = 0
+def seal(size, fg=INK, bg=PAPER, rot=-8):
+    # Timbro della hero: stesse misure di src/app/(public)/[lang]/_landing-sections/Seal.tsx
+    # (disegnato su 128, testo steso su tutto il giro meno 7 di spazio tra * e L).
+    global _seals; _seals += 1; pid = f"seal-ring-{_seals}"
+    r = 47; ring = 2*math.pi*r - 7
+    inner = mark(28, fg).replace('<svg ', '<svg x="50" y="50" ', 1)
+    return (f'<svg width="{size}" height="{size}" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" style="transform:rotate({rot}deg);flex:none">'
+            f'<defs><path id="{pid}" d="M64,64 m-{r},0 a{r},{r} 0 1,1 {2*r},0 a{r},{r} 0 1,1 -{2*r},0"/></defs>'
+            f'<circle cx="64" cy="64" r="61" fill="{bg}" stroke="{fg}" stroke-width="1.5"/>'
+            f'<circle cx="64" cy="64" r="34" fill="none" stroke="{fg}" stroke-width="1"/>'
+            f'<text font-family="IBM Plex Mono" font-size="9.5" fill="{fg}"><textPath href="#{pid}" textLength="{ring:.2f}" lengthAdjust="spacing">LORIS DAL SANTO * FRONT-END DEVELOPER * MILANO *</textPath></text>'
+            f'{inner}</svg>')
+
 def construction(size):
     # Linee guida tipografiche del marchio: ascendente, altezza x, linea di base, cursore.
     h = size*0.62; fs = h*0.8; tw = 0.738*fs
@@ -73,6 +87,7 @@ html=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="robots" co
 </style></head><body>
 
 <div class="p" style="display:flex;flex-direction:column;justify-content:center;gap:26px">
+  <div style="position:absolute;right:26px;top:26px">{seal(150)}</div>
   {mark(112,INK)}
   <div><div style="font-size:44px;font-weight:500;letter-spacing:-.02em;line-height:1">Loris Dal Santo</div>
   <div class="mono" style="font-size:12px;color:{MUTED};margin-top:14px">Front-End &amp; Flutter Developer</div></div>
@@ -90,9 +105,10 @@ html=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="robots" co
       <i style="width:9px;height:9px;border-radius:50%;background:{LINE}"></i><i style="width:9px;height:9px;border-radius:50%;background:{LINE}"></i><i style="width:9px;height:9px;border-radius:50%;background:{LINE}"></i>
       <div class="mono" style="margin-left:10px;flex:1;background:{RAISED};border-radius:5px;padding:5px 10px;font-size:10px;letter-spacing:.06em;text-transform:none;color:{MUTED};display:flex;align-items:center;gap:7px">{mark(12,MUTED)} lorisdalsanto.it</div>
     </div>
-    <div style="padding:20px 20px">
+    <div style="padding:20px 20px;position:relative">
+      <div style="position:absolute;right:14px;top:8px">{seal(54)}</div>
       <div class="mono" style="font-size:9px;color:{MUTED}">Milano <span style="color:{SIGNAL}">●</span> Aperto a nuove opportunità</div>
-      <div style="font-size:30px;line-height:1.05;letter-spacing:-.02em;margin-top:14px">Progetto e sviluppo applicazioni web e mobile<span class="cursor"></span></div>
+      <div style="font-size:30px;line-height:1.05;letter-spacing:-.02em;margin-top:14px;padding-right:64px">Progetto e sviluppo applicazioni web e mobile<span class="cursor"></span></div>
       <div style="display:flex;gap:18px;margin-top:18px;font-size:13px"><span style="border-bottom:1px solid {INK};padding-bottom:3px">Scrivimi →</span><span style="color:{MUTED}">Leggi il CV →</span></div>
     </div>
   </div>
@@ -135,7 +151,7 @@ html=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="robots" co
 
 <div class="p">
   <div style="display:flex;gap:14px;align-items:flex-end">
-    {mark(84,PAPER,bg=INK)}{mark(48,PAPER,bg=INK)}{mark(32,PAPER,bg=INK)}{mark(16,INK)}
+    {seal(96)}{mark(84,PAPER,bg=INK)}{mark(48,PAPER,bg=INK)}{mark(32,PAPER,bg=INK)}{mark(16,INK)}
   </div>
   <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px">
     <span class="mono" style="font-size:10.5px;border:1px solid {LINE};border-radius:99px;padding:7px 12px;display:flex;gap:8px;align-items:center"><span style="width:7px;height:7px;border-radius:50%;background:{SIGNAL}"></span>Aperto a nuove opportunità</span>
