@@ -17,9 +17,9 @@ export function CopyEmail({
   const [copies, setCopies] = useState(0);
   const [copied, setCopied] = useState(false);
 
+  // Solo il ritorno all'etichetta normale passa dall'effect: ogni nuova copia lo riarma.
   useEffect(() => {
     if (!copies) return;
-    setCopied(true);
     const timer = setTimeout(() => setCopied(false), 2000);
     return () => clearTimeout(timer);
   }, [copies]);
@@ -40,6 +40,7 @@ export function CopyEmail({
       field.remove();
       if (!ok) return;
     }
+    setCopied(true);
     setCopies((n) => n + 1);
   }
 
