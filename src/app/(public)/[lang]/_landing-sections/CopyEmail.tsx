@@ -13,21 +13,34 @@ export function CopyEmail({
   label: string;
   done: string;
 }) {
+  // Numero dell'ultima copia riuscita: ogni clic riparte con 2 secondi pieni.
+  const [copies, setCopies] = useState(0);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    if (!copied) return;
+    if (!copies) return;
+    setCopied(true);
     const timer = setTimeout(() => setCopied(false), 2000);
     return () => clearTimeout(timer);
-  }, [copied]);
+  }, [copies]);
 
   async function copy() {
     try {
       await navigator.clipboard.writeText(email);
-      setCopied(true);
     } catch {
-      // Appunti non disponibili: resta il link mailto.
+      // Appunti non disponibili (permesso negato, browser datato): copia classica.
+      const field = document.createElement("textarea");
+      field.value = email;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.append(field);
+      field.select();
+      const ok = document.execCommand("copy");
+      field.remove();
+      if (!ok) return;
     }
+    setCopies((n) => n + 1);
   }
 
   return (

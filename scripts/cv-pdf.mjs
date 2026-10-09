@@ -26,6 +26,8 @@ const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || undefined,
 });
 const page = await browser.newPage();
+// Ogni file chiesto e non trovato in out/: un PDF da una pagina rotta non deve uscire.
+const missing = [];
 await page.route(`${ORIGIN}/**`, async (route) => {
   let file = new URL(route.request().url()).pathname;
   if (BASE && file.startsWith(BASE)) file = file.slice(BASE.length);
@@ -37,13 +39,23 @@ await page.route(`${ORIGIN}/**`, async (route) => {
       contentType: TYPES[path.extname(file)] ?? "application/octet-stream",
     });
   } catch {
+    missing.push(file);
     await route.fulfill({ status: 404, body: "" });
   }
 });
 
 await mkdir(path.join(OUT, "assets/cv"), { recursive: true });
 for (const lang of LOCALES) {
-  await page.goto(`${ORIGIN}${BASE}/${lang}/cv/`, { waitUntil: "networkidle" });
+  const response = await page.goto(`${ORIGIN}${BASE}/${lang}/cv/`, {
+    waitUntil: "networkidle",
+  });
+  if (!response?.ok() || missing.length) {
+    await browser.close();
+    throw new Error(
+      `CV ${lang}: pagina o risorse mancanti in out/ (${missing.join(", ") || response?.status()}). ` +
+        "PAGES_BASE_PATH deve essere lo stesso della build.",
+    );
+  }
   await page.evaluate(() => document.fonts.ready);
   const file = path.join(OUT, `assets/cv/loris-dal-santo-cv-${lang}.pdf`);
   await page.pdf({
