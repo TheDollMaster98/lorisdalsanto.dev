@@ -45,7 +45,8 @@ html {
    compaiono e spariscono al primo paint. Se lo script non parte, dopo 2.5s si mostrano comunque. */
 .js:not(.no-motion) [data-hero-title],
 .js:not(.no-motion) [data-hero-meta] > *,
-.js:not(.no-motion) [data-hero-cta] > * {
+.js:not(.no-motion) [data-hero-cta] > *,
+.js:not(.no-motion) [data-hero-seal] {
   visibility: hidden;
   animation: reveal-fallback 0s 2.5s forwards;
 }
@@ -81,7 +82,8 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .js:not(.no-motion) [data-hero-title],
   .js:not(.no-motion) [data-hero-meta] > *,
-  .js:not(.no-motion) [data-hero-cta] > * {
+  .js:not(.no-motion) [data-hero-cta] > *,
+  .js:not(.no-motion) [data-hero-seal] {
     visibility: visible;
     animation: none;
   }
