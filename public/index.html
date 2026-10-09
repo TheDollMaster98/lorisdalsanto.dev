@@ -11,14 +11,18 @@
     -->
     <meta http-equiv="refresh" content="0; url=./it/" />
     <script>
-      // Prima di tutto: da http a https (vedi src/lib/site/https.ts).
-      if (location.protocol === "http:" && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname))
+      // Prima di tutto: da http a https (vedi src/lib/site/https.ts). Se succede,
+      // la lingua la sceglie la pagina caricata in https: un secondo replace
+      // annullerebbe il primo.
+      if (location.protocol === "http:" && /(^|\.)lorisdalsanto\.it$/.test(location.hostname)) {
         location.replace("https:" + location.href.slice(5));
-      var supported = ["it", "en"];
-      var lang = (navigator.language || "").slice(0, 2).toLowerCase();
-      location.replace(
-        "./" + (supported.indexOf(lang) >= 0 ? lang : "en") + "/",
-      );
+      } else {
+        var supported = ["it", "en"];
+        var lang = (navigator.language || "").slice(0, 2).toLowerCase();
+        location.replace(
+          "./" + (supported.indexOf(lang) >= 0 ? lang : "en") + "/",
+        );
+      }
     </script>
   </head>
   <body>

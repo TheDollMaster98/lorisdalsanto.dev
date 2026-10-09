@@ -59,8 +59,12 @@ def field(w,h,step=18):
 W,H=1600,1200; G=14; PW=(W-G*4)//3; PH=(H-G*4)//3
 def lab(n,t,col=MUTED): return f'<div class="lab" style="color:{col}"><span>{n}</span><span>{t}</span></div>'
 html=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Brand kit, Loris Dal Santo</title>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
+/* Font serviti dal sito (fonts/ accanto a questa pagina): nessuna richiesta a Google, come dice la privacy. */
+@font-face{{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk.woff2) format("woff2");font-weight:400 900;font-display:swap}}
+@font-face{{font-family:"IBM Plex Mono";src:url(fonts/ibm-plex-mono-400.woff2) format("woff2");font-weight:400;font-display:swap}}
+@font-face{{font-family:"IBM Plex Mono";src:url(fonts/ibm-plex-mono-500.woff2) format("woff2");font-weight:500;font-display:swap}}
 *{{box-sizing:border-box;margin:0}} body{{background:{CANVAS};width:{W}px;height:{H}px;padding:{G}px;display:grid;grid-template-columns:repeat(3,{PW}px);grid-template-rows:repeat(3,{PH}px);gap:{G}px;font-family:"Schibsted Grotesk",sans-serif;color:{INK}}}
 .p{{position:relative;overflow:hidden;background:{PAPER};border-radius:6px;padding:28px}}
 .lab{{position:absolute;left:28px;right:28px;bottom:20px;display:flex;justify-content:space-between;font:400 11px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}}

@@ -16,8 +16,8 @@ const HERO = "[data-hero-title], [data-hero-meta] > *, [data-hero-cta] > *";
 
 // Animazioni della pagina, guidate da attributi data-* nel markup:
 // - data-hero-title: il titolo si scrive lettera per lettera, con un cursore che lampeggia
-// - data-hero-meta: la riga sopra il titolo compare dopo il titolo
-// - data-hero-cta: i link sotto il titolo compaiono per ultimi
+// - data-hero-meta: la riga sopra il titolo compare a 0,3 s, mentre il titolo si scrive
+// - data-hero-cta: i link sotto il titolo compaiono a 0,5 s, senza aspettare la scrittura
 // - data-line: le linee sottili si disegnano da sinistra entrando nel viewport
 // - data-reveal: il contenuto sale di poco e compare entrando nel viewport
 // Con "riduci animazioni" attivo nel sistema, o con l'interruttore dell'header
@@ -164,7 +164,6 @@ function typeTitle(title: HTMLElement, timeline: gsap.core.Timeline) {
     );
   });
   // A fine scrittura il cursore lampeggia qualche volta, poi sparisce.
-  timeline.addLabel("typed");
   timeline.call(() => cursor.classList.remove("is-typing"));
   timeline.to(cursor, { autoAlpha: 0, duration: 0.4, delay: 3 }, ">");
 
