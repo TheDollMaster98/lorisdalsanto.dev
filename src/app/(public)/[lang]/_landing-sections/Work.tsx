@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { asset } from "@/lib/site/asset";
 import type { Content } from "@/models/content.model";
-import type { Project } from "@/models/project.model";
+import type { Project, ProjectImage } from "@/models/project.model";
 import { Section } from "./Section";
 
 export function Work({ work }: { work: Content["work"] }) {
@@ -27,7 +27,7 @@ export function Work({ work }: { work: Content["work"] }) {
                   )}
                 </h3>
                 <p className="mt-2 text-sm text-ink-muted">{project.context}</p>
-                {hasGallery(project) && project.images?.[0] && (
+                {hasGallery(project) && (
                   // Prima schermata del progetto: un appiglio visivo nella lista.
                   <div className="mt-6 max-w-sm overflow-hidden border border-line">
                     <Image
@@ -111,6 +111,8 @@ export function Work({ work }: { work: Content["work"] }) {
 }
 
 // Con immagini la riga apre la galleria (il link al sito è dentro la galleria).
-function hasGallery(project: Project) {
+function hasGallery(
+  project: Project,
+): project is Project & { slug: string; images: ProjectImage[] } {
   return Boolean(project.slug && project.images?.length);
 }
