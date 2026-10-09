@@ -12,12 +12,14 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 export const EASE = "expo.out";
 
 // Elementi della hero nascosti dal CSS prima del primo paint (vedi globals.css).
-const HERO = "[data-hero-title], [data-hero-meta] > *, [data-hero-cta] > *";
+const HERO =
+  "[data-hero-title], [data-hero-meta] > *, [data-hero-cta] > *, [data-hero-seal]";
 
 // Animazioni della pagina, guidate da attributi data-* nel markup:
 // - data-hero-title: il titolo si scrive lettera per lettera, con un cursore che lampeggia
 // - data-hero-meta: la riga sopra il titolo compare a 0,3 s, mentre il titolo si scrive
 // - data-hero-cta: i link sotto il titolo compaiono a 0,5 s, senza aspettare la scrittura
+// - data-hero-seal: il timbro cade dall'alto e viene schiacciato sulla pagina a 1,1 s
 // - data-line: le linee sottili si disegnano da sinistra entrando nel viewport
 // - data-reveal: il contenuto sale di poco e compare entrando nel viewport
 // Con "riduci animazioni" attivo nel sistema, o con l'interruttore dell'header
@@ -72,6 +74,10 @@ export function Motion({ children }: { children: React.ReactNode }) {
           },
         );
 
+        const seal =
+          scope.current?.querySelector<HTMLElement>("[data-hero-seal]");
+        if (seal) slapSeal(seal);
+
         gsap.utils.toArray<HTMLElement>("[data-line]").forEach((line) => {
           gsap.from(line, {
             scaleX: 0,
@@ -105,6 +111,47 @@ export function Motion({ children }: { children: React.ReactNode }) {
   );
 
   return <div ref={scope}>{children}</div>;
+}
+
+// Timbro "schiaffato": parte grande, ruotato e con un'ombra larga, come se fosse
+// sollevato sopra la pagina; cade accelerando, all'impatto si schiaccia di poco e
+// rimbalza, mentre un anello sottile si allarga e svanisce.
+const SEAL_DELAY = 1.1; // secondi: arriva mentre il titolo finisce di scriversi
+const SEAL_FALL = 0.32;
+
+function slapSeal(seal: HTMLElement) {
+  const body = seal.querySelector<HTMLElement>("[data-hero-seal-body]");
+  const ring = seal.querySelector<HTMLElement>("[data-hero-seal-ring]");
+  const slap = gsap.timeline({ delay: SEAL_DELAY });
+
+  slap
+    .fromTo(
+      seal,
+      { scale: 2.4, rotation: -26, y: -24 },
+      { scale: 1, rotation: 0, y: 0, duration: SEAL_FALL, ease: "power3.in" },
+      0,
+    )
+    // L'opacità arriva prima: il timbro si vede già mentre cade.
+    .fromTo(seal, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, 0)
+    .fromTo(
+      body,
+      { boxShadow: "0 28px 36px -12px rgb(21 21 21 / 0.28)" },
+      {
+        boxShadow: "0 0px 0px 0px rgb(21 21 21 / 0)",
+        duration: SEAL_FALL,
+        ease: "power3.in",
+        clearProps: "boxShadow",
+      },
+      0,
+    )
+    .to(seal, { scale: 0.93, duration: 0.05, ease: "power1.out" })
+    .to(seal, { scale: 1, duration: 0.5, ease: "elastic.out(1, 0.45)" })
+    .fromTo(
+      ring,
+      { opacity: 0.35, scale: 1 },
+      { opacity: 0, scale: 1.5, duration: 0.6, ease: EASE },
+      SEAL_FALL,
+    );
 }
 
 // Scrittura a macchina del titolo: ogni lettera diventa uno span invisibile che si
