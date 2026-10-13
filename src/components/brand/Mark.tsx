@@ -10,7 +10,7 @@ export function Mark({ size = 40, className = "" }: MarkProps) {
       className={`inline-flex items-center font-medium leading-none tracking-[-0.04em] ${className}`}
       style={{ height: size, fontSize: size * 0.8 }}
     >
-      ld
+      lds
       <span
         className="inline-block bg-current"
         style={{

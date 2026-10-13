@@ -10,12 +10,12 @@ def mark(size, fg, bg=None, **_):
     # Con bg: riquadro pieno (icone), il segno occupa il 62% dell'altezza.
     h = size*0.62 if bg else size
     fs = h*0.8; cw = max(1.5, h*0.07); ch = h*0.66
-    tw = 0.738*fs                     # larghezza visibile di "ld" in Schibsted 500 (misurata), -0.04em
+    tw = 0.738*fs                     # larghezza visibile di "lds" in Schibsted 500 (misurata), -0.04em
     x0 = (size - (tw + h*0.13 + cw))/2
     base = size/2 + 0.36*fs           # testo centrato in verticale sul cursore
     out = [f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" xmlns="http://www.w3.org/2000/svg">']
     if bg: out.append(f'<rect width="{size}" height="{size}" rx="{size*0.22}" fill="{bg}"/>')
-    out.append(f'<text x="{x0:.2f}" y="{base:.2f}" font-family="Schibsted Grotesk" font-weight="500" font-size="{fs:.2f}" letter-spacing="{-0.04*fs:.2f}" fill="{fg}">ld</text>')
+    out.append(f'<text x="{x0:.2f}" y="{base:.2f}" font-family="Schibsted Grotesk" font-weight="500" font-size="{fs:.2f}" letter-spacing="{-0.04*fs:.2f}" fill="{fg}">lds</text>')
     out.append(f'<rect x="{x0+tw+h*0.07:.2f}" y="{(size-ch)/2:.2f}" width="{cw:.2f}" height="{ch:.2f}" fill="{fg}"/>')
     out.append('</svg>'); return "".join(out)
 
