@@ -6,14 +6,16 @@ random.seed(7)
 PAPER="#f4f2ee"; RAISED="#ebe8e2"; INK="#151515"; MUTED="#5e5b55"; LINE="#d9d5cd"; SIGNAL="#3f7a4a"; CANVAS="#1c1c1b"
 
 def mark(size, fg, bg=None, **_):
-    # Marchio: "ld" + cursore, stesse proporzioni di src/components/brand/Mark.tsx.
-    # Con bg: riquadro pieno (icone), il segno occupa il 62% dell'altezza.
-    h = size*0.62 if bg else size
+    # Marchio: "lds" + cursore, stesse proporzioni di src/components/brand/Mark.tsx.
+    # Con bg: riquadro pieno (icone), il segno occupa il 52% dell'altezza.
+    h = size*0.52 if bg else size
     fs = h*0.8; cw = max(1.5, h*0.07); ch = h*0.66
-    tw = 0.738*fs                     # larghezza visibile di "lds" in Schibsted 500 (misurata), -0.04em
-    x0 = (size - (tw + h*0.13 + cw))/2
+    tw = 1.215*fs                     # posizione del cursore dopo "lds" in Schibsted 500, -0.04em (misurata: "ld" 0.793em, "lds" 1.27em)
+    # Senza bg l'SVG è largo quanto il segno ("lds" è più largo che alto).
+    w = size if bg else math.ceil(tw + h*0.07 + cw)
+    x0 = (w - (tw + h*0.07 + cw))/2
     base = size/2 + 0.36*fs           # testo centrato in verticale sul cursore
-    out = [f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" xmlns="http://www.w3.org/2000/svg">']
+    out = [f'<svg width="{w}" height="{size}" viewBox="0 0 {w} {size}" xmlns="http://www.w3.org/2000/svg">']
     if bg: out.append(f'<rect width="{size}" height="{size}" rx="{size*0.22}" fill="{bg}"/>')
     out.append(f'<text x="{x0:.2f}" y="{base:.2f}" font-family="Schibsted Grotesk" font-weight="500" font-size="{fs:.2f}" letter-spacing="{-0.04*fs:.2f}" fill="{fg}">lds</text>')
     out.append(f'<rect x="{x0+tw+h*0.07:.2f}" y="{(size-ch)/2:.2f}" width="{cw:.2f}" height="{ch:.2f}" fill="{fg}"/>')
@@ -25,7 +27,8 @@ def seal(size, fg=INK, bg=PAPER, rot=-8):
     # (disegnato su 128, testo steso su tutto il giro meno 7 di spazio tra * e L).
     global _seals; _seals += 1; pid = f"seal-ring-{_seals}"
     r = 47; ring = 2*math.pi*r - 7
-    inner = mark(28, fg).replace('<svg ', '<svg x="50" y="50" ', 1)
+    inner = mark(28, fg); iw = float(inner.split('width="',1)[1].split('"',1)[0])
+    inner = inner.replace('<svg ', f'<svg x="{64-iw/2:.1f}" y="50" ', 1)
     return (f'<svg width="{size}" height="{size}" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" style="transform:rotate({rot}deg);flex:none">'
             f'<defs><path id="{pid}" d="M64,64 m-{r},0 a{r},{r} 0 1,1 {2*r},0 a{r},{r} 0 1,1 -{2*r},0"/></defs>'
             f'<circle cx="64" cy="64" r="61" fill="{bg}" stroke="{fg}" stroke-width="1.5"/>'
@@ -35,7 +38,7 @@ def seal(size, fg=INK, bg=PAPER, rot=-8):
 
 def construction(size):
     # Linee guida tipografiche del marchio: ascendente, altezza x, linea di base, cursore.
-    h = size*0.62; fs = h*0.8; tw = 0.738*fs
+    h = size*0.52; fs = h*0.8; tw = 1.215*fs
     x0 = (size - (tw + h*0.13 + max(1.5, h*0.07)))/2
     base = size/2 + 0.36*fs; asc = base - fs*0.72; xh = base - fs*0.52
     cx = x0 + tw + h*0.13 + max(1.5, h*0.07)/2
