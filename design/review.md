@@ -8,7 +8,7 @@ Il design generale regge e non va rifatto. Palette, tipografia, griglia e ritmo 
 
 ## 1. Marchio
 
-**Deciso: versione A, `ld` + cursore**, applicata a favicon, icona iOS, anteprima social, CV e brand kit. Il resto di questa sezione resta come storico delle opzioni valutate.
+**Deciso: `lds` + cursore** (evoluzione della versione A), applicata a favicon, icona iOS, anteprima social, CV, timbro della hero e brand kit. Nelle icone il segno occupa il 52% del riquadro, perché `lds|` è più largo di `ld|`. Il resto di questa sezione resta come storico delle opzioni valutate.
 
 ### Perché il precedente non convinceva
 
@@ -41,7 +41,7 @@ Confronto completo: [`logo-alternative.png`](logo-alternative.png) (16, 24, 32, 
 
 Tra le varianti di A la più solida è **A2** (blocco), seguita da A1 se vuoi il colore.
 
-**Marchi disegnati** ([`logo-disegnati.png`](logo-disegnati.png)). Le varianti A sono lettere scritte con un font dentro un quadrato: soluzione standard dei portfolio da sviluppatore, quindi generica. Tre direzioni con le lettere costruite a mano:
+**Marchi disegnati** (immagine di confronto rimossa). Le varianti A sono lettere scritte con un font dentro un quadrato: soluzione standard dei portfolio da sviluppatore, quindi generica. Tre direzioni con le lettere costruite a mano:
 
 | | Idea | A 16 px | Note |
 | --- | --- | --- | --- |
@@ -51,7 +51,7 @@ Tra le varianti di A la più solida è **A2** (blocco), seguita da A1 se vuoi il
 
 **Consiglio aggiornato: 1, la legatura.**
 
-**Combinazioni di A e taglio** ([`logo-taglio-cursore.png`](logo-taglio-cursore.png)), su tua richiesta:
+**Combinazioni di A e taglio** (immagine di confronto rimossa), su tua richiesta:
 
 | | Idea | A 16 px | Giudizio |
 | --- | --- | --- | --- |
